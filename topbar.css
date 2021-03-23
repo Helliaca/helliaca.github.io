@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    background-color: #191919;
+}
+
+#root {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    color: white;
+}
+
+#topbar-container {
+    background-color: #191919;
+    height: 98px;
+    width: 80%;
+    padding: 0px 10%;
+    margin: 0px 0px;
+    overflow: hidden;
+}
+
+#topbar-logo {
+    background-image: url("para.svg");
+    height: 100%;
+    width: 38%;
+    text-align: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px 0px;
+    padding: 0px 0px;
+    float: left;
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+
+#topbar-socialmedia {
+    text-align: right;
+}
+
+#topbar-links {
+    text-align: left;
+}

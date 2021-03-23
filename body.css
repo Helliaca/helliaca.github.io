@@ -1,0 +1,20 @@
+#body-container {
+    background-image: url("background_prototype.png");
+    background-color: #cccccc;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 0px 0px;
+    margin: 0px 0px;
+}
+
+#diag {
+  width: 100%;
+  height: 100%;
+  transform: skew(-31deg);
+  background-color: rgba(25, 25, 25, 0.8);;
+  position: relative;
+  top: 0px;
+  left: -900px;
+}
