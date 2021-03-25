@@ -49,17 +49,42 @@ body {
 #topbar-links {
     text-align: right;
     height: 100%;
-    width: 100%;
+    width: 62%;
     float: right;
+    position: relative;
+    top: 0px;
+    right: 0px;
 }
 
-#topbar-links a {
+#topbar-links div {
+    height: 100%;
+    margin-left: 20px;
+    float: right;
+    line-height: calc(100% + 127px);  // No clue why this works tbh, but this puts the text at the bottom of the topbar
+}
+
+.topbar-link {
+    transform: skewX(-31deg);
+    background-color: rgba(0, 0, 0, 0.0);
+    transition: 0.6s;
+}
+
+.topbar-link.active {
+    transform: skewX(-31deg);
+    background-color: rgba(17, 17, 17, 1.0);
+}
+
+.topbar-link:hover {
+    transform: skewX(-31deg);
+    background-color: rgba(0, 0, 0, 1.0);
+}
+
+.topbar-link-text {
     font-family: "Microsoft Yi Baiti", Helvetica, sans-serif;
     font-size: 27px;
     color: #cccccc;
-    text-decoration: none;
     position: relative;
-    bottom: 0px;
-    height: 100%;
-    margin-left: 20px;
+    left: -25px;
+    transform: skewX(31deg);
+    background-color: rgba(0, 0, 0, 0.0);
 }
