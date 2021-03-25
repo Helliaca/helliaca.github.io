@@ -23,6 +23,7 @@ body {
 
 #topbar-logo {
     background-image: url("para.svg");
+    color: #ffffff;
     font-family: "Microsoft Yi Baiti", Helvetica, sans-serif;
     font-size: 20px;
     letter-spacing: 4px;
