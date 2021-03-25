@@ -2,11 +2,12 @@ body {
     margin: 0;
     background-color: #191919;
     color: #ffffff;
+    font-family: "Microsoft Yi Baiti", Helvetica, sans-serif;
+    font-size: 24px;
 }
 
 a {
     color: #ffffff;
-    text-decoration: none;
 }
 
 #root {
@@ -15,5 +16,6 @@ a {
     left: 0;
     height: 100%;
     width: 100%;
-    color: white
+    color: white;
+    z-index: -3;
 }

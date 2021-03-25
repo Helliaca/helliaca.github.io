@@ -43,6 +43,7 @@
     color: #DDDDDD;
     position: relative;
     z-index: 999;
+    text-decoration: none;
 }
 
 #topbar-links {

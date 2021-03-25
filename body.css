@@ -21,3 +21,63 @@
   left: -50%;
   z-index: -1;
 }
+
+#welcome-container {
+    position: absolute;
+    left: calc(10% + 30px);
+    top: 50px;
+    width: 35%;
+    height: calc(100% - 50px);
+    z-index: 1;
+}
+
+#welcome-banner {
+    font-size: 59px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    min-width: 730px;
+    line-height: 65px;
+}
+
+#welcome-text {
+    font-size: 30px;
+    position: absolute;
+    left: 50px;
+    top: 180px;
+    min-width: 420px;
+}
+
+#welcome-img {
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    left: calc(10% + 60px);
+    top: 470px;
+    background-image: url("cv_portr_round_grey.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.gradient {
+    background-origin: padding-box;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right 0px bottom -8px;
+    background-image: url("gradient.png");
+}
+
+.gradient-inv {
+    background-origin: padding-box;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("gradient-inverse.png");
+    background-position: right 0px bottom -8px;
+}
