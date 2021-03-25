@@ -33,7 +33,7 @@
     width: 62%;
     float: right;
     position: absolute;
-    top: 10px;
+    top: 5px;
     right: 10%;
     letter-spacing: 8px;
 }
@@ -60,7 +60,7 @@
     height: 100%;
     margin-left: 20px;
     float: right;
-    line-height: calc(100% + 127px);  // No clue why this works tbh, but this puts the text at the bottom of the topbar
+    line-height: calc(100% + 127px); /* No clue why this works tbh, but this puts the text at the bottom of the topbar */
 }
 
 .topbar-link {

@@ -1,0 +1,18 @@
+#projects-container {
+    width: 80%;
+    height: 100%;
+    position: relative;
+    overflow: auto;
+
+    /* Dunno what this is, but it centers the div */
+    margin:0 auto !important;
+    display: block !important;
+}
+
+.project-container {
+    margin-top: 100px;
+    background-color: #191919;
+    width: 100%;
+    min-height: 600px;
+    position: relative;
+}
