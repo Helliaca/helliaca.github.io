@@ -7,6 +7,8 @@
     background-size: cover;
     padding: 0px 10%;
     margin: 0px 0px;
+    position: relative;
+    z-index: -2;
 }
 
 #diag {
@@ -14,7 +16,8 @@
   height: 100%;
   transform: skew(-31deg);
   background-color: rgba(25, 25, 25, 0.8);
-  position: relative;
+  position: absolute;
   top: 0px;
   left: -50%;
+  z-index: -1;
 }
