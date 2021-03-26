@@ -3,6 +3,7 @@
     height: 100%;
     position: relative;
     overflow: auto;
+    background-color: #191919;
 
     /* Dunno what this is, but it centers the div */
     margin:0 auto !important;
@@ -10,24 +11,32 @@
 }
 
 .project-container {
-    margin-top: 100px;
-    background-color: #191919;
-    width: 100%;
-    min-height: 600px;
-    max-height: 600px;
+    margin-top: 50px;
+    padding: 30px 60px;
+    min-height: 313px;
     position: relative;
 }
 
 .project-img {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    height: 100%;
-    width: 61%;
+    position: relative;
+    float: left;
+    height: 313px;
+    width: 355px;
+    margin-right: 61px;
+}
+
+.project-container:nth-of-type(odd) .project-img {
+    float: right;
+    margin-left: 61px;
 }
 
 .project-img img {
     height: 100%;
     width: 100%;
     object-fit: cover;
+}
+
+.project-title {
+    font-size: 42px;
+
 }
