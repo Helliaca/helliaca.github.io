@@ -2,6 +2,7 @@
     width: 80%;
     height: 100%;
     position: relative;
+    z-index: -2;
     overflow: auto;
     background-color: #191919;
 
@@ -38,5 +39,4 @@
 
 .project-title {
     font-size: 42px;
-
 }

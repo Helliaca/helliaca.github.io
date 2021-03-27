@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/common.css" type="text/css">
+    <link rel="stylesheet" href="css/topbar.css" type="text/css">
+    <link rel="stylesheet" href="css/body.css" type="text/css">
+    <link rel="stylesheet" href="css/projects.css" type="text/css">
+    <link rel="stylesheet" href="css/project.css" type="text/css">
+    <link rel="stylesheet" href="res/fontawesome-free-5.15.3-web/css/all.css" type="text/css">
+</head>
+
+<body>
+    <div id="root">
+
+        <!-- TOPBAR -->
+        <div id="topbar-container">
+
+            <!-- TOPBAR LOGO -->
+            <a href="#"><div id="topbar-logo">
+                <h1>BENJAMIN KAHL</h1>
+            </div></a>
+
+            <!-- TOPBAR SOCIAL MEDIA ICONS -->
+            <div id="topbar-socialmedia">
+                <a href="#" class="fas fa-envelope"></a>
+                <a href="#" class="fab fa-github"></a>
+                <a href="#" class="fab fa-linkedin-in"></a>
+                <a href="#" class="fab fa-deviantart"></a>
+            </div>
+
+            <!-- TOPBAR LINKS/NAV -->
+            <div id=topbar-links>
+                <a href="more.html"><div class="topbar-link"><div class="topbar-link-text"> MORE </div></div></a>
+                <a href="publications.html"><div class="topbar-link"><div class="topbar-link-text"> PUBLICATIONS </div></div></a>
+                <a href="cv.html"><div class="topbar-link"><div class="topbar-link-text"> CV </div></div></a>
+                <a href="#"><div class="topbar-link active"><div class="topbar-link-text"> PROJECTS </div></div></a>
+                <a href="index.html"><div class="topbar-link"><div class="topbar-link-text"> HOME </div></div></a>
+            </div>
+
+        </div>
+
+        <!-- BODY -->
+        <div id="body-container">
+
+            <div id="projects-container">
+
+                <div class="project-banner">
+                    <img class="project-banner-img" src="res/banner_4x.png">
+                    <div class="project-banner-title">VXCT</div>
+                </div>
+
+                <div class="project-toolbar">
+                    <div class="project-toolbar-back">
+                        <a href="projects.html" class="fas fa-arrow-alt-circle-left"></a>
+                    </div>
+
+                    <div class="project-toolbar-links">
+                        <a href="#" class="far fa-file-pdf"></a>
+                        <a href="#" class="fab fa-github"></a>
+                    </div>
+                </div>
+
+                <div class="project-description">
+
+                    <h2>What does it do?</h2>
+                    <p>VXCT is an OpenGL 4.5 based implementation of the Voxel Cone Tracing rendering algorithm.</p>
+                    <p>It allows for easy visualization of all data utilized during the process such as 3D textures, individual lighting components and more. Customized scenes and models can be defined and loaded into the rendering environment with ease.</p>
+                    <p>The development took place as part of a Bachelor's thesis at the <a href="https://www.fu-berlin.de/">Freie Universität Berlin</a>. A revised and corrected version of said thesis can be viewed and used as a form of documentation <a href="https://drive.google.com/file/d/1ZS57rgKCYl-T-sqEzVSDuj0E7VQEB6EY/view?usp=sharing">here.</a></p>
+                    <p><img alt="Example Pictures" src="https://i.imgur.com/TSqa8XK.jpg" /></p>
+                    <h1>Instructions</h1>
+                    <h2>Setup</h2>
+                    <p>If you are looking to only run this application without making code-based changes, simply head on over to the github releases tab and download the newest version. Make sure your GPU and driver are compatible with OpenGL 4.5.</p>
+                    <p>A compressed folder will include three executables for 64x64x64, 128x128x128 and 256x256x256 sized 3D textures (voxelmaps) respectively. The higher resolution ones may cause some strain to your GPU, so I suggest commencing with the 64 variant.</p>
+                    <p>Alternatively, if you are looking to compile the program yourself in Visual Studio, make sure you inlcude following dependencies:</p>
+                    <ul>
+                    <li><a href="https://github.com/assimp/assimp/releases/tag/v3.3.1/">Assimp 3.1.1</a></li>
+                    <li><a href="https://www.glfw.org/download.html">GLFW 3.2.1</a></li>
+                    <li><a href="https://github.com/g-truc/glm/releases/tag/0.9.8.5">GLM 9.8.5</a></li>
+                    <li><a href="http://glad.dav1d.de/#profile=core&amp;language=c&amp;specification=gl&amp;loader=on&amp;api=gl%3D4.5">An OpenGL 4.5 loader generated with glad 0.1.16a0</a></li>
+                    </ul>
+                    <p>Whichever method you opt for, once executed, you should be greeted by a commandline window together with an OpenGL rendering window displaying the default scene consisting of a simple Cornell Box and a low-poly version of 'Lucy', from the <a href="http://graphics.stanford.edu/data/3Dscanrep/">Stanford 3D Scanning Repository</a>. All other complex models shipped with this application also originate form the Stanford repository.</p>
+                    <p>Performance comparison:
+                    <img alt="Comparison" src="https://i.imgur.com/lWYRW2x.jpg" /></p>
+                    <h2>Creating/Modifying a scene</h2>
+                    <p>If the default scene is not to your liking or you simply wish to render a scene of your own, head on over to the <code>/scenes</code> directory, where you'll find a variety of <code>.txt</code> files, each corresponding to a pre-defined scene.</p>
+                    <p>You may open, edit and remove these files at your own pleasure, but keep in mind that the file <code>scene.txt</code> will be loaded by default at program start. So ensure to keep it around, even if just as an empty file.</p>
+                    <p>The scene descriptions follow a simple, C-like syntax. Simply inspecting any of the pre-defined files should give you a pretty good overview of what options are available. A minimalist scene consisting of only one model and lighsource might look a little something like this:</p>
+                    <pre><code>
+                    scene = {
+                        name = mainScene
+
+                        model = {
+                            name = MyModel
+                            active = true
+                                static = false
+                            path = models/my_model.obj
+                            position = { x = 0.0f y = 0.0f z = 0.0f }
+                            rotation = { x = 0.0f y = 0.0f z = 0.0f }
+                            scale = 1.0f
+                            shader = COLOR
+                            material = {
+                                shininess = 32.0f
+                                specular_str = 1.0f
+                                ambient_str = 1.0f
+                                diffuse_str = 1.0f
+                                color = { r = 1.0f g = 0.0f b = 0.0f }
+                            }
+                        }
+
+                        light = {
+                            position = { x = 0.0f y = 0.5f z = 0.0f }
+                            color = { r = 1.0f g = 1.0f b = 1.0f }
+                            att_quadratic = 1.0f
+                            att_linear = 1.0f
+                            att_constant = 1.0f
+                        }
+                    }
+                    </code></pre>
+                    <p>Note that all models should posses an identifier <code>name</code>, which can later be used to adjust any of its attributes. Models with the <code>active</code> attribute as false will not be rendered. Set <code>shader</code> to COLOR for all regular objects and EMIT for objects like light-sources. The <code>static</code> attribute determines whether if models are included in voxel cone tracing or not. In particular all objects with a non COLOR shader should be declared as static.</p>
+                    <p>The material attributes correspond to their Phong-reflection-model counterparts and will also influence the results obtained through voxel cone tracing. Textured objects are not supported at this moment. Instead, a flat color is assigned through the material's <code>color</code> attribute.</p>
+                    <p>The <code>att_consant</code>, <code>att_linear</code> and <code>att_quadratic</code> attributes determine the light-sources quadratic, linear and constant attenuation values. Using their default values by simply omitting them should work for most purposes.</p>
+                    <p>Keep in mind that the scene will only be voxelized within the coordinate bounds of [-1, 1] and all objects should be contained here. If your models are too large to accommodate this constraint, scale them down using the <code>scale</code> attribute.</p>
+                    <p>Once you have your desired scene, simply running <code>load [scene_name]</code> will bring up your scene in the rendering window. Note that the <code>.txt</code> file extension is omitted in this command, but is still mandatory for the files in the <code>/scenes</code> directory.</p>
+                    <h2>Manipulating a scene</h2>
+                    <p>Once you have an active scene running, you may make further adjustments at any point during runtime. However, any changes made will not persist after exiting the application.</p>
+                    <p>Use <code>setmat [name] [property] [value]</code> to set any of the material properties except color (shininess, specular_str, ambient_str, diffuse_str) of a model identified by the name passed as the first argument.</p>
+                    <p>The <code>rotate [name] [x|y|z] [value]</code> and <code>translate [name] [x|y|z] [value]</code> can be used to rotate or otherwise move a model along/around the specified axis. Furthermore <code>scale [name] [value]</code> will scale a model and <code>toggle [name]</code> will invert its <code>active</code> attribute.</p>
+                    <h2>Voxelizing a scene</h2>
+                    <p>Up until now we've only looked at models rendered through a rudimentary Phong shader. To allow for voxel cone tracing to be performed, the scene must first be voxelized. There are two alternative approaches to accomplish this:</p>
+                    <ul>
+                    <li><em>Manual Voxelization</em>: Simply running the command <code>vox</code> will voxelize the scene in its current state. Should any changes to scene be made or a different scene be loaded, you will have to run this command again to keep the voxelmap updated.</li>
+                    <li><em>Dynamic Voxelization</em>: The command <code>dynamic</code> will toggle on or off dynamic mode, which will continuously re-voxelize the scene. The frequency of revoxelization (default is every 0.5s) can be adjusted with the <code>vox_freq [time-intervall]</code> command.  Keep in mind that dynamically revoxelizing can be a heavy strain on your GPU if you are running a high voxelmap resolution and a low <code>vox_freq</code> value.</li>
+                    </ul>
+                    <p><img alt="Example Pictures" src="https://i.imgur.com/AMzx3cR.jpg" /></p>
+                    <h2>Visualizing a voxelmap</h2>
+                    <p>This feature is only available, if the scene was voxelized <em>manually</em>. Copying a whole 3D texture back to the CPU is costly and thus not adequate for dynamic revoxelization. Also, note that visualizing voxels may cause really low framerates, in particular on large voxelmaps. Consider using single-frame mode.</p>
+                    <p>Typing in <code>voxs</code> will toggle voxel visualization and <code>voxsW</code> will toggle wireframe mode.</p>
+                    <p>If your scene is enclosed in a set of walls, as most default scenes are, you will have to remove the front wall in order to actually see anything useful. Running <code>toggle FrontWall</code> for any default scene should do the trick. Remember to revoxelize for it to take effect.</p>
+                    <p>The various LOD levels of the voxelmap can retrieved with the <code>lod [level]</code> command.</p>
+                    <p>Alternatively to <code>voxs</code>, you may use localized LOD mode which runs at far higher framerates. Unlike the previous method, voxels are not being rendered as individual cubes. Instead, the surfaces of every (non-static) object are given the color contained in the voxelmap at that position. The <code>loclod</code> command will toggle this mode respectively. Changing the LOD value will also work here.</p>
+                    <h2>Voxel Cone Tracing</h2>
+                    <p>The command <code>iLight</code> will toggle between the voxel cone tracing shader and phong shader. If the scene has not been voxelized, this will result in completely black surfaces.</p>
+                    <p>Once in this mode, a plethora of commands is available for the fine-tuning of individual algorithm parameters, which are all listed in the 'List of available command' below.</p>
+                    <p>Most importantly, <code>diffuse_only</code>, <code>specular_only</code>, <code>shadows_only</code>, <code>phong_only</code> and <code>all</code> will allow you to look at the individual components taken into account during the rendering algorithm.</p>
+                    <p>You can toggle the sets of indirect diffuse cones traced with the <code>front_cone</code>, <code>side_cones</code> and <code>intermediate_cones</code> commands.</p>
+                    <p><img alt="Example Pictures" src="https://i.imgur.com/RaYpTrE.jpg" /></p>
+                    <h1>List of available Commands</h1>
+                    <p>The available shell commands are the following (vxct is short for voxel cone tracing):</p>
+                    <h3>Regular commands:</h3>
+                    <ul>
+                    <li><code>objs</code>: Toggle visibility of all models in the scene.</li>
+                    <li><code>objsW</code>: Toggle wireframe mode for all models.</li>
+                    <li><code>sfMode</code>: Toggle single-frame rendering mode.</li>
+                    <li><code>sf</code>: Render a single frame if sfMode is active.</li>
+                    <li><code>overlayW</code>: Overlay a wireframe on top of all models.</li>
+                    <li><code>pos1</code>: Move camera to position 1.</li>
+                    <li><code>pos2</code>: Move camera to position 2.</li>
+                    <li><code>exit</code> or <code>quit</code> or <code>q</code>: Exit the application.</li>
+                    </ul>
+                    <h3>Scene manipulation</h3>
+                    <ul>
+                    <li><code>load [x]</code>: Loads a scene file with the name [x].txt located in the scenes directory.</li>
+                    <li><code>setmat [name] [property] [x]</code>: Sets the specified property of the material of a model with the name [name] to x. [property] can be one of the following: <code>shininess, ambient_str, diffuse_str, specular_str</code></li>
+                    <li><code>translate [name] [axis] [x]</code>: Translates the model along the specified axis by x units. <code>axis</code> can be <code>x</code>, <code>y</code> or <code>z</code>.</li>
+                    <li><code>rotate [name] [axis] [x]</code>: Rotates the model around the specified axis by x degree. <code>axis</code> can be <code>x</code>, <code>y</code> or <code>z</code>.</li>
+                    <li><code>scale [name] [x]</code>: Scales the model to x times its size.</li>
+                    <li><code>toggle [name]</code>: Show/Hide the specified model.</li>
+                    </ul>
+                    <h3>Voxeliaztion and voxel visualization:</h3>
+                    <ul>
+                    <li><code>vox</code>: Voxelize the scene in its current state.</li>
+                    <li><code>dynamic</code>: Toggle dynamic mode (Continuous revoxelization).</li>
+                    <li><code>voxs</code>: Toggle visibility of all voxels.</li>
+                    <li><code>voxsW</code>: Toggle wireframe mode for all voxels.</li>
+                    <li><code>loclod</code>: Enable localized Lod values as shader.</li>
+                    <li><code>vox_freq [x]</code>: Set revoxelization time-interval of dynamic mode to x.</li>
+                    <li><code>lod [x]</code>: Set LOD of visualized voxels or loclod shader.</li>
+                    </ul>
+                    <h3>Voxel Cone Tracing</h3>
+                    <ul>
+                    <li><code>iLight</code>: Toggle indirect light (voxel cone tracing).</li>
+                    </ul>
+                    <p>--</p>
+                    <ul>
+                    <li><code>phong</code>: Toggle direct light shading component in vxct.</li>
+                    <li><code>phong_ambient</code>: Toggle direct light ambient component in vxct.</li>
+                    <li><code>phong_specular</code>: Toggle direct light specular/glossy component in vxct.</li>
+                    <li><code>phong_diffuse</code>: Toggle direct light diffuse component in vxct.</li>
+                    </ul>
+                    <p>--</p>
+                    <ul>
+                    <li><code>front_cone</code>: Toggle front cone.</li>
+                    <li><code>side_cones</code>: Toggle side cones.</li>
+                    <li><code>intermediate_cones</code>: Toggle intermediate cones.</li>
+                    </ul>
+                    <p>--</p>
+                    <ul>
+                    <li><code>phong_only</code>: Display only phong component in vxct.</li>
+                    <li><code>shadows_only</code>: Display only occlusion component in vxct.</li>
+                    <li><code>specular_only</code>: Display only specular component in vxct.</li>
+                    <li><code>diffuse_only</code>: Display only diffuse component in vxct.</li>
+                    <li><code>all</code>: Enable all 4 components in vxct.</li>
+                    </ul>
+                    <p>--</p>
+                    <ul>
+                    <li><code>vox_diffuse</code> or <code>vdiff</code>: Toggle vxct diffuse component.</li>
+                    <li><code>vox_specular</code> or <code>vspec</code>: Toggle vxct specular component.</li>
+                    <li><code>vox_shadows</code> or <code>vshad</code>: Toggle vxct occlusion component.</li>
+                    </ul>
+                    <p>--</p>
+                    <ul>
+                    <li><code>diffuse_offset</code> or <code>do</code>: Print diffuse cone offset.</li>
+                    <li><code>specular_offset</code> or <code>so</code>: Print specular cone offset.</li>
+                    <li><code>occlusion_offset</code> or <code>oo</code>: Print occlusion cone offset.</li>
+                    </ul>
+                    <p>--</p>
+                    <ul>
+                    <li><code>diffuse_dist_factor [x]</code> or <code>ddf [x]</code>: Set vxct diffuse distance factor to x.</li>
+                    <li><code>occlusion_dist_factor [x]</code> or <code>ddf [x]</code>: Set vxct occlusion distance factor to x.</li>
+                    <li><code>specular_dist_factor [x]</code> or <code>ddf [x]</code>: Set vxct specular distance factor to x.</li>
+                    </ul>
+                    <p>--</p>
+                    <ul>
+                    <li><code>diffuse_offset [x]</code> or <code>do [x]</code>: Set vxct diffuse offset to x.</li>
+                    <li><code>diffuse_origin_offset [x]</code> or <code>doo [x]</code>: Set the offset of vxct diffuse cones' origin to x.</li>
+                    <li><code>occlusion_offset [x]</code> or <code>oo [x]</code>: Set vxct occlusion offset to x.</li>
+                    <li><code>specular_offset [x]</code> or <code>so [x]</code>: Set vxct specular offset to x.</li>
+                    </ul>
+                    <p>--</p>
+                    <ul>
+                    <li><code>diffuse_aperture [x]</code> or <code>da [x]</code>: Set vxct diffuse cone aperture to x.</li>
+                    <li><code>occlusion_aperture [x]</code> or <code>oa [x]</code>: Set vxct occlusion cone aperture to x.</li>
+                    <li><code>specular_aperture [x]</code> or <code>sa [x]</code>: Set vxct specular cone aperture to x.</li>
+                    </ul>
+                    <p>--</p>
+                    <ul>
+                    <li><code>shadow_str [x]</code> or <code>ss [x]</code>: Set vxct shadow strength to x.</li>
+                    <li><code>shininess_falloff [x]</code> or <code>sf [x]</code>: Set vxct shininess falloff to x.</li>
+                    </ul>
+                    <h3>Utilities</h3>
+                    <ul>
+                    <li><code>ray</code>: Cast a ray from the cameras origin, marking the surface normal of the triangle hit.</li>
+                    <li><code>avgf</code>: Print the average frametime of the last 100 frames.</li>
+                    <li><code>clearf</code>: Clear all recorded frametimes.</li>
+                    <li><code>lastframes [x]</code>: Print frametimes of the last x frames.</li>
+                    <li><code>draw_block</code>: Will force CPU to wait for GPU to finish drawing. Allows GPU performance measurements to be made with <code>avgf</code> and <code>clearf</code>.</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
