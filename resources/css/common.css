@@ -24,4 +24,5 @@ code {
     width: 100%;
     color: white;
     z-index: -3;
+    overflow: hidden;
 }

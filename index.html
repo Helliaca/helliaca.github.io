@@ -3,10 +3,20 @@
 
 <head>
     <base href="">
+
+    <!-- Regular css sheets -->
     <link rel="stylesheet" href="resources/css/common.css" type="text/css">
     <link rel="stylesheet" href="resources/css/topbar.css" type="text/css">
     <link rel="stylesheet" href="resources/css/body.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/projects.css" type="text/css">
+
+    <!-- Font awesome sheet  -->
     <link rel="stylesheet" href="resources/fontawesome-free-5.15.3-web/css/all.css" type="text/css">
+
+    <!-- Fade-in-out module -->
+    <link rel="stylesheet" href="resources/fade-in-out/fade-in-out.css" type="text/css">
+    <script src="resources/fade-in-out/jquery-3.6.0.min.js"></script>
+    <script src="resources/fade-in-out/fade-in-out.js"></script>
 </head>
 
 <body>
@@ -42,24 +52,28 @@
         <!-- BODY -->
         <div id="body-container">
 
-            <div id="diag"></div>
-
-            <div id="welcome-container">
-
-                <div id="welcome-banner">
-                    Hi, I'm <span class="gradient">Benjamin. </span><br>
-                    <span class="gradient-inv">Welcome</span> to my personal website.
-                </div>
-
-                <div id="welcome-text">
-                    I'm a computer science student at the <a href="https://www.fu-berlin.de/">Free University of Berlin</a> specializing in computer graphics & VR. I love working with (or developing) real-time 3D rendering applications of all kinds.<br>
-                    You can find many of my personal and professional projects on this page.<br>
-                    Feel free to <a href="build/projects.html">look around</a> or <a href="build/contact.html">get in touch</a>!<br>
-                </div>
-
-                <div id="welcome-img"></div>
-
+            <div class="fade-in">
+                <div id="diag"></div>
             </div>
+
+            <div class="fade-in-diag">
+                <div id="welcome-container">
+
+                    <div id="welcome-banner">
+                        Hi, I'm <span class="gradient">Benjamin. </span><br>
+                        <span class="gradient-inv">Welcome</span> to my personal website.
+                    </div>
+
+                    <div id="welcome-text">
+                        I'm a computer science student at the <a href="https://www.fu-berlin.de/">Free University of Berlin</a> specializing in computer graphics & VR. I love working with (or developing) real-time 3D rendering applications of all kinds.<br>
+                        You can find many of my personal and professional projects on this page.<br>
+                        Feel free to <a href="build/projects.html">look around</a> or <a href="build/contact.html">get in touch</a>!<br>
+                    </div>
+
+                    <div id="welcome-img"></div>
+                </div>
+            </div>
+
         </div>
     </div>
 </body>
