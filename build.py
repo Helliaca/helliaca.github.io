@@ -36,6 +36,8 @@ class object:
 
     def __init__(self, file_path):
         self.cmds = parse_all_commands(file_path)
+        self.context = dict()
+        self.glob = global_context
         for (command, params) in self.cmds:
             if command in init_cmd_dict:
                 init_cmd_dict[command](self, params)
