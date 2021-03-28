@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../../css/common.css" type="text/css">
+    <link rel="stylesheet" href="../../css/topbar.css" type="text/css">
+    <link rel="stylesheet" href="../../css/body.css" type="text/css">
+    <link rel="stylesheet" href="../../css/projects.css" type="text/css">
+    <link rel="stylesheet" href="../../css/project.css" type="text/css">
+    <link rel="stylesheet" href="../../res/fontawesome-free-5.15.3-web/css/all.css" type="text/css">
+</head>
+
+<body>
+    <div id="root">
+
+        <!-- TOPBAR -->
+        <div id="topbar-container">
+
+            <!-- TOPBAR LOGO -->
+            <a href="#"><div id="topbar-logo">
+                <h1>BENJAMIN KAHL</h1>
+            </div></a>
+
+            <!-- TOPBAR SOCIAL MEDIA ICONS -->
+            <div id="topbar-socialmedia">
+                <a href="#" class="fas fa-envelope"></a>
+                <a href="#" class="fab fa-github"></a>
+                <a href="#" class="fab fa-linkedin-in"></a>
+                <a href="#" class="fab fa-deviantart"></a>
+            </div>
+
+            <!-- TOPBAR LINKS/NAV -->
+            <div id=topbar-links>
+                <a href="more.html"><div class="topbar-link"><div class="topbar-link-text"> MORE </div></div></a>
+                <a href="publications.html"><div class="topbar-link"><div class="topbar-link-text"> PUBLICATIONS </div></div></a>
+                <a href="cv.html"><div class="topbar-link"><div class="topbar-link-text"> CV </div></div></a>
+                <a href="projects.html"><div class="topbar-link active"><div class="topbar-link-text"> PROJECTS </div></div></a>
+                <a href="index.html"><div class="topbar-link"><div class="topbar-link-text"> HOME </div></div></a>
+            </div>
+
+        </div>
+
+        <!-- BODY -->
+        <div id="body-container">
+
+            <div id="projects-container">
+
+                <div class="project-banner">
+                    $if project_banner_image_path$<img class="project-banner-img" src="$insert project_banner_image_path$">$endif$
+                    $if project_title$<div class="project-banner-title">$insert project_title$</div>$endif$
+                </div>
+
+                <div class="project-toolbar">
+                    <div class="project-toolbar-back">
+                        <a href="projects.html" class="fas fa-arrow-alt-circle-left"></a>
+                    </div>
+
+                    <div class="project-toolbar-links">
+                        $if project_pdf_link$<a href="$insert project_pdf_link$" class="far fa-file-pdf"></a>$endif$
+                        $if project_github_link$<a href="$insert project_github_link$" class="fab fa-github"></a>$endif$
+                    </div>
+                </div>
+
+                <div class="project-description">
+                    $insert project_description$
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
