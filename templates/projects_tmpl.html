@@ -2,12 +2,11 @@
 <html>
 
 <head>
-    <base href="../../../">
+    <base href="../">
     <link rel="stylesheet" href="resources/css/common.css" type="text/css">
     <link rel="stylesheet" href="resources/css/topbar.css" type="text/css">
     <link rel="stylesheet" href="resources/css/body.css" type="text/css">
     <link rel="stylesheet" href="resources/css/projects.css" type="text/css">
-    <link rel="stylesheet" href="resources/css/project.css" type="text/css">
     <link rel="stylesheet" href="resources/fontawesome-free-5.15.3-web/css/all.css" type="text/css">
 </head>
 
@@ -46,25 +45,7 @@
 
             <div id="projects-container">
 
-                <div class="project-banner">
-                    $if project_banner_image_path$<img class="project-banner-img" src="$insert project_banner_image_path$">$endif$
-                    $if project_title$<div class="project-banner-title">$insert project_title$</div>$endif$
-                </div>
-
-                <div class="project-toolbar">
-                    <div class="project-toolbar-back">
-                        <a href="build/projects.html" class="fas fa-arrow-alt-circle-left"></a>
-                    </div>
-
-                    <div class="project-toolbar-links">
-                        $if project_pdf_link$<a href="$insert project_pdf_link$" class="far fa-file-pdf"></a>$endif$
-                        $if project_github_link$<a href="$insert project_github_link$" class="fab fa-github"></a>$endif$
-                    </div>
-                </div>
-
-                <div class="project-description">
-                    $insert project_description$
-                </div>
+                $insert projects_list$
 
             </div>
 

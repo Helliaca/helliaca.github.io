@@ -1,5 +1,5 @@
 #body-container {
-    background-image: url("../res/background_prototype.png");
+    background-image: url("../background_prototype.png");
     background-color: #cccccc;
     height: calc(100% - 98px);
     background-position: center top;
@@ -54,7 +54,7 @@
     position: absolute;
     left: calc(10% + 60px);
     top: 470px;
-    background-image: url("../res/cv_portr_round_grey.png");
+    background-image: url("../cv_portr_round_grey.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -68,7 +68,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: right 0px bottom -8px;
-    background-image: url("../res/gradient.png");
+    background-image: url("../gradient.png");
 }
 
 .gradient-inv {
@@ -78,6 +78,6 @@
     padding-bottom: 5px;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url("../res/gradient-inverse.png");
+    background-image: url("../gradient-inverse.png");
     background-position: right 0px bottom -8px;
 }

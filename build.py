@@ -5,6 +5,11 @@ import shlex
 from scripts.parse import parse_all_commands
 from scripts.commands import *
 
+init_cmd_dict = {
+    "priority": set_priority,
+    "id": set_id,
+}
+
 cmd_dict = {
     "set": set_context,
     "fill_template": fill_template,
@@ -16,8 +21,8 @@ cmd_dict = {
     "globalappend": globalappend_context,
     "globalappend_from_file": globalappend_context_from_file,
     "globalappend_from_md_file": globalappend_context_from_md_file,
-    "priority": set_priority,
-    "id": set_id,
+    "priority": do_nothing,
+    "id": do_nothing,
 }
 
 global_context = dict()
@@ -32,8 +37,8 @@ class object:
     def __init__(self, file_path):
         self.cmds = parse_all_commands(file_path)
         for (command, params) in self.cmds:
-            if command=="priority" or command=="id":
-                cmd_dict[command](self, params)
+            if command in init_cmd_dict:
+                init_cmd_dict[command](self, params)
 
     def process(self):
         for (command, params) in self.cmds:
@@ -61,7 +66,7 @@ class object:
 
 
 objects = []
-for root, dirs, files in os.walk(os.getcwd() + "/input"):
+for root, dirs, files in os.walk(os.getcwd() + "/config"):
     for file in files:
         if(file.endswith(".cfg")):
             print("> Parsing: " + file)

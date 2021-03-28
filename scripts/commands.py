@@ -3,6 +3,10 @@ import markdown
 import os
 from .parse import condition_parser, insert_parser
 
+def do_nothing(obj, params):
+    return
+
+
 def set_priority(obj, params):
     obj.priority = int(params[0])
 
