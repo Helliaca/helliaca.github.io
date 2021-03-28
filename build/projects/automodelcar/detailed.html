@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <base href="../../../">
+    <link rel="stylesheet" href="resources/css/common.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/topbar.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/body.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/projects.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/project.css" type="text/css">
+    <link rel="stylesheet" href="resources/fontawesome-free-5.15.3-web/css/all.css" type="text/css">
+</head>
+
+<body>
+    <div id="root">
+
+        <!-- TOPBAR -->
+        <div id="topbar-container">
+
+            <!-- TOPBAR LOGO -->
+            <a href="index.html"><div id="topbar-logo">
+                <h1>BENJAMIN KAHL</h1>
+            </div></a>
+
+            <!-- TOPBAR SOCIAL MEDIA ICONS -->
+            <div id="topbar-socialmedia">
+                <a href="mailto:TODO@workinprogress.com" class="fas fa-envelope"></a>
+                <a href="https://github.com/Helliaca" class="fab fa-github"></a>
+                <a href="https://www.linkedin.com/in/benjamin-kahl-97a56a20a/" class="fab fa-linkedin-in"></a>
+                <a href="https://www.deviantart.com/helliaca" class="fab fa-deviantart"></a>
+            </div>
+
+            <!-- TOPBAR LINKS/NAV -->
+            <div id=topbar-links>
+                <a href="build/more.html"><div class="topbar-link"><div class="topbar-link-text"> MORE </div></div></a>
+                <a href="build/publications.html"><div class="topbar-link"><div class="topbar-link-text"> PUBLICATIONS </div></div></a>
+                <a href="build/cv.html"><div class="topbar-link"><div class="topbar-link-text"> CV </div></div></a>
+                <a href="build/projects.html"><div class="topbar-link active"><div class="topbar-link-text"> PROJECTS </div></div></a>
+                <a href="index.html"><div class="topbar-link"><div class="topbar-link-text"> HOME </div></div></a>
+            </div>
+
+        </div>
+
+        <!-- BODY -->
+        <div id="body-container">
+
+            <div id="projects-container">
+
+                <div class="project-banner">
+                    <img class="project-banner-img" src="config/automodelcar/banner.jpg">
+                    <div class="project-banner-title">AutoModelCar Simulator</div>
+                </div>
+
+                <div class="project-toolbar">
+                    <div class="project-toolbar-back">
+                        <a href="build/projects.html" class="fas fa-arrow-alt-circle-left"></a>
+                    </div>
+
+                    <div class="project-toolbar-links">
+                        <a href="https://github.com/Helliaca/AutoModelCar_Simulator/blob/master/AutoModelCarSimulator.pdf" class="far fa-file-pdf"></a>
+                        <a href="https://github.com/Helliaca/AutoModelCar_Simulator" class="fab fa-github"></a>
+                    </div>
+                </div>
+
+                <div class="project-description">
+                    <h1>AutoModelCar Simulator</h1>
+<h2>What does it do?</h2>
+<p>The AutoModelCar-Simulator is a <a href="https://unity.com/">Unity3D</a> and <a href="https://github.com/siemens/ros-sharp">RosSharp</a>-based simulator of the <a href="https://github.com/AutoModelCar/AutoModelCarWiki/wiki">AutoModelCar</a>.</p>
+<p>It allows you to easily run and test simple ROS nodes in a virtual environment without requiring access to an actual AutoModelCar. The environment provided closely resembles the conditions found at the <a href="https://www.fu-berlin.de/">FU-Berlin</a> robotics laboratory.</p>
+<p>A PDF documenting the development and inner workings of the application can be viewed <a href="https://github.com/Helliaca/AutoModelCar_Simulator/blob/master/AutoModelCarSimulator.pdf">here.</a></p>
+<h2>How to get started?</h2>
+<h3>TL;DR</h3>
+<ul>
+<li>Download the simulator from the <a href="https://github.com/Helliaca/AutoModelCar_Simulator/releases">github releases tab</a> and unpack it into a folder of your choosing.</li>
+<li>Make sure there is a <a href="http://wiki.ros.org/roscore">roscore</a> running on the <code>ROS_MASTER_URI</code> machine.</li>
+<li>Make sure your ros-environment machine recognizes autominy_msgs message types. (<code>source devel/setup.bash</code>) (See <a href="https://github.com/AutoMiny/AutoMiny">here</a>)</li>
+<li>Launch rosbridge-server on your ros-environment machine: <code>roslaunch rosbridge_server rosbridge_websocket.launch</code>.</li>
+<li>In the unpacked folder, change the <code>RosBridgeServer_Url</code> in <code>/UserSettings/settings.txt</code> to the ip of your rosbridge server. (<code>RosBridgeServer_Url = ws://localhost:9090</code> for a single machine setup.)</li>
+<li>Run the simulation executable.</li>
+</ul>
+<h3>Basic Setup Tutorial (Single machine setup, Linux)</h3>
+<p>If you still haven't got a rudimentary ROS setup, follow the <a href="http://wiki.ros.org/melodic/Installation">ROS installation instructions</a>, clone the <a href="https://github.com/AutoMiny/AutoMiny">autominy repository</a>, then build and source it.</p>
+<p>Otherwise skip this step and move on directly to the following:</p>
+<p>1) Download the Linux version from the <a href="https://github.com/Helliaca/AutoModelCar_Simulator/releases">releases tab</a> and unzip into <code>~/AutoModelCar_Simulator/</code>:</p>
+<pre><code>mkdir AutoModelCar_Simulator
+unzip AMCS_v1.0_Lin.zip -d AutoModelCar_Simulator/
+</code></pre>
+<p>2) With downloading and unpacking completed, launch a roscore instance:</p>
+<pre><code>roscore
+</code></pre>
+<p>3) Unless you've launched roscore into a separate thread, open up a new terminal. There, reference the running roscore instance by setting the <code>ROS_MASTER_URI</code> environment variable:</p>
+<pre><code>export ROS_MASTER_URI=http://localhost:11311
+</code></pre>
+<p>4) Afterwards, launch a rosbrdige server:</p>
+<pre><code>roslaunch rosbrdige_server rosbrdige_websocket.launch
+</code></pre>
+<p>By default, this will start a server on port 9090. Reference the address of this server in the settings.txt of the simulator:</p>
+<p>5) Open <code>AutoModelCar_Simulator/UserSettings/settings.txt</code> in a text-editor of your preference and replace the <code>RosBrdigeServer_Url</code> field with <code>ws://localhost:9090</code>.</p>
+<p>6) Launch the simulator by running the executable:</p>
+<pre><code>./AutoModelCar_Simulator/AutoModelCar_Simulator.x86_64
+</code></pre>
+<p>Once the simulator is running, you may verify that everthing is working fine by running <code>rostopic list</code> in a new terminal. This should yield the following result:</p>
+<p><img alt="success" src="https://i.imgur.com/JLzxb0Q.png" /></p>
+<p>If you are missing the /actuators topics and your terminal running rosbrdige-server produces a bunch of errors, this means that your rosbrdige-server does not recognize the message-types used by the autominy framework.</p>
+<p><img alt="failure1" src="https://i.imgur.com/Mr8sKi0.png" />
+<img alt="failure1" src="https://i.imgur.com/dCJZtCR.png" /></p>
+<p>To rectify this, make sure you have the <a href="https://github.com/AutoMiny/AutoMiny">autominy</a> repository cloned and built (<code>catkin build</code>) and run <code>source devel/setup.bash</code> in your catkin workspace before launching the rosbridge server (step 4).</p>
+<p>You may also check whether if camera-images are being received by using <a href="http://wiki.ros.org/rviz">rviz</a>.</p>
+<p><img alt="cam_rviz" src="https://i.imgur.com/TL5Yypb.png" /></p>
+<h2>Usage</h2>
+<h3>Camera Movement</h3>
+<p>In order to navigate the scene with the oberving camera hold down <em>RMB</em> (Right-Click). Move your mouse to rotate and use the WASD keys to move around.</p>
+<p>Alternatively, use the buttons of the main control panel, visible by default in the top right corner:</p>
+<p>Left-Click anywhere in the scene to place a 3D handle. Then click on the "Look at Selected" button to rotate the camera towards it. "Reset Camera" moves the camera back to its original position.</p>
+<p><img alt="picture" src="https://i.imgur.com/xJRbv4n.png" /></p>
+<p>You may also have the camera track a specific car while it is driving: Open up the <em>Inspector</em> panel by clicking on "Toggle Inspector" and select a car from the list of props (left side). Once selected click on "Track Selected" to track the given car.</p>
+<p><img alt="picture" src="https://i.imgur.com/kptojNi.png" /></p>
+<h3>Moving / Rotating a Car</h3>
+<p>To move a car to a desired position, left-click in the scene where you want the car moved to to place the 3D handle there. Then, in the CarController panel click on "Move to Handle".</p>
+<p><img alt="picture" src="https://i.imgur.com/9TqokMG.png" /></p>
+<p>You may also use the speed and steering sliders of the CarController panel to drive the car to your desired position. Use the rotation-slider to set the cars rotation.</p>
+<p>Alternatively, open up the inspector panel, select your car, select the <em>Transform</em> component, and edit the position, rotation and scale values to your liking.</p>
+<p><img alt="picture" src="https://i.imgur.com/yyu1Xuq.png" /></p>
+<h3>Adding/Removing Obstacles</h3>
+<p>To add, remove or modify obstacles place the 3D handle by clicking whereever you want to place the obstacle. Then open the inspector panel and click on "Add Prop" underneath the Prop-list. Choose "Obstacles/Misc." and select an object from a list of default props.</p>
+<p><img alt="picture" src="https://i.imgur.com/mup9k32.png" /></p>
+<p>You may then move, rotate or scale the object by selecting its <em>Transform</em> component and editing the given values.</p>
+<p>The same principle applies for adding new cars or sensors to an existing prop.</p>
+<h3>Topics</h3>
+<p>Each car can be controlled through a ROS node by the means of steering- and speed- topics. Each component publisher read data which can, in turn, be used by the nodes to adjust their respective outputs.</p>
+<p>The simulation environment subscribes to the following topics:</p>
+<ul>
+<li>Steering (PWM)</li>
+<li>Steering (Normalized)</li>
+<li>Steering (Real)</li>
+<li>Speed (PWM)</li>
+<li>Speed (Normalized)</li>
+<li>Speed (Real)</li>
+</ul>
+<p>The topics the simulation publishes to are:</p>
+<ul>
+<li>Ticks</li>
+<li>Lidar</li>
+<li>GPS</li>
+<li>Camera</li>
+</ul>
+<p>Each of these is handled by its respective component. Components can be added or removed from cars and objects by using the inspector panel.</p>
+<p>The topicname these publish to can be edited by clicking on it in the component-list. Default topicnames can be adjusted through the user settings.</p>
+<p><img alt="picture" src="https://i.imgur.com/J3nXfh4.png" /></p>
+<h3>Using the Developers Console</h3>
+<p>Press <em>Left-Ctrl</em>, <em>Tab</em> or click on "Toggle Console" to bring up the developers console. Error messages, warnings and other information will be displayed here.</p>
+<p>You may also enter a command end execute it by pressing <em>Enter</em>. For a full list of available commands see below.</p>
+<h3>Loading a Different Scene</h3>
+<p>If performance is important, switching to a less detailed scene should improve the simulations framerate.</p>
+<p>Open up the developers console and run <code>load lab_detailed</code>, <code>load lab_standard</code> or <code>load lab_min</code> to open up the detailed, standard or minimalist scenes.</p>
+<p><img alt="picture" src="https://i.imgur.com/FQEv871.png" /></p>
+<h3>Editing Default Settings</h3>
+<p>The <code>/UserSettings</code> directory contains text files that are parsed at program start for settings.</p>
+<p>The files named</p>
+<pre><code>propulsionaxle_interp_nrm.txt
+propulsionaxle_interp_pwm.txt
+propulsionaxle_interp_real.txt
+steeringaxle_interp_nrm.txt
+steeringaxle_interp_pwm.txt
+steeringaxle_interp_real.txt
+</code></pre>
+<p>describe the interpolation values of the speed and steering topics.</p>
+<p>The <code>settings.txt</code> file lists following values:</p>
+<pre><code>RosBridgeServer_Url: Url of the rosbridge server
+RosBridgeServer_Timeout: Time in seconds before connection timeout to rosbridge server
+RosBridgeServer_Protocol: Protocol to use for rosbridge server connection. Values can be &quot;Web_Socket_Sharp&quot; or &quot;Web_Socket_NET&quot;
+
+OnStart_Spawn_Car: Spawn a car once the program starts. true/false
+OnStart_Car_SpawnLocation_X: X coordinate of where to spawn that car (float)
+OnStart_Car_SpawnLocation_Z: Z coordinate of where to spawn that car (float)
+OnStart_Car_Yaw: Rotation value with which to spawn that car
+OnStart_Car_Type: Type of the spawned car (max/min/cless)
+
+OnStart_Load_Scene = true
+OnStart_Default_Scene = lab_detailed
+</code></pre>
+<p>The remaining fields describe default topic-names and prop names. These can be decorated with tokens that get their value from the object they belong to. Available tokens are <code>{ID}</code> for the objects id-number, <code>{NAME}</code> for the objects name or <code>{TYPE}</code> for the objects type.</p>
+<pre><code>Default_TopicNames_Camera: Default topicname for camera topic
+Default_TopicNames_Gps: Default topicname for GPS Odometry topic
+Default_TopicNames_LaserScanner: Default topicname for lidar topic
+Default_TopicNames_Ticks: Default topicname for ticks topic
+
+Default_TopicNames_SteeringPwm: Default topicname for pwm steering topic
+Default_TopicNames_SteeringReal: Default topicname for steering topic
+Default_TopicNames_SteeringNormalized: Default topicname for normalized steering topic
+
+Default_TopicNames_SpeedPwm: Default topicname for pwm speed topic
+Default_TopicNames_SpeedReal: Default topicname for speed topic
+Default_TopicNames_SpeedNormalized: Default topicname for normalized speed topic
+
+Default_PropNames: Default name ascribed to newly created props
+Default_CarNames: Default name ascribed to newly created cars
+</code></pre>
+<p>If you are planning to use multiple cars in a single simulation, it is recommended to give these topicnames a tokenized prefix (such as <code>/car_{ID}/...</code>). This way you'll avoid multiple cars publishing to the same topic. (See <code>settings_multicar.txt</code>)</p>
+<h2>Console Commands</h2>
+<p>Complete list of available console commands:</p>
+<ul>
+<li><code>clear</code>: Clears current console output.</li>
+<li><code>pause</code>: Stops simulation time.</li>
+<li><code>unpause</code>: Resumes simulation time.</li>
+<li><code>scc [string]</code>: Sets current car to the car with the name given as a parameter.</li>
+<li><code>toggle [lidar_lines/lidar_spheres/lidar_mesh]</code>: Enables visualization of lidar data as lines, spheres or a mesh as seen below.</li>
+</ul>
+<p><img alt="picture" src="https://i.imgur.com/12XLmQ0.jpg" /></p>
+<ul>
+<li><code>toggle Circle</code>: Enables/Disables visualization of the cars turning circle.</li>
+<li><code>toggle HUD</code>: Enables/Disables all UI elements at once.</li>
+<li><code>HUD basic</code>: Enables basic UI elements for steering/speed topics.</li>
+<li><code>HUD off</code>: Disables all UI elements at once.</li>
+<li><code>set_speed [float]</code>: Sets speed of current car to given value.</li>
+<li><code>set_steering [float]</code>: Sets steering of current car to given value.</li>
+<li><code>load [boot/lab_max/lab_standard/lab_min]</code>: Loads the scene given as a parameter.</li>
+<li><code>toggle [string]</code>: Enables/Disables the object with the given name. This command can be used to essentially toggle on/off any object within the unity-scene and thus offers a wide range of possibilites.</li>
+</ul>
+<h3>Toggle-Objects</h3>
+<ul>
+<li><code>toggle [carname]</code>: Enables/Disables the car with the given name</li>
+<li><code>toggle [carname]_[steeringaxle/propaxle/camera/laserscanner/gps/collisiondetection]</code>: Enables/Disables the given component on the given car.</li>
+<li><code>toggle [carname]</code>: Enables/Disables the car with the given name</li>
+<li><code>toggle Environment</code>: Enables/Disables all environmental models in the scene, except for the floor map.</li>
+<li><code>toggle MapContainer</code>: Enables/Disables the floor map.</li>
+<li><code>toggle [UIElement]</code>: Enables/Disables the given UI element. The available options are the following:</li>
+</ul>
+<h3>Toggle-UIElements</h3>
+<ul>
+<li><code>toggle FPS_Graph</code>: Enables/Disables a graph that shows current simulation frames-per-second.</li>
+<li><code>toggle Speed_Graph</code>: Enables/Disables a graph that tracks speed of current car.</li>
+<li><code>toggle Steering_Graph</code>: Enables/Disables a graph that tracks steering of current car.</li>
+<li><code>toggle Location_Graph</code>: Enables/Disables a graph that displays the current position of the car.</li>
+<li><code>toggle Ack_Graph</code>: Enables/Disables a graph that displays current ackerman-steering values.</li>
+<li><code>toggle Lidar_Graph</code>: Enables/Disables a graph that shows lidar-hitpoints.</li>
+<li><code>toggle Objects_Panel</code>: Enables/Disables the inspector panel.</li>
+<li><code>toggle Context_panel</code>: Enables/Disables a the contextual component panel.</li>
+<li><code>toggle MainControl_Panel</code>: Enables/Disables the main control panel that start at the top right by default.</li>
+<li><code>toggle CarControl_Panel</code>: Enables/Disables a the CarController panel that by default is found underneath the main control panel.</li>
+</ul>
+<p>Simulation with basic UI Elements:
+<img alt="picture" src="https://i.imgur.com/T5dXjdW.png" /></p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
