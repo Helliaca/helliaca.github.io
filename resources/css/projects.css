@@ -88,3 +88,24 @@
     background-color: #333333;
     border-radius: 6px;
 }
+
+@media screen and (max-width: 1240px) {
+    .project-img-wrapper {
+        margin: 0px auto;
+        width: 90%;
+    }
+
+    .project-text-wrapper {
+        width: 100%;
+    }
+
+    .project-container {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .project-container {
+        margin: 0px 0px;
+    }
+}

@@ -1,0 +1,105 @@
+#diag {
+  width: 100%;
+  height: 100%;
+  transform: skew(-31deg);
+  background-color: rgba(25, 25, 25, 0.7);
+  position: absolute;
+  top: 0px;
+  left: -50%;
+  z-index: -1;
+}
+
+#welcome-wrapper {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+#welcome-container {
+    position: absolute;
+    left: calc(10% + 30px);
+    top: 0px;
+    width: 35%;
+    min-width: 750px;
+    height: 100%;
+    z-index: 1;
+}
+
+#welcome-banner {
+    font-size: 59px;
+    position: absolute;
+    left: 0px;
+    top: 50px;
+    min-width: 730px;
+    line-height: 65px;
+}
+
+#welcome-text {
+    font-size: 30px;
+    position: absolute;
+    left: 50px;
+    top: 230px;
+    max-width: 600px;
+    min-width: 320px;
+}
+
+#welcome-img {
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    left: calc(10% + 60px);
+    top: 520px;
+    background-image: url("../cv_portr_round_grey.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.gradient {
+    background-origin: padding-box;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right 0px bottom -8px;
+    background-image: url("../gradient.png");
+}
+
+.gradient-inv {
+    background-origin: padding-box;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../gradient-inverse.png");
+    background-position: right 0px bottom -8px;
+}
+
+@media screen and (max-width: 1550px) {
+    #diag {
+        left: -30%;
+    }
+    #welcome-container {
+        width: 100%;
+        left: 10%;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    #diag {
+        width: 300%; /* Kind of a dirty solution, but this will jsut cover the whole screen. */
+    }
+    #welcome-container {
+        width: 100%;
+        left: 5%;
+    }
+    #welcome-banner {
+        font-size: 50px;
+    }
+    #welcome-text {
+        left: 0px;
+    }
+}
