@@ -14,14 +14,15 @@
 .project-container {
     margin-top: 50px;
     padding: 30px 60px;
-    min-height: 313px;
+    min-height: 325px;
+    height: auto;
+    overflow: hidden;
     position: relative;
 }
 
 .project-img {
     position: relative;
     float: left;
-    height: 313px;
     width: 355px;
     margin-right: 61px;
 }
@@ -32,6 +33,7 @@
 }
 
 .project-img img {
+    margin-top: 60px;
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -39,4 +41,23 @@
 
 .project-title {
     font-size: 42px;
+}
+
+.project-subtitle {
+    line-height: 42px;
+    color: #cccccc;
+}
+
+.project-desc {
+    color: #aaaaaa;
+}
+
+.project-container:nth-of-type(even) .project-desc {
+    left: 476px;
+    position: absolute;
+    max-width: calc(100% - 516px);
+}
+
+.project-container:nth-of-type(odd) .project-desc {
+    max-width: calc(100% - 476px);
 }
