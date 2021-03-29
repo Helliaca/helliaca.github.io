@@ -7,7 +7,7 @@ $(document).ready(function() {
         linkLocation = this.href;
 
         // If it directs to a page with the same domain
-        if( location.hostname === this.hostname || !this.hostname.length ) {
+        if( !this.hasClass("no-fade") && (location.hostname === this.hostname || !this.hostname.length )) {
 
             // Temporarily prevent it from directing there
             event.preventDefault();

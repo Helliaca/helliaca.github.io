@@ -70,12 +70,10 @@
 }
 
 .topbar-link.active {
-    transform: skewX(-31deg);
     background-color: rgba(17, 17, 17, 1.0);
 }
 
 .topbar-link:hover {
-    transform: skewX(-31deg);
     background-color: rgba(0, 0, 0, 1.0);
 }
 
@@ -87,4 +85,58 @@
     left: -25px;
     transform: skewX(31deg);
     background-color: rgba(0, 0, 0, 0.0);
+}
+
+/* RESPONSIVE CSS */
+
+.topbar-link-mobile {
+    border-bottom: 2px solid black;
+    line-height: 50px;
+    font-weight: bold;
+}
+
+/* Hide mobile topbar and icon by default */
+#topbar-links-mobile {
+    margin-top: 98px;
+    display: none;
+    height: 0px;
+    width: 100%;
+}
+
+#topbar-mobile-menu {
+    position: absolute;
+    right: 10%;
+    top: 50px;
+    display: none;
+    font-size: 35px;
+}
+
+@media screen and (max-width: 1240px) {
+
+    /* If we're on mobile, show the menu icon and hide the regular menu buttons */
+    #topbar-mobile-menu {
+        display: block;
+    }
+
+    #topbar-links .topbar-link {
+        display: none;
+    }
+
+    /* Also, make topbar-container adapt to height */
+    #topbar-container {
+        height: auto;
+    }
+
+    /* Make sure the logo fits fine */
+    #topbar-logo {
+        left: -8%;
+        min-width: 350px;
+    }
+
+    /* If the mobile-menu button is pressed (class responsive), show all topbar-link-mobile */
+
+    #topbar-links-mobile.responsive {
+        display: block;
+        height: auto;
+    }
 }

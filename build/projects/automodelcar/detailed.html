@@ -30,6 +30,9 @@
     <link rel="stylesheet" href="resources/fade-in-out/fade-in-out.css" type="text/css">
     <script src="resources/fade-in-out/jquery-3.6.0.min.js"></script>
     <script src="resources/fade-in-out/fade-in-out.js"></script>
+
+    <!-- Mobile-menu module -->
+    <script src="resources/responsive.js"></script>
 </head>
 
 <body onunload="">
@@ -59,6 +62,17 @@
                 <a href="build/projects.html"><div class="topbar-link active"><div class="topbar-link-text"> PROJECTS </div></div></a>
                 <a href="index.html"><div class="topbar-link"><div class="topbar-link-text"> HOME </div></div></a>
             </div>
+
+            <!-- NAVBAR FOR MOBILE -->
+            <a href="javascript:void(0);" class="no-fade" id="topbar-mobile-menu" onclick="toggleMobileMenu()"><div><i class="fa fa-bars"></div></i></a>
+            <div id="topbar-links-mobile">
+                <a href="index.html"><div class="topbar-link-mobile"> HOME </div></a>
+                <a href="build/projects.html"><div class="topbar-link-mobile"> PROJECTS </div></a>
+                <a href="build/cv.html"><div class="topbar-link-mobile"> CV </div></a>
+                <a href="build/publications.html"><div class="topbar-link-mobile"> PUBLICATIONS </div></a>
+                <a href="build/more.html"><div class="topbar-link-mobile"> MORE </div></a>
+            </div>
+
 
         </div>
 
