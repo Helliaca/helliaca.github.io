@@ -62,6 +62,11 @@
     width: 100%;
     text-align: center;
     background-color: #333333;
+    transition: 0.6s;
+}
+
+.project-read-more:hover {
+    background-color: #222222;
 }
 
 .project-title {
