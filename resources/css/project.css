@@ -77,3 +77,16 @@
 .project-description img {
     width: 100%;
 }
+
+@media screen and (max-width: 1240px) {
+    .project-toolbar-links a {
+        font-size: 45px;
+        line-height: 60px;
+        width: 60px;
+        height: 60px;
+    }
+
+    .project-toolbar-back a {
+        font-size: 80px;
+    }
+}

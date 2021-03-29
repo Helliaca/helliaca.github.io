@@ -39,7 +39,7 @@
 }
 
 #topbar-socialmedia a {
-    font-size: 14px;
+    font-size: 16px;
     color: #DDDDDD;
     position: relative;
     z-index: 999;
@@ -112,6 +112,10 @@
 }
 
 @media screen and (max-width: 1240px) {
+
+    #topbar-socialmedia a {
+        font-size: 25px;
+    }
 
     /* If we're on mobile, show the menu icon and hide the regular menu buttons */
     #topbar-mobile-menu {
