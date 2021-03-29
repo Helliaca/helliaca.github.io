@@ -11,6 +11,19 @@
     z-index: -2;
 }
 
+#content-container {
+    width: 80%;
+    height: 100%;
+    position: relative;
+    z-index: -2;
+    overflow: auto;
+    background-color: #191919dd;
+
+    /* Dunno what this is, but it centers the div */
+    margin:0 auto !important;
+    display: block !important;
+}
+
 #diag {
   width: 100%;
   height: 100%;
