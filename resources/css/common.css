@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Microsoft Yi Baiti";
+    src: url("../msyi.ttf");
+}
+
 body {
     margin: 0;
     background-color: #191919;
