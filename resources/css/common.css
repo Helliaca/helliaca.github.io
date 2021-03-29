@@ -2,12 +2,20 @@
     font-family: "Microsoft Yi Baiti";
     src: url("../msyi.ttf");
 }
+@font-face{
+    font-family: "Microsoft Yi Baiti IE";
+    src: url("../msyi.eot");
+}
+
+img {
+    max-width: 100%; height: auto
+}
 
 body {
     margin: 0;
     background-color: #191919;
     color: #ffffff;
-    font-family: "Microsoft Yi Baiti", Helvetica, sans-serif;
+    font-family: "Microsoft Yi Baiti", "Microsoft Yi Baiti IE", Arial, Helvetica, sans-serif;
     font-size: 24px;
     word-spacing: -6px;
 }

@@ -4,7 +4,7 @@
     width: 100%;
     left: -200px;
     top: 0px;
-    opacity: 0%;
+    opacity: 0.0;
     /* fade-in animation */
     animation: fadeout 0.3s;
     -moz-animation: fadeout 0.3s; /* Firefox */
@@ -16,7 +16,7 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    opacity: 0%;
+    opacity: 0.0;
     left: 77px;
     top: -129px;
     /* fade-in animation */
@@ -54,12 +54,12 @@
 
 @keyframes fadein-diag {
     from {
-        opacity: 0%;
+        opacity: 0.0;
         left: 77px;
         top: -129px;
     }
     to {
-        opacity: 100%;
+        opacity: 1.0;
         left: 0px;
         top: 0px;
     }
@@ -67,12 +67,12 @@
 
 @keyframes fadeout-diag {
     from {
-        opacity: 100%;
+        opacity: 1.0;
         left: 0px;
         top: 0px;
     }
     to {
-        opacity: 0%;
+        opacity: 0.0;
         left: -77px;
         top: 129px;
     }
@@ -80,22 +80,22 @@
 
 @keyframes fadein {
     from {
-        opacity: 0%;
+        opacity: 0.0;
         left: 200px;
     }
     to {
-        opacity: 100%;
+        opacity: 1.0;
         left: 0px;
     }
 }
 
 @keyframes fadeout {
     from {
-        opacity: 100%;
+        opacity: 1.0;
         left: 0px;
     }
     to {
-        opacity: 0%;
+        opacity: 0.0;
         left: -200px;
     }
 }

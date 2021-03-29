@@ -1,1 +1,1 @@
-<embed style="width: 80%; height:calc(100% - 10px); margin-left: 10%;" src="resources\BKahl_cv_DE.pdf" width="500" height="375" type="application/pdf">
+<embed style="width: 80%; height:calc(100% - 10px); margin-left: 10%;" src="resources/BKahl_cv_DE.pdf" width="500" height="375" type="application/pdf">

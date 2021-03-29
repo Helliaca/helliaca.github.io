@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <title>BK - $insert project_title$</title>
@@ -48,10 +48,10 @@
 
             <!-- TOPBAR SOCIAL MEDIA ICONS -->
             <div id="topbar-socialmedia">
-                <a href="mailto:TODO@workinprogress.com" class="fas fa-envelope"></a>
-                <a href="https://github.com/Helliaca" class="fab fa-github"></a>
-                <a href="https://www.linkedin.com/in/benjamin-kahl-97a56a20a/" class="fab fa-linkedin-in"></a>
-                <a href="https://www.deviantart.com/helliaca" class="fab fa-deviantart"></a>
+                <a href="mailto:TODO@workinprogress.com" class="fas fa-envelope" aria-label="Send email"></a>
+                <a href="https://github.com/Helliaca" class="fab fa-github" aria-label="Github link"></a>
+                <a href="https://www.linkedin.com/in/benjamin-kahl-97a56a20a/" class="fab fa-linkedin-in" aria-label="Linkedin link"></a>
+                <a href="https://www.deviantart.com/helliaca" class="fab fa-deviantart" aria-label="Deviantart link"></a>
             </div>
 
             <!-- TOPBAR LINKS/NAV -->
@@ -64,7 +64,7 @@
             </div>
 
             <!-- NAVBAR FOR MOBILE -->
-            <a href="javascript:void(0);" class="no-fade" id="topbar-mobile-menu" onclick="toggleMobileMenu()"><div><i class="fa fa-bars"></div></i></a>
+            <a href="javascript:void(0);" class="no-fade" id="topbar-mobile-menu" onclick="toggleMobileMenu()"><div><i class="fa fa-bars"></i></div></a>
             <div id="topbar-links-mobile">
                 <a href="index.html"><div class="topbar-link-mobile"> HOME </div></a>
                 <a href="build/projects.html"><div class="topbar-link-mobile"> PROJECTS </div></a>
@@ -82,7 +82,7 @@
             <div id="content-container" class="fade-in-diag">
 
                 <div class="project-banner">
-                    $if project_banner_image_path$<img class="project-banner-img" src="$insert project_banner_image_path$">$endif$
+                    $if project_banner_image_path$<img alt="project banner image" class="project-banner-img" src="$insert project_banner_image_path$">$endif$
                     $if project_title$<div class="project-banner-title">$insert project_title$</div>$endif$
                 </div>
 

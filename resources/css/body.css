@@ -18,7 +18,7 @@
     position: relative;
     z-index: -2;
     overflow: auto;
-    background-color: #191919dd;
+    background-color: rgba(25, 25, 25, 0.85);
 
     /* Dunno what this is, but it centers the div */
     margin:0 auto !important;

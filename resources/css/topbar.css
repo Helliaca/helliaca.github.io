@@ -10,7 +10,7 @@
 
 #topbar-logo {
     background-image: url("../para.svg");
-    font-family: "Microsoft Yi Baiti", Helvetica, sans-serif;
+    font-family: "Microsoft Yi Baiti", "Microsoft Yi Baiti IE", Arial, Helvetica, sans-serif;
     font-size: 20px;
     letter-spacing: 4px;
     height: 100%;
@@ -78,7 +78,6 @@
 }
 
 .topbar-link-text {
-    font-family: "Microsoft Yi Baiti", Helvetica, sans-serif;
     font-size: 27px;
     color: #cccccc;
     position: relative;
