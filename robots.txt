@@ -1,0 +1,6 @@
+Sitemap: https://helliaca.github.io/build/sitemap.xml
+
+User-agent: *
+Disallow: /config/
+Disallow: /scripts/
+Disallow: /templates/

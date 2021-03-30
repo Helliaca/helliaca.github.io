@@ -84,6 +84,7 @@
                 <div class="project-banner">
                     $if project_banner_image_path$<img alt="project banner image" class="project-banner-img" src="$insert project_banner_image_path$">$endif$
                     $if project_title$<div class="project-banner-title">$insert project_title$</div>$endif$
+                    $if project_subtitle$<div class="project-banner-subtitle">$insert project_subtitle$</div>$endif$
                 </div>
 
                 <div class="project-toolbar">
@@ -93,8 +94,17 @@
 
                     <div class="project-toolbar-links">
                         $if project_pdf_link$<a href="$insert project_pdf_link$" class="far fa-file-pdf"></a>$endif$
+                        $if project_pdf_link2$<a href="$insert project_pdf_link2$" class="far fa-file-pdf"></a>$endif$
                         $if project_github_link$<a href="$insert project_github_link$" class="fab fa-github"></a>$endif$
+                        $if project_github_link2$<a href="$insert project_github_link2$" class="fab fa-github"></a>$endif$
+                        $if project_youtube_link$<a href="$insert project_youtube_link$" class="fab fa-youtube"></a>$endif$
+                        $if project_youtube_link2$<a href="$insert project_youtube_link2$" class="fab fa-youtube"></a>$endif$
                         $if project_steam_link$<a href="$insert project_steam_link$" class="fab fa-steam"></a>$endif$
+                        $if project_steam_link2$<a href="$insert project_steam_link2$" class="fab fa-steam"></a>$endif$
+                        $if project_generic_link$<a href="$insert project_generic_link$" class="fas fa-external-link-alt"></a>$endif$
+                        $if project_generic_link2$<a href="$insert project_generic_link2$" class="fas fa-external-link-alt"></a>$endif$
+                        $if project_custom_link$$if project_custom_link_icon$<a href="$insert project_custom_link$" class="$insert project_custom_link_icon$"></a>$endif$$endif$
+                        $if project_custom_link2$$if project_custom_link_icon2$<a href="$insert project_custom_link2$" class="$insert project_custom_link_icon2$"></a>$endif$$endif$
                     </div>
                 </div>
 

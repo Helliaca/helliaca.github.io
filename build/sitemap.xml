@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://helliaca.github.io/</loc>
+    </url>
+   
+   <url>
+       <loc>https://helliaca.github.io/build/projects/vxct/detailed.html</loc>
+   </url>
+   
+   <url>
+       <loc>https://helliaca.github.io/build/projects/automodelcar/detailed.html</loc>
+   </url>
+   
+   <url>
+       <loc>https://helliaca.github.io/build/projects/hoi4lotr/detailed.html</loc>
+   </url>
+   
+   <url>
+       <loc>https://helliaca.github.io/build/projects/sample_project/detailed.html</loc>
+   </url>
+   
+   <url>
+       <loc>https://helliaca.github.io/build/cv.html</loc>
+   </url>
+   
+   <url>
+       <loc>https://helliaca.github.io/build/more.html</loc>
+   </url>
+   
+   <url>
+       <loc>https://helliaca.github.io/build/projects.html</loc>
+   </url>
+   
+   <url>
+       <loc>https://helliaca.github.io/build/publications.html</loc>
+   </url>
+   
+</urlset>

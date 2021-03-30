@@ -64,7 +64,7 @@ def condition_parser(s):
 
             i += 7
 
-        # Nothing psecial at this position
+        # Nothing special at this position
         else:
             if found:
                 embed.append(s[i])
@@ -113,7 +113,7 @@ def loop_parser(s):
 
             i += 8
 
-        # Nothing psecial at this position
+        # Nothing special at this position
         else:
             if found:
                 embed.append(s[i])
