@@ -74,6 +74,56 @@ def condition_parser(s):
 
     return found, before, condition, embed, after
 
+
+def loop_parser(s):
+    found = False
+    before = ""
+    embed = []
+    after = ""
+
+    i = 0
+    ic = 0
+    while i<len(s):
+
+        if s[i:i+8] == "$forall$":
+
+            # if we havent found a previous one
+            if not found:
+                before = s[0:i] # Set before and found
+                found = True
+
+            # if we already found one, add this to the embed
+            else:
+                embed.append(s[i])
+
+            ic += 1 # increase if-counter
+            i+=8
+
+        elif s[i:i+8] == "$endfor$":
+
+            ic -= 1 # lower counter
+
+            # if we have 0 on the stack -> end
+            if ic==0:
+                after = s[i+8:]
+                break
+            # otherwise add it to the embed
+            else:
+                embed.append(s[i:i+8])
+
+            i += 8
+
+        # Nothing psecial at this position
+        else:
+            if found:
+                embed.append(s[i])
+            i+=1
+
+    embed = ''.join(embed)
+
+    return found, before, embed, after
+
+
 def insert_parser(s):
     found = False
     before = ""

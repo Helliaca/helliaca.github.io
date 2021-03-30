@@ -80,7 +80,49 @@
 
             <div id="content-container" class="fade-in-diag">
 
-                $insert projects_list$
+                $forall$
+                $if is_project$
+                <div class="project-container">
+                    <div class="project-img-wrapper">
+                        <div class="project-img-container">
+                            <a href="$insert project_page_path$"><img alt="project spash image" src="$insert project_image_path$"></a>
+                        </div>
+                    </div>
+
+                    <div class="project-text-wrapper">
+                        <div class="project-text-container">
+                            <a href="$insert project_page_path$">
+                                <div class="project-title">
+                                    $insert project_title$
+                                </div>
+                            </a>
+
+                            <div class="project-buttons">
+                                $if project_pdf_link$<a href="$insert project_pdf_link$" class="far fa-file-pdf"></a>$endif$
+                                $if project_github_link$<a href="$insert project_github_link$" class="fab fa-github"></a>$endif$
+                                $if project_steam_link$<a href="$insert project_steam_link$" class="fab fa-steam"></a>$endif$
+                            </div>
+
+                            $if project_subtitle$
+                            <div class="project-subtitle">
+                                <b>$insert project_subtitle$</b>
+                            </div>
+                            $endif$
+
+                            <div class="project-desc">
+                                $insert project_abstract$
+                            </div>
+
+                            <a href="$insert project_page_path$">
+                                <div class="project-read-more">
+                                    Read more
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                $endif$
+                $endfor$
 
             </div>
 

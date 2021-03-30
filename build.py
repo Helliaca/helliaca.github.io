@@ -26,12 +26,14 @@ cmd_dict = {
 }
 
 global_context = dict()
+objects = []
 
 class object:
     priority = 0
     context = dict()
     cmds = []
     glob = global_context
+    all_objects = objects
     id = "Unnamed"
 
     def __init__(self, file_path):
@@ -67,7 +69,6 @@ class object:
             return False
 
 
-objects = []
 for root, dirs, files in os.walk(os.getcwd() + "/config"):
     for file in files:
         if(file.endswith(".cfg")):

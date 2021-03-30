@@ -1,7 +1,7 @@
 import re
 import markdown
 import os
-from .parse import condition_parser, insert_parser
+from .parse import *
 
 def do_nothing(obj, params):
     return
@@ -62,11 +62,16 @@ def set_context_from_md_file(obj, params):
     content = markdown.markdown(content, extensions=['extra'])
     obj.context[params[0]] = content
 
-def fill_template(obj, params):
-    template_path = params[0]
-    write_path = params[1]
 
-    content = open(template_path, "r").read()
+def fill_section(obj, content):
+    # Do loops
+    found, before, embed, after = loop_parser(content)
+    while found:
+        app = ""
+        for o in obj.all_objects:
+            app  += fill_section(o, embed)
+        content = before + app + after
+        found, before, embed, after = loop_parser(content)
 
     # Do conditions
     found, before, condition, embed, after = condition_parser(content)
@@ -82,6 +87,17 @@ def fill_template(obj, params):
     while(found):
         content = before + obj.get_token(token) + after
         found, before, token, after = insert_parser(content)
+
+    return content
+
+
+def fill_template(obj, params):
+    template_path = params[0]
+    write_path = params[1]
+
+    content = open(template_path, "r").read()
+
+    content = fill_section(obj, content)
 
     # Create directories if necessary
     try:
