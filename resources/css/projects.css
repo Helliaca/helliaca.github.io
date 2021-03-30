@@ -2,8 +2,7 @@
     margin: 50px 80px;
     position: relative;
     background-color: #191919;
-    border: 5px solid #111111;
-    border-style: groove;
+    border: 3px solid #333333;
     display: flex;
 }
 

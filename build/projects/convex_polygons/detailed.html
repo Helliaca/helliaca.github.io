@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>BK - Minimum Convex Partitioning</title>
+
+    <!-- Base path -->
+    <base href="../../../">
+
+    <!-- Meta data -->
+    <meta charset="UTF-8">
+    <meta name="author" content="Benjamin Kahl">
+    <meta name="keywords" content="Benjamin, Kahl, Helliaca">
+    <meta name="description" content="Personal Website of Benjamin Kahl aka Helliaca">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="resources/favicon.ico"/>
+
+    <!-- Regular css sheets -->
+    <link rel="stylesheet" href="resources/css/common.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/topbar.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/body.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/projects.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/project.css" type="text/css">
+
+    <!-- Font awesome sheet  -->
+    <link rel="stylesheet" href="resources/fontawesome-free-5.15.3-web/css/all.css" type="text/css">
+
+    <!-- Fade-in-out module -->
+    <link rel="stylesheet" href="resources/fade-in-out/fade-in-out.css" type="text/css">
+    <script src="resources/fade-in-out/jquery-3.6.0.min.js"></script>
+    <script src="resources/fade-in-out/fade-in-out.js"></script>
+
+    <!-- Mobile-menu module -->
+    <script src="resources/responsive.js"></script>
+</head>
+
+<body onunload="">
+    <div id="root">
+
+        <!-- TOPBAR -->
+        <div id="topbar-container">
+
+            <!-- TOPBAR LOGO -->
+            <a href="index.html"><div id="topbar-logo">
+                <h1>BENJAMIN KAHL</h1>
+            </div></a>
+
+            <!-- TOPBAR SOCIAL MEDIA ICONS -->
+            <div id="topbar-socialmedia">
+                <a href="mailto:TODO@workinprogress.com" class="fas fa-envelope" aria-label="Send email"></a>
+                <a href="https://github.com/Helliaca" class="fab fa-github" aria-label="Github link"></a>
+                <a href="https://www.linkedin.com/in/benjamin-kahl-97a56a20a/" class="fab fa-linkedin-in" aria-label="Linkedin link"></a>
+                <a href="https://www.deviantart.com/helliaca" class="fab fa-deviantart" aria-label="Deviantart link"></a>
+            </div>
+
+            <!-- TOPBAR LINKS/NAV -->
+            <div id=topbar-links>
+                <a href="build/more.html" aria-label="Link to see miscellaneous content"><div class="topbar-link"><div class="topbar-link-text"> MORE </div></div></a>
+                <a href="build/publications.html"><div class="topbar-link"><div class="topbar-link-text"> PUBLICATIONS </div></div></a>
+                <a href="build/cv.html"><div class="topbar-link"><div class="topbar-link-text"> CV </div></div></a>
+                <a href="build/projects.html"><div class="topbar-link active"><div class="topbar-link-text"> PROJECTS </div></div></a>
+                <a href="index.html"><div class="topbar-link"><div class="topbar-link-text"> HOME </div></div></a>
+            </div>
+
+            <!-- NAVBAR FOR MOBILE -->
+            <a href="javascript:void(0);" class="no-fade" id="topbar-mobile-menu" onclick="toggleMobileMenu()"><div><i class="fa fa-bars"></i></div></a>
+            <div id="topbar-links-mobile">
+                <a href="index.html"><div class="topbar-link-mobile"> HOME </div></a>
+                <a href="build/projects.html"><div class="topbar-link-mobile"> PROJECTS </div></a>
+                <a href="build/cv.html"><div class="topbar-link-mobile"> CV </div></a>
+                <a href="build/publications.html"><div class="topbar-link-mobile"> PUBLICATIONS </div></a>
+                <a href="build/more.html" aria-label="Link to see miscellaneous content"><div class="topbar-link-mobile"> MORE </div></a>
+            </div>
+
+
+        </div>
+
+        <!-- BODY -->
+        <div id="body-container">
+
+            <div id="content-container" class="fade-in-diag">
+
+                <div class="project-banner">
+                    <img alt="project banner image" class="project-banner-img" src="config/convex_polygons/banner.png">
+                    <div class="project-banner-title">Minimum Convex Partitioning</div>
+                    <div class="project-banner-subtitle">software project and competition 2019/2020</div>
+                </div>
+
+                <div class="project-toolbar">
+                    <div class="project-toolbar-back">
+                        <a href="build/projects.html" class="fas fa-arrow-alt-circle-left"></a>
+                    </div>
+
+                    <div class="project-toolbar-links">
+                        <a href="https://raw.githubusercontent.com/SemjonKerner/convex_polygons/master/texinput/report.pdf" class="far fa-file-pdf"></a>
+                        <a href="https://raw.githubusercontent.com/SemjonKerner/convex_polygons/b5412ddf3189458d07803e934d98bb67e8e7cc36/texinput/convex_polygons.pdf" class="far fa-file-pdf"></a>
+                        <a href="https://github.com/SemjonKerner/convex_polygons" class="fab fa-github"></a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </div>
+
+                <div class="project-description">
+                    <h2>Convex Polygons</h2>
+<p>This repository contains algorithms for the convex partitioning of a pointset that were used for the CG:SHOP 2020 competition as well as the respective solutions.</p>
+<p>All Algorithms were created and implemented by Benjamin Kahl, Semjon Kerner, Abbas Mohammed Murrey and Konstantin Jaehne, students of computer science at the Freie Universität Berlin as part of a course by Prof. Günter Rote.</p>
+<p>A detailed explanation on our proceedings can be found in our course report <a href="https://github.com/SemjonKerner/convex_polygons/blob/master/texinput/report.pdf">here</a>.
+You can find our final presentation for the course <a href="https://github.com/SemjonKerner/convex_polygons/blob/b5412ddf3189458d07803e934d98bb67e8e7cc36/texinput/convex_polygons.pdf">here</a>.</p>
+<p>The problem, as stated by this competition (see <a href="https://cgshop.ibr.cs.tu-bs.de/competition/cg-shop-2020/">CG:SHOP 2020</a>):<br />
+<em>Given a set S of n points in the plane. The objective is to compute a plane graph with vertex set S (with each point in S having positive degree) that partitions the convex hull of S into the smallest possible number of convex faces. Note that collinear points are allowed on face boundaries, so all internal angles of a face are at most π</em></p>
+<h2>Execution</h2>
+<p>The algorithms are executed with presentation.py</p>
+<p>usage: presentation.py [-h] [-a {wave,merged,pass,nested}] [-o] [-p] [-v] [-l LIMIT LIMIT] [-c COORD COORD] [-r [RNDM]] [-e EXPLICIT] file</p>
+<p>positional arguments:<br />
+file - path to instance file</p>
+<p>optional arguments:<br />
+-h, --help : <strong>Show this help message</strong><br />
+-a {wave,merged,pass,nested}, --algorithm {wave,merged,pass,nested} : <strong>Choose algorithm to execute</strong><br />
+-o, --overwrite : <strong>Overwrite existing solution if new one is better</strong><br />
+-p, --plot : <strong>Show plot  - Not recommended for large instances (matplotlib is slow)</strong><br />
+-v, --verbose : <strong>Print some information</strong><br />
+-l LIMIT LIMIT, --limit LIMIT LIMIT : <strong>Don't execute if amount of points is outside of limit</strong><br />
+-c COORD COORD, --coordinates COORD COORD : <strong>Set coordinates of start point</strong><br />
+-r [RNDM], --random [RNDM] : <strong>Set random seed</strong><br />
+-e EXPLICIT, --explicit EXPLICIT : <strong>Amount of used start points in percent</strong>  </p>
+<h2>About the Algorithms</h2>
+<p>We developed 4 Algorithms for this competition.
+With the exception of <em>nested hulls</em>, they are essentially evolutions of each other.</p>
+<h3>Nested Hulls</h3>
+<ul>
+<li>Repeatedly creates convex hulls from unconnected vertices from outside to the inside.</li>
+<li>Connects these convex hulls respecting the constraints on convex faces.</li>
+<li>Removes unnecessary edges from the former convex hulls.</li>
+</ul>
+<p>This algorithm performs very well on instances with many collinear points.</p>
+<h3>Single Convex Waves</h3>
+<ul>
+<li>Starting at one (random) point, it iteratively connects the closest point (by euclidean distance to the start point)</li>
+<li>The created graph will always maintain a convex hull after connecting a new point</li>
+<li>A point is connected to the most outer points on the convex hull and all points inbetween on the convex hull (except for points that are collinear on the convex hull)</li>
+<li>Edges between those Points on the convex hull are deleted when the resulting face will be convex</li>
+</ul>
+<p>This algorithm is the fastest of all four.</p>
+<h3>Merged Convex Waves</h3>
+<p>We came up with the idea of starting at many start points, because we realized that <em>Single Convex Wave</em> produced suboptimal results on larger pointsets.
+Here we start multiple instances of <em>Single Convex Wave</em> at various locations and merge them into one whenever a collision occurs.
+However, the merging procedure is computationally expensive, suffers from poor code comprehensibility and produces large amounts number of edges.</p>
+<p>This algorithm performs the worst in all aspects, but served as a stepping stone for the significantly improved <em>Pass Based</em> algorithm..</p>
+<h3>Pass Based</h3>
+<ul>
+<li>This algorithm creates a polygon at given start points until all points were part of a polygon.</li>
+<li>Choosing start points smartly helped creating bigger polygons first. This was the intended effect.</li>
+<li>In contrast this algorithm does not keep convex hulls intact, leading to some following cleaning passes.</li>
+<li>The convex hull for all points is created.</li>
+<li>Islands, not connected to the convex hull, are detected and connected to the convex hull.</li>
+<li>Non-convex faces are repaired - those with inflex edges.</li>
+<li>Stray points are integrated.</li>
+<li>At last the algorithm tries all edges if they may be deleted, by comparing the angles to the adjacent faces.</li>
+</ul>
+<p>This algorithm performed best on most instances. It takes longer than <em>Nested Hulls</em> and <em>Single Convex Wave</em> though.
+There is still a known bug in this algorithm, but it happens very seldom and on very large instances.. but since the competition is over, we will probably not maintain this algorithm further or fix any bugs.</p>
+<p>Here are all four algorithms side by side on a 500 point instance:
+<img alt="picture" src="https://i.imgur.com/FA7LW13.png" /></p>
+<h3>Datastructure DCEL</h3>
+<p>We used Doubly-Connected Edge List (DCEL) as our main datastructure. It allowed fast traversal on the graph with reasonable overhead.</p>
+<h3>Start Points</h3>
+<p>For <em>Pass Based</em> we calculated a set of start points for each instance. We considered multiple approaches, like clustering with kmeans or heatgrids. Eventually we settled with another approach on Delaunay Triangulation. This approach achieved very good start point distributions.</p>
+<ul>
+<li>A Delaunay triangulation is calculated on all instance points. This leaves us with a set I of edges in a triangulation.</li>
+<li>A second Delaunay triangulation is calculated on the midpoints of edges in I. This triangulation yields a set S of edges.</li>
+<li>The edges in S are ordered by the corresponding edges in I, in a way that the edge in S is directed from the midpoint of the longer edge in I to the midpoint of the shorter edge in I.</li>
+<li>For every midpoint the algorithm counts the outgoing edges in I and sorts the resulting list by the degree.</li>
+</ul>
+<p>This approach chooses start points between all instance points in order to eliminate longer edges in a <em>neighborhood</em> of edges. That way bigger polygons shall be created first - not in area size, but in number of vertices. Sadly this algorithm didn't show as much of an effect on <em>Pass Based</em> as hoped.</p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
