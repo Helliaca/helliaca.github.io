@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>BK - SDL2 Game</title>
+
+    <!-- Base path -->
+    <base href="../../../">
+
+    <!-- Meta data -->
+    <meta charset="UTF-8">
+    <meta name="author" content="Benjamin Kahl">
+    <meta name="keywords" content="Benjamin, Kahl, Helliaca">
+    <meta name="description" content="Personal Website of Benjamin Kahl aka Helliaca">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="resources/favicon.ico"/>
+
+    <!-- Regular css sheets -->
+    <link rel="stylesheet" href="resources/css/common.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/topbar.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/body.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/projects.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/project.css" type="text/css">
+
+    <!-- Font awesome sheet  -->
+    <link rel="stylesheet" href="resources/fontawesome-free-5.15.3-web/css/all.css" type="text/css">
+
+    <!-- Fade-in-out module -->
+    <link rel="stylesheet" href="resources/fade-in-out/fade-in-out.css" type="text/css">
+    <script src="resources/fade-in-out/jquery-3.6.0.min.js"></script>
+    <script src="resources/fade-in-out/fade-in-out.js"></script>
+
+    <!-- Mobile-menu module -->
+    <script src="resources/responsive.js"></script>
+</head>
+
+<body onunload="">
+    <div id="root">
+
+        <!-- TOPBAR -->
+        <div id="topbar-container">
+
+            <!-- TOPBAR LOGO -->
+            <a href="index.html"><div id="topbar-logo">
+                <h1>BENJAMIN KAHL</h1>
+            </div></a>
+
+            <!-- TOPBAR SOCIAL MEDIA ICONS -->
+            <div id="topbar-socialmedia">
+                <a href="mailto:TODO@workinprogress.com" class="fas fa-envelope" aria-label="Send email"></a>
+                <a href="https://github.com/Helliaca" class="fab fa-github" aria-label="Github link"></a>
+                <a href="https://www.linkedin.com/in/benjamin-kahl-97a56a20a/" class="fab fa-linkedin-in" aria-label="Linkedin link"></a>
+                <a href="https://www.deviantart.com/helliaca" class="fab fa-deviantart" aria-label="Deviantart link"></a>
+            </div>
+
+            <!-- TOPBAR LINKS/NAV -->
+            <div id=topbar-links>
+                <a href="build/more.html" aria-label="Link to see miscellaneous content"><div class="topbar-link"><div class="topbar-link-text"> MORE </div></div></a>
+                <a href="build/publications.html"><div class="topbar-link"><div class="topbar-link-text"> PUBLICATIONS </div></div></a>
+                <a href="build/cv.html"><div class="topbar-link"><div class="topbar-link-text"> CV </div></div></a>
+                <a href="build/projects.html"><div class="topbar-link active"><div class="topbar-link-text"> PROJECTS </div></div></a>
+                <a href="index.html"><div class="topbar-link"><div class="topbar-link-text"> HOME </div></div></a>
+            </div>
+
+            <!-- NAVBAR FOR MOBILE -->
+            <a href="javascript:void(0);" class="no-fade" id="topbar-mobile-menu" onclick="toggleMobileMenu()"><div><i class="fa fa-bars"></i></div></a>
+            <div id="topbar-links-mobile">
+                <a href="index.html"><div class="topbar-link-mobile"> HOME </div></a>
+                <a href="build/projects.html"><div class="topbar-link-mobile"> PROJECTS </div></a>
+                <a href="build/cv.html"><div class="topbar-link-mobile"> CV </div></a>
+                <a href="build/publications.html"><div class="topbar-link-mobile"> PUBLICATIONS </div></a>
+                <a href="build/more.html" aria-label="Link to see miscellaneous content"><div class="topbar-link-mobile"> MORE </div></a>
+            </div>
+
+
+        </div>
+
+        <!-- BODY -->
+        <div id="body-container">
+
+            <div id="content-container" class="fade-in-diag">
+
+                <div class="project-banner">
+                    <img alt="project banner image" class="project-banner-img" src="config/sdl2_game/banner.jpg">
+                    <div class="project-banner-title">SDL2 Game</div>
+                    
+                </div>
+
+                <div class="project-toolbar">
+                    <div class="project-toolbar-back">
+                        <a href="build/projects.html" class="fas fa-arrow-alt-circle-left"></a>
+                    </div>
+
+                    <div class="project-toolbar-links">
+                        
+                        
+                        <a href="https://github.com/Helliaca/SDL2-Game" class="fab fa-github"></a>
+                        
+                        <a href="https://www.youtube.com/watch?v=upb3DJJbQIM" class="fab fa-youtube"></a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </div>
+
+                <div class="project-description">
+                    <h1>SDL2-Game</h1>
+<p>A small 2D, SDL2 Game written in C++ featuring destructive terrain, raycasts, tailphysics and more!</p>
+<p><img alt="bsp_img" src="https://i.imgur.com/bT7p3lS.jpg" /></p>
+<p>This is what it looks like: https://www.youtube.com/watch?v=upb3DJJbQIM</p>
+<p>Only dependencies are the SDL2 and SDL2-image libraries. See <a href="https://krother.gitbooks.io/objektorientierte-programmierung-mit-c/content/gitbook/SDL_unter_eclipse.html">here</a>.</p>
+<p>All code was written by me and is public domain.</p>
+<h1>Controls</h1>
+<ul>
+<li>WASD to move the player</li>
+<li>LMB to fire a projectile that destroys terrain</li>
+<li>RMB to create terrain</li>
+</ul>
+<p>Healthbars and AI are missing, so you will have to control the boss/enemy yourself:
+- 1 for the Boss to shoot his laser
+- 2 for the Boss to shoot his rockets
+- 3 to toggle a continous rain of rockets</p>
+<h1>Sources for Artwork:</h1>
+<ul>
+<li>Projectiles:  http://millionthvector.blogspot.de/p/free-sprites.html</li>
+<li>Fire animation:           https://opengameart.org/content/wgstudio-fire-animation-loop</li>
+<li>Explosion animation:      https://opengameart.org/content/explosion</li>
+<li>Metal Structure: https://opengameart.org/content/metal-grate-texture</li>
+<li>Metal Supports:   https://opengameart.org/content/brown-metal-trim (And similar from the same author)</li>
+<li>Laser Flare:  http://www.photos-public-domain.com/2011/11/19/bright-sun/</li>
+<li>Destructible Rock texture: textures.com</li>
+<li>Everything Else: Myself</li>
+</ul>
+<h1>Documentation:</h1>
+<h3>Root directory</h3>
+<p>The root directory contains what you might consider to be the 'game engine':
+- <em>defs.h</em>: All constant values used across other files, including file directories, window size etc.
+- <em>random.h</em>: Inline header file to generate random numbers.
+- <em>main.cpp</em>: Runs the start-method in gamemaster.cpp. That's all.
+- <em>gamemaster.cpp/.h</em>: Contains the base 'game-loop'. Continously clears, draws and updates all relevant objects.
+- <em>base.cpp/.h</em>: Fundamental classes/functions used and inherited throughout the project. This includes: Timer, Vector2, Camera, GameWindow, Object, Image, AdvImage. Object being the base class for all Objects drawn on screen.</p>
+<h3>Assets directory</h3>
+<p>Includes more specialized files. All of these inherit from either the Object or Image class.
+- <em>animation</em>: Class for a spritesheet-animation. Used by explosion or fire aniamtions, aswells as the player sprite.
+- <em>background</em>: Parallax background image that scrolls relative to player position and level size.
+- <em>terrain</em>: Actual level. Pixel collision and destructible terrain are handled here.
+- <em>missile</em>: The missiles that the boss spawns on his second attack.
+- <em>physicsObj</em>: Base class for all physics-based Objects.
+- <em>player</em>: The player.
+- <em>projectile</em>: Base class for physics-based projectiles.</p>
+<h3>assets/NAV directory</h3>
+<p>Point- and Path-classes used for the Navigation of the Boss.
+Paths can have ease-in/-out aswell as linear, bezier or sine-curve interpolations.
+nav_graph creates and includes preset paths for the boss to navigate along.</p>
+<h3>assets/BOSS directory</h3>
+<p>All classes concerning the boss.
+- <em>boss_AI</em>: Main wrapper for the entire thing. Looks at what attack the boss is doing and executes it by calling boss_Controller methods.
+- <em>boss_Controller</em>: Handles boss idle animations, laser animations etc. Second layer of complexity wrapping.
+- <em>boss_Head</em>: The main bulk of the boss' head.
+- <em>boss_TailSegment</em>: The small segments that constitute the boss' tail. Each segment has an angular and positional velocity aswell as an angular and positional acceleration. At a certain self-positonal-velocity the segments will accelerate towards the vector of said velocity. If this velocity is smaller than the given threshhold, the segments will accelerate towards their default position.
+- <em>boss_TailSegmentConnector</em>: The red connectors between segments.</p>
+<p>Certain elements are heavily inspired by the Supreme Jeh'Oul bossfight from Wings of Vi (<a href="https://www.youtube.com/watch?v=VD-y3-hH1do">this one</a>).</p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
