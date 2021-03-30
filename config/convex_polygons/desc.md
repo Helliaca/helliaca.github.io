@@ -1,80 +1,79 @@
-## Convex Polygons
+A convex partition of a pointset consists of a planar subdivision of its convex hull so that all faces are empty and convex. Finding a partition with the minimum amount of edges (or faces), is still a problem of unknown complexity.
 
-This repository contains algorithms for the convex partitioning of a pointset that were used for the CG:SHOP 2020 competition as well as the respective solutions.
+The [CG:SHOP 2020 competition](https://cgshop.ibr.cs.tu-bs.de/competition/cg-shop-2020/#problem-description) put forth a large number of pointsets alongside the challenge to compute their convex partitions that incorporate the least amount of edges.
 
-All Algorithms were created and implemented by Benjamin Kahl, Semjon Kerner, Abbas Mohammed Murrey and Konstantin Jaehne, students of computer science at the Freie Universität Berlin as part of a course by Prof. Günter Rote.
+With a team of four members we set out to give it our best shot using rudimentary, symbolic algorithms. The [github repository](https://github.com/SemjonKerner/convex_polygons) of our project includes all of our computed results as well as their respective algorithms.
 
-A detailed explanation on our proceedings can be found in our course report [here](https://github.com/SemjonKerner/convex_polygons/blob/master/texinput/report.pdf).
-You can find our final presentation for the course [here](https://github.com/SemjonKerner/convex_polygons/blob/b5412ddf3189458d07803e934d98bb67e8e7cc36/texinput/convex_polygons.pdf).
+If you deem the explanation on this site insufficient or simply want to know more about our employed algorithms, I highly suggest to check out our written report on our proceedings which you can find [here](https://github.com/SemjonKerner/convex_polygons/blob/master/texinput/report.pdf) as well as the slides of our final presentation, which can be found [here](https://github.com/SemjonKerner/convex_polygons/blob/b5412ddf3189458d07803e934d98bb67e8e7cc36/texinput/convex_polygons.pdf).
 
-The problem, as stated by this competition (see [CG:SHOP 2020](
-https://cgshop.ibr.cs.tu-bs.de/competition/cg-shop-2020/)):  
-_Given a set S of n points in the plane. The objective is to compute a plane graph with vertex set S (with each point in S having positive degree) that partitions the convex hull of S into the smallest possible number of convex faces. Note that collinear points are allowed on face boundaries, so all internal angles of a face are at most π_
+The problem, as stated by the competition is:  
+_Given a set S of n points in the plane. The objective is to compute a plane graph with vertex set S (with each point in S having positive degree) that partitions the convex hull of S into the smallest possible number of convex faces. Note that collinear points are allowed on face boundaries, so all internal angles of a face are at most pi_
 
-## Execution
+<img alt="example of a convex partition" src="config/convex_polygons/banner.png">
 
-The algorithms are executed with presentation.py
+# Proceedings
 
-usage: presentation.py [-h] [-a {wave,merged,pass,nested}] [-o] [-p] [-v] [-l LIMIT LIMIT] [-c COORD COORD] [-r [RNDM]] [-e EXPLICIT] file
+## Preparations
 
-positional arguments:  
-file - path to instance file
+The field of algorithmic geometry poses problems that, due to their complexity, can get out of hand quickly without a robust data-structure to support them. Since we were planning on implementing several algorithms, we opted for the stalwart [DCEL](https://en.wikipedia.org/wiki/Doubly_connected_edge_list), or 'doubly connected edge list'.
 
-optional arguments:  
--h, --help : __Show this help message__  
--a {wave,merged,pass,nested}, --algorithm {wave,merged,pass,nested} : __Choose algorithm to execute__  
--o, --overwrite : __Overwrite existing solution if new one is better__  
--p, --plot : __Show plot  - Not recommended for large instances (matplotlib is slow)__  
--v, --verbose : __Print some information__  
--l LIMIT LIMIT, --limit LIMIT LIMIT : __Don't execute if amount of points is outside of limit__  
--c COORD COORD, --coordinates COORD COORD : __Set coordinates of start point__  
--r [RNDM], --random [RNDM] : __Set random seed__  
--e EXPLICIT, --explicit EXPLICIT : __Amount of used start points in percent__  
+This data-structure handles polygonal data in the form of doubly connected edges. Each edge has a twin (essentially its inverse) as well as a predecessor `prev` and successor `next`. At any given vertex the connected edges can be traversed in counter-clockwise order by iterating through each twin and successor.[^1]
 
-## About the Algorithms
-We developed 4 Algorithms for this competition.
-With the exception of _nested hulls_, they are essentially evolutions of each other.
+![image of a dcel](config/convex_polygons/dcel.png)
 
-### Nested Hulls
-- Repeatedly creates convex hulls from unconnected vertices from outside to the inside.
-- Connects these convex hulls respecting the constraints on convex faces.
-- Removes unnecessary edges from the former convex hulls.
+[^1]: For more information refer to our [project pdf](https://raw.githubusercontent.com/SemjonKerner/convex_polygons/master/texinput/report.pdf)
 
-This algorithm performs very well on instances with many collinear points.
+There are a manifold of libraries in all programming languages that offer any common DCEL functionality. However, as some of the pointsets provided by the competition reached into *millions* of points, performance would be of the essence. To keep a good overview of all our computational operations, we decided to implement a DCEL variant ourselves. Although some additional effort, this allowed us to create a highly minimalized variant that only performs the actions we require it with good performance. Our DCEL implementation can be found under in one of our project in [HDCEL.py](https://github.com/SemjonKerner/convex_polygons/blob/master/bin/HDCEL.py).
 
-### Single Convex Waves
-- Starting at one (random) point, it iteratively connects the closest point (by euclidean distance to the start point)
-- The created graph will always maintain a convex hull after connecting a new point
-- A point is connected to the most outer points on the convex hull and all points inbetween on the convex hull (except for points that are collinear on the convex hull)
-- Edges between those Points on the convex hull are deleted when the resulting face will be convex
+## Benchmark algorithms
 
-This algorithm is the fastest of all four.
+For fist step we wanted to ensure that we could compute at least one half-way decent result for each pointset provided by the competition, so we decided to start simple.
 
-### Merged Convex Waves
-We came up with the idea of starting at many start points, because we realized that _Single Convex Wave_ produced suboptimal results on larger pointsets.
-Here we start multiple instances of _Single Convex Wave_ at various locations and merge them into one whenever a collision occurs.
-However, the merging procedure is computationally expensive, suffers from poor code comprehensibility and produces large amounts number of edges.
+As one of our first algorithms we implemented the a simple *nested convex hull* (or [convex layers](https://en.wikipedia.org/wiki/Convex_layers)) approach. This one simply computes the outermost convex hull of the pointset, then recursively repeats this step for all remaining points until none are left. As a final step the individual hulls need to be connected in a way as to produce a convex partition.
 
-This algorithm performs the worst in all aspects, but served as a stepping stone for the significantly improved _Pass Based_ algorithm..
+For our second approach we coined the name *convex waves*. This was a more unique, even novel approach compared to nested hulls, whilst maintaining an even higher degree of performance.
+Here, we start at any given (or random) point in the plane and perform a radial sweep-line that incorporates all vertices into the partition in order of their distance to the startpoint.
+A new vertex is integrated into the partition by connecting it to all vertices on the hull that are 'visible' to it (two vertices are mutually visible if no edges lie in-between them). Subsequently, the hulls edges are tested for redundancy, then removed or kept respectively.  Additionally, the presence of collinear points on the hull may permit the removal of some of the created edges. Lastly,  the separately maintained convex hull is updated to accommodate the newly annexed vertex.
 
-### Pass Based
-- This algorithm creates a polygon at given start points until all points were part of a polygon.
-- Choosing start points smartly helped creating bigger polygons first. This was the intended effect.
-- In contrast this algorithm does not keep convex hulls intact, leading to some following cleaning passes.
-- The convex hull for all points is created.
-- Islands, not connected to the convex hull, are detected and connected to the convex hull.
-- Non-convex faces are repaired - those with inflex edges.
-- Stray points are integrated.
-- At last the algorithm tries all edges if they may be deleted, by comparing the angles to the adjacent faces.
+These two algorithms are both extremely fast and fall within a complexity of O(log n). Thanks to its dependence on a starting-point, *convex waves* can also be executed in parallel multiple times on a single instance. For randomly scattered vertices, this tends to provide better results than nested hulls.
 
-This algorithm performed best on most instances. It takes longer than _Nested Hulls_ and _Single Convex Wave_ though.
-There is still a known bug in this algorithm, but it happens very seldom and on very large instances.. but since the competition is over, we will probably not maintain this algorithm further or fix any bugs.
+Thanks to their considerable speed we were able to quickly produce a passable solution to each pointset provided in the competition, albeit we did suffer some setbacks when a new batch was released that included sets with a large number of colinear vertices. However, despite these generally positive results, both of our algorithms traded computational expense for a sub-optimal result. The image below illustrates the solution of a convex wave on an instance of 500 vertices:
 
-Here are all four algorithms side by side on a 500 point instance:
-![picture](https://i.imgur.com/FA7LW13.png)
+![image of conv partition](config/convex_polygons/conv_wave_drawbacks.png)
 
-### Datastructure DCEL
-We used Doubly-Connected Edge List (DCEL) as our main datastructure. It allowed fast traversal on the graph with reasonable overhead.
+## Advanced algorithms
+
+### Merged convex Waves
+
+In an attempt to break up the inauspicious pattern produced by a single convex wave, we devised a variant consisting of multiple wave-instances running in tandem. Whenever two of these would collide, the instances are merged into one. The intent was to maximize the desirable results single convex waves produced in the vicinity of their starting points whilst curtailing the circular patterns depicted above.
+
+The basic idea of a 'merge' was simple:
+
+- *Calculate visible bounds:* We compute the outermost, mutually visible vertices on each hull.
+- *Query for intermediate points:* Using the foregoing visible bounds, we find all vertices that lie in-between both hulls which remain unclaimed by either.
+- *Break up occluding hulls:* If any of these vertices are occupied by other wave-instances, we clear these of all their connected edges.
+- *Repair broken instances:* If we cleared any vertices in the last step, we recalculate the convex hulls of the instances they belonged to and triangulate ruptures caused by the previous step.
+- *Allocate intermediate points:* The points in-between both instances we divide into two domains by a line and correspondingly allocate them to the respective instance.
+- *Integrate intermediate points:* In accordance to the foregoing allocation, we integrate each intermediate vertex into their respective hull using the regular convex wave iterative procedure.
+- *Connect instances:* By advancing along the mutually visible bounds, we connect both hulls.
+
+However, in practice, the implementation of a fully functional merging algorithm proved to be more challenging than anticipated. Two or more instances can be arranged in a plethora of unusual predicaments that are left unhandled by the above given steps. We implemented a semi-functional variant of these steps by handling all edge cases individually.
+
+After testing, our central findings were that our merged-approach produced on average 10% more edges than the best solutions computed by a single convex wave. In addition, optimization possibilities were scarce, making it not only our worst performing but also our slowest algorithm.
+
+### Pass-based convex waves
+
+In light of the foregoing, we made the decision to avert the complications of a merging step by opting instead for a pass-based variant. Ultimately, this approach proved to be our best one. It erforms a series of sequential procedures where the output of a previous step is used as input for the next one. In order for this pipeline to function correctly, the input and output of each pass must conform to a strict specification, which we accomplished by employing several intermediate passes.
+
+The exact specification of each pass, as well as the steps they perform can be read in our [project pdf](https://raw.githubusercontent.com/SemjonKerner/convex_polygons/master/texinput/report.pdf), but it roughly boils down to this:
+
+- Grow single convex polygons at given startpoints. If the given points are chosen wisely, this should help secure the largest faces/areas of the partition.
+- Gather stray points by performing the step above for all remaining unconnected vertices.
+- Integrate any produces 'island'-polygons into their surrounding area and enclose the whole system by computing the convex hull.
+- Of the partition produced so far, all inflex points are resolved on an individual basis.
+- Lastly we perform a stray-point integration pass as well as a cleaning pass.
+
+This algorithm performed best on most instances. It was naturally slower than _Nested Hulls_ and _Single Convex Wave_.
 
 ### Start Points
 For _Pass Based_ we calculated a set of start points for each instance. We considered multiple approaches, like clustering with kmeans or heatgrids. Eventually we settled with another approach on Delaunay Triangulation. This approach achieved very good start point distributions.
@@ -85,3 +84,31 @@ For _Pass Based_ we calculated a set of start points for each instance. We consi
 - For every midpoint the algorithm counts the outgoing edges in I and sorts the resulting list by the degree.
 
 This approach chooses start points between all instance points in order to eliminate longer edges in a _neighborhood_ of edges. That way bigger polygons shall be created first - not in area size, but in number of vertices. Sadly this algorithm didn't show as much of an effect on _Pass Based_ as hoped.
+
+## Results
+
+The following charts portray the number of instances solved by each of the three algorithms in our final submission:
+
+![graph](config/convex_polygons/results_graph.png)
+
+### Strengths and Weaknesses
+
+When confronted with inputs based on isotropically spread points as well as image- or brightness-based, our pass based algorithm proved to be an indispensable benefit to our over-all performance. It vastly outperformed both other algorithms, albeit at a significantly higher computational cost.
+
+![graph](config/convex_polygons/graphs2.jpg)
+
+For artificially assembled instances of mostly collinear points, the nested hulls algorithmproved highly invaluable. To the naked eye, the image below  may initially appear as a victory for passed-based, but this is mostly due to the areas being stretched out more evenly. The nested hulls approach produces longer squares by combining multiple vertices into a single chain.
+
+![graph](config/convex_polygons/graphs3.jpg)
+
+The single convex wave algorithm was the fastest and acted as a useful fallback for the few cases that pass-based was unable to provide a solution for. The growth of computation time can be observed in the following image: (Note: all times were recorded on an AMD Ryzen 1700)
+
+![graph](config/convex_polygons/graphs4.jpg)
+
+The image below shows our solutions to all orthogonal (diamond  shape) and regular instances (plus-shape). As can be observed, the pass based algorithm dominates throughout most of the larger instances. When it comes to instances with many collinear points (at the top) nested hulls and pass based are mostly at an impasse, with nested hulls scoring the majority of solutions.
+
+![graph](config/convex_polygons/graphs5.jpg)
+
+Here is our score over time:
+
+![graph](config/convex_polygons/graphs6.jpg)

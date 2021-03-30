@@ -86,7 +86,10 @@
 }
 
 .project-description img {
-    width: 100%;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 @media screen and (max-width: 1240px) {
