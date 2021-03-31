@@ -20,7 +20,7 @@ It has been showcased and played by large number of popular HoI4 content creator
 <iframe width="560" height="315" src="https://www.youtube.com/embed/le_TmXKHV7g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
 
-Other popular youtubers include [Pravus](https://www.youtube.com/watch?v=MZABMk9pBDw), [ISP](https://www.youtube.com/watch?v=QlsU93XQbPc) and [Rimmy](https://www.youtube.com/watch?v=LyCC3-nLb8c) [Pravus](https://www.youtube.com/watch?v=MZABMk9pBDw), although the latter two regarded the mod more critically, particularly the seemingly absurd alternate-history paths.
+Other popular youtubers include [Pravus](https://www.youtube.com/watch?v=MZABMk9pBDw), [ISP](https://www.youtube.com/watch?v=QlsU93XQbPc) and [Rimmy](https://www.youtube.com/watch?v=LyCC3-nLb8c), although the latter two regarded the mod more critically, particularly the seemingly absurd alternate-history paths.
 
 Unfortunately, I've struggled to keep the mod up-to-date with the current version of the game, nevermind introducing new content updates. Thankfully some community members have stepped up and provided much needed support on github or elsewhere.
 
