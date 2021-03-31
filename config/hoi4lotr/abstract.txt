@@ -1,1 +1,5 @@
-This mod aims at recreating J. R. R. Tolkien's Lord of the Rings within the bounds of Hearts of Iron IV, as well as providing plenty of alternate possibilites to bend the narrative to player's will. If you find yourself enjoying this mod, please feel free to leave behind a positive rating or comment as a token of appreciation.
+Why anyone would think that creating a Lord of The Rings themed game by modifying a WW2 strategy game is a good idea seems puzzling. Yet, here we are.
+<br>
+This <i>Hearts of Iron 4</i> mod started off as a small, 'play-with-friends', meme-project but unexpectedly exploded in popularity on the steam workshop, having gained exposure from some of the games most popular content creators.
+<br>
+With its distinctly satirical and humorous ways of describing events as well as enabling otherwise unthinkable 'alternate history' paths, this mod has remained highly popular despite a distinct lack of subsequent content updates.
