@@ -1,0 +1,45 @@
+.section-list {
+    margin: 50px 8%;
+}
+
+.section-title {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.image-entry {
+    display: inline-block;
+    height: 180px;
+    width: auto;
+    position: relative;
+    border: 1px solid #999999;
+    vertical-align: top;
+    margin: 3px 1px;
+}
+
+.more {
+    text-align: center;
+    width: 280px;
+}
+
+.image-entry img {
+    position: relative;
+    height: 100%;
+}
+
+.hiddenRadioButton {
+    display: none;
+}
+
+input#showMoreArtwork ~ div#moreArtwork {
+  display: none;
+}
+
+input#showMoreArtwork:checked ~ div#moreArtwork {
+  display: block;
+}
+
+input#showMoreArtwork:checked ~ label#showMoreArtworkLabel {
+  display: none;
+}
