@@ -69,7 +69,7 @@ def fill_section(obj, content):
     while found:
         app = ""
         for o in obj.all_objects:
-            app  += fill_section(o, embed)
+            app  += fill_section(o, embed).rstrip()
         content = before + app + after
         found, before, embed, after = loop_parser(content)
 

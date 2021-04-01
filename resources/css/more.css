@@ -60,3 +60,18 @@ input#showMoreArtwork:checked ~ span#moreArtwork {
 input#showMoreArtwork:checked ~ label#showMoreArtworkLabel {
   display: none;
 }
+
+@media screen and (max-width: 1400px) {
+    .image-entry img {
+        filter: grayscale(0%);
+    }
+    .image-entry {
+        height: 120px;
+    }
+    .section-list {
+        margin: 50px 3%;
+    }
+    .more {
+        line-height: 110px;
+    }
+}
