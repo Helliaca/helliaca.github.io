@@ -75,3 +75,7 @@ input#showMoreArtwork:checked ~ label#showMoreArtworkLabel {
         line-height: 110px;
     }
 }
+
+video::-webkit-media-controls {
+    display:none !important;
+}
