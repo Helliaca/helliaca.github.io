@@ -11,21 +11,18 @@
     width: 100px;
     border-right: 3px solid #333333;
     display: table;
+    margin: auto;
 }
 
 .pub-img-container {
     display: table-cell;
     vertical-align: middle;
-    text-align: center;
     padding: 10px 10px;
 }
 
 .pub-img-container img {
     position: relative;
-    left: 0px;
-    height: 100%;
-    width: auto;
-    margin: auto 0px;
+    margin: auto;
 }
 
 .pub-img-container a {
@@ -52,6 +49,7 @@
     width: 150px;
     border-left: 3px solid #333333;
     display: table;
+    margin: auto;
 }
 
 .pub-links-wrapper a {
