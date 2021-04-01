@@ -14,7 +14,7 @@ The whole project is open source and within the public domain. It can be found u
 
 A highly simplified overview of the underlying engine structure can be derived from this diagram:
 
-<img style="width: 50%;" alt="class diagram" src="config/sdl2_game/class_diagram_simple.svg">
+<img style="width: 50%;" alt="class diagram" src="config/projects/sdl2_game/class_diagram_simple.svg">
 
 As is typical in game-engines, most entities inherit from an underlying 'Object' class that provides a function to draw them on screen as well as update them on a per-frame basis.
 The *Image* class provides the visual element, whilst the *physicsObj* class provides rudimentary physics interaction such as gravity.
@@ -27,7 +27,7 @@ Note as well the purple border around the edges. Since the terrain also takes pr
 
 The UML diagram below should give you a decent overview of the base classes. Keep in mind that advanced classes controlling enemies or the player are not depicted.
 
-<img alt="class diagram" src="config/sdl2_game/class_diagram.svg">
+<img alt="class diagram" src="config/projects/sdl2_game/class_diagram.svg">
 
 The respective source files for each class are neatly organized as follows:
 

@@ -119,14 +119,14 @@
 <h2>Architecture</h2>
 <p>The whole project is open source and within the public domain. It can be found under <a href="https://github.com/Helliaca/SDL2-Game">this</a> github repository. The only dependencies are <a href="https://www.libsdl.org/download-2.0.php">SDL2 and SLD2-image</a>.</p>
 <p>A highly simplified overview of the underlying engine structure can be derived from this diagram:</p>
-<p><img style="width: 50%;" alt="class diagram" src="config/sdl2_game/class_diagram_simple.svg"></p>
+<p><img style="width: 50%;" alt="class diagram" src="config/projects/sdl2_game/class_diagram_simple.svg"></p>
 <p>As is typical in game-engines, most entities inherit from an underlying 'Object' class that provides a function to draw them on screen as well as update them on a per-frame basis.
 The <em>Image</em> class provides the visual element, whilst the <em>physicsObj</em> class provides rudimentary physics interaction such as gravity.</p>
 <p>The <em>terrain</em> works with a bitmap on a per-pixel basis. The destructibility of any terrain pixel is given by a <em>terrain mask</em>. The terrain mask corresponding to the level in the above linked video can be seen here:</p>
 <p><img style="width: 50%;" alt="terrain picture" src="https://raw.githubusercontent.com/Helliaca/SDL2-Game/master/resource/terrain1_msk.png"></p>
 <p>Note as well the purple border around the edges. Since the terrain also takes priority on the solidity of an object, this can be used to keep the player within the level's bounds.</p>
 <p>The UML diagram below should give you a decent overview of the base classes. Keep in mind that advanced classes controlling enemies or the player are not depicted.</p>
-<p><img alt="class diagram" src="config/sdl2_game/class_diagram.svg"></p>
+<p><img alt="class diagram" src="config/projects/sdl2_game/class_diagram.svg"></p>
 <p>The respective source files for each class are neatly organized as follows:</p>
 <h3>Root directory</h3>
 <p>The root directory contains what you might consider to be the 'game engine':</p>

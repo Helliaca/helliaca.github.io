@@ -8,7 +8,7 @@ Within the context of this mod, merely depicting the orcs in Moria as communists
 
 Here are some of my favorite events from the mod which we wrote up in a (hopefully) humorous fashion:
 
-![image of events](config/hoi4lotr/events.jpg)
+![image of events](config/projects/hoi4lotr/events.jpg)
 
 ### Reception
 
@@ -26,10 +26,10 @@ Unfortunately, I've struggled to keep the mod up-to-date with the current versio
 
 Despite the lackluster updates, the mod has amassed (at the time of writing) a total of over 250.000 unique visitors, a steady amount of over 60.000 subscribers and over 1.700 positive ratings. Here are it's lifetime stats on the steam workshop:
 
-![graph](config/hoi4lotr/stats.png)
+![graph](config/projects/hoi4lotr/stats.png)
 
 The mod is available on the [steam workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=1314446921) as well as on [github](https://github.com/Helliaca/HoI4-LotrMod).
 
 To finish off, here's two infantry divisions of the army of Gondor stationed at Osgiliath, presumably worried about what is to come.
 
-![screenshot](config/hoi4lotr/division.jpg)
+![screenshot](config/projects/hoi4lotr/division.jpg)

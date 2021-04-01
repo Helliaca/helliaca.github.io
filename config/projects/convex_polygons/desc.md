@@ -9,7 +9,7 @@ If you deem the explanation on this site insufficient or simply want to know mor
 The problem, as stated by the competition is:  
 _Given a set S of n points in the plane. The objective is to compute a plane graph with vertex set S (with each point in S having positive degree) that partitions the convex hull of S into the smallest possible number of convex faces. Note that collinear points are allowed on face boundaries, so all internal angles of a face are at most pi_
 
-<img alt="example of a convex partition" src="config/convex_polygons/banner.png">
+<img alt="example of a convex partition" src="config/projects/convex_polygons/banner.png">
 
 # Proceedings
 
@@ -19,7 +19,7 @@ The field of algorithmic geometry poses problems that, due to their complexity, 
 
 This data-structure handles polygonal data in the form of doubly connected edges. Each edge has a twin (essentially its inverse) as well as a predecessor `prev` and successor `next`. At any given vertex the connected edges can be traversed in counter-clockwise order by iterating through each twin and successor.[^1]
 
-![image of a dcel](config/convex_polygons/dcel.png)
+![image of a dcel](config/projects/convex_polygons/dcel.png)
 
 [^1]: For more information refer to our [project pdf](https://raw.githubusercontent.com/SemjonKerner/convex_polygons/master/texinput/report.pdf)
 
@@ -39,7 +39,7 @@ These two algorithms are both extremely fast and fall within a complexity of O(l
 
 Thanks to their considerable speed we were able to quickly produce a passable solution to each pointset provided in the competition, albeit we did suffer some setbacks when a new batch was released that included sets with a large number of colinear vertices. However, despite these generally positive results, both of our algorithms traded computational expense for a sub-optimal result. The image below illustrates the solution of a convex wave on an instance of 500 vertices:
 
-![image of conv partition](config/convex_polygons/conv_wave_drawbacks.png)
+![image of conv partition](config/projects/convex_polygons/conv_wave_drawbacks.png)
 
 ## Advanced algorithms
 
@@ -89,26 +89,26 @@ This approach chooses start points between all instance points in order to elimi
 
 The following charts portray the number of instances solved by each of the three algorithms in our final submission:
 
-![graph](config/convex_polygons/results_graph.png)
+![graph](config/projects/convex_polygons/results_graph.png)
 
 ### Strengths and Weaknesses
 
 When confronted with inputs based on isotropically spread points as well as image- or brightness-based, our pass based algorithm proved to be an indispensable benefit to our over-all performance. It vastly outperformed both other algorithms, albeit at a significantly higher computational cost.
 
-![graph](config/convex_polygons/graphs2.jpg)
+![graph](config/projects/convex_polygons/graphs2.jpg)
 
 For artificially assembled instances of mostly collinear points, the nested hulls algorithmproved highly invaluable. To the naked eye, the image below  may initially appear as a victory for passed-based, but this is mostly due to the areas being stretched out more evenly. The nested hulls approach produces longer squares by combining multiple vertices into a single chain.
 
-![graph](config/convex_polygons/graphs3.jpg)
+![graph](config/projects/convex_polygons/graphs3.jpg)
 
 The single convex wave algorithm was the fastest and acted as a useful fallback for the few cases that pass-based was unable to provide a solution for. The growth of computation time can be observed in the following image: (Note: all times were recorded on an AMD Ryzen 1700)
 
-![graph](config/convex_polygons/graphs4.jpg)
+![graph](config/projects/convex_polygons/graphs4.jpg)
 
 The image below shows our solutions to all orthogonal (diamond  shape) and regular instances (plus-shape). As can be observed, the pass based algorithm dominates throughout most of the larger instances. When it comes to instances with many collinear points (at the top) nested hulls and pass based are mostly at an impasse, with nested hulls scoring the majority of solutions.
 
-![graph](config/convex_polygons/graphs5.jpg)
+![graph](config/projects/convex_polygons/graphs5.jpg)
 
 Here is our score over time:
 
-![graph](config/convex_polygons/graphs6.jpg)
+![graph](config/projects/convex_polygons/graphs6.jpg)
