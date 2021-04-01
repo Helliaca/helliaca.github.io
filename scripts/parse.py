@@ -18,6 +18,7 @@ def parse_all_commands(file_path):
 
 # Takes a string and returns the first $if condition$ (...) $endif$
 def condition_parser(s):
+    neg = False
     found = False
     before = ""
     condition = ""
@@ -35,11 +36,16 @@ def condition_parser(s):
             if not found:
                 before = s[0:i] # Set before and found
                 found = True
+                if s[i+3:i+6] == "not":
+                    neg = True
+                    i += 6
+                else:
+                    i += 3
 
                 # parse condition
-                j = i+1
+                j = i
                 while s[j] != "$": j += 1
-                condition = s[i+3:j].strip()
+                condition = s[i:j].strip()
                 i = j
 
             # if we already found one, add this to the embed
@@ -72,7 +78,7 @@ def condition_parser(s):
 
     embed = ''.join(embed)
 
-    return found, before, condition, embed, after
+    return found, neg, before, condition, embed, after
 
 
 def loop_parser(s):

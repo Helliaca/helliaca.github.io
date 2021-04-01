@@ -74,13 +74,13 @@ def fill_section(obj, content):
         found, before, embed, after = loop_parser(content)
 
     # Do conditions
-    found, before, condition, embed, after = condition_parser(content)
+    found, neg, before, condition, embed, after = condition_parser(content)
     while(found):
-        if obj.has_token(condition):
+        if neg != obj.has_token(condition):
             content = before + embed + after
         else:
             content = before + after
-        found, before, condition, embed, after = condition_parser(content)
+        found, neg, before, condition, embed, after = condition_parser(content)
 
     # Do replacements
     found, before, token, after = insert_parser(content)
