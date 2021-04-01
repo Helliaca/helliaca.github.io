@@ -21,6 +21,12 @@
 .more {
     text-align: center;
     width: 280px;
+    transition: 0.3s;
+    line-height: 160px;
+}
+
+.more:hover {
+    background-color: #070707;
 }
 
 .image-entry img {
@@ -32,12 +38,12 @@
     display: none;
 }
 
-input#showMoreArtwork ~ div#moreArtwork {
+input#showMoreArtwork ~ span#moreArtwork {
   display: none;
 }
 
-input#showMoreArtwork:checked ~ div#moreArtwork {
-  display: block;
+input#showMoreArtwork:checked ~ span#moreArtwork {
+  display: inline;
 }
 
 input#showMoreArtwork:checked ~ label#showMoreArtworkLabel {
