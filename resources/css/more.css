@@ -16,6 +16,17 @@
     border: 1px solid #999999;
     vertical-align: top;
     margin: 3px 1px;
+    overflow: hidden;
+}
+
+.image-entry img {
+    transition: 0.5s;
+    filter: grayscale(65%);
+}
+
+.image-entry img:hover {
+    transform: scale(1.2);
+    filter: grayscale(0%);
 }
 
 .more {
