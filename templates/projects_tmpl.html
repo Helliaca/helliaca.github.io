@@ -127,6 +127,20 @@
                 $endif$
                 $endfor$
 
+                <div class="small-projects-container">
+                    $forall$
+                    $if is_project_small$
+                        <div class="small-project-container">
+                            <div class="small-project-img-container">
+                                <a href="$insert project_page_path$"><img alt="project spash image" src="$insert project_image_path$"></a>
+                            </div>
+                            <div class="small-project-title">$insert project_title$</div>
+                            <div class="small-project-desc">$insert project_abstract$</div>
+                        </div>
+                    $endif$
+                    $endfor$
+                </div>
+
             </div>
 
         </div>

@@ -86,6 +86,73 @@
     border-radius: 6px;
 }
 
+.hiddenRadioButton {
+    display: none;
+}
+
+input#showSecondaryProjects ~ span#secondaryProjects {
+  display: none;
+}
+
+input#showSecondaryProjects:checked ~ span#secondaryProjects {
+  display: inline;
+}
+
+input#showSecondaryProjects:checked ~ label#showSecondaryProjectsLabel {
+  display: none;
+}
+
+.small-projects-container {
+    margin: 0px 70px;
+    text-align: center;
+}
+
+.small-project-container {
+    margin: 5px 5px;
+    width: 31%;
+    height: 335px;
+    display: inline-block;
+    position: relative;
+    background-color: #191919;
+    border: 3px solid #333333;
+    overflow: hidden;
+    text-align: left;
+    transition: 0.5s;
+}
+
+.small-project-container:hover {
+    background-color: #050505;
+}
+
+.small-project-title {
+    font-weight: bold;
+    margin: 0px 10px;
+}
+
+.small-project-desc {
+    margin: 0px 10px;
+    color: #aaaaaa;
+}
+
+.small-project-img-container {
+    width: 100%;
+    height: 200px;
+    border-bottom: 3px solid #333333;
+    overflow: hidden;
+}
+
+.small-project-container img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: 0.5s;
+}
+
+.small-project-container:hover img {
+    transform: scale(1.15);
+}
+
 @media screen and (max-width: 1240px) {
     .project-img-wrapper {
         margin: 0px auto;
