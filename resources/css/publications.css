@@ -12,6 +12,7 @@
     border-right: 3px solid #333333;
     display: table;
     margin: auto;
+    text-align: center;
 }
 
 .pub-img-container {
@@ -73,4 +74,31 @@
 
 .pub-year {
     display: inline;
+}
+
+@media screen and (max-width: 1240px) {
+
+}
+
+@media screen and (max-width: 680px) {
+    .pub-container {
+        display: block;
+    }
+    .pub-img-container img {
+        height: 60px;
+    }
+    .pub-img-wrapper {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+    }
+    .pub-links-wrapper {
+        width: 100%;
+        text-align: right;
+        height: 100px;
+    }
+    .pub-text-wrapper  {
+        width: 100%;
+        border-bottom: 3px solid #333333;
+    }
 }
