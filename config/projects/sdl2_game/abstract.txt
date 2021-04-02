@@ -1,4 +1,1 @@
 Creative naming aside, I built this simple yet powerful 2D game-engine as part of a brief university <a href="https://github.com/krother/cplusplus_abv_zedat">games with C++ workshop</a>.
-It tackles many of the same problems as its predecessor Skinc such as pixel-based 2d physics and destructible terrain. In addition it also features ray-casts, tail-physics and other goodies!
-<br>
-Albeit less powerful than SFML, SDL2 provides an API far closer to OpenGL directly, allowing for potentially significant performance gains.
