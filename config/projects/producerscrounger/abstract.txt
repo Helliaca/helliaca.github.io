@@ -1,0 +1,5 @@
+A key question individuals face in any social learning environment is when to innovate alone and when to imitate others. The 'producer-scrounger' model is a mould in psychology that outlines social foraging tactics often observed among animals on their search for food.
+<br>
+With this minecraft-based experiment we analyze how the model manifests itself among the participants and shine new light on how groups collectively adapt to the fluctuating demands of the environment through specialization and selective imitation, rather than homogeneity and indiscriminate copying of others.
+<br>
+Our employed POV-rendering tools facilitate unprecedented access to a combined analysis of spatial trajectories and visual field data.

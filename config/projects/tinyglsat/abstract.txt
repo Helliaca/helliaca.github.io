@@ -1,0 +1,1 @@
+By leveraging the power of GPU parallelization this hyper-minimal SAT solver outperforms its DPLL-based peers on low-literal SAT problems.

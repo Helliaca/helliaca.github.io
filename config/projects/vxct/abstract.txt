@@ -1,4 +1,4 @@
 Building systems capable of replicating global illumination models with interactive frame-rates has long been one of the toughest conundrums facing computer graphics researchers.
 Voxel Cone Tracing, as proposed by Cyril Crassin et al. in 2011, makes use of mipmapped 3D textures containing a voxelized representation of an environments direct light component to trace diffuse, specular and occlusion cones in linear time to extrapolate a surface fragments indirect light emitted towards a given photo-receptor.
+<br>
 Seemingly providing a well-disposed balance between performance and physical fidelity, this thesis examines the algorithms theoretical side on the basis of the rendering equation as well as its practical side in the context of a self-implemented, OpenGL-based variant.
-Whether if it can compete with long standing alternatives such as radiosity and raytracing will be determined in the subsequent evaluation.

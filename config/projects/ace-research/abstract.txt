@@ -1,0 +1,5 @@
+The nonprofit organization Animal Charity Evaluators (ACE) is optimistic that the coming years will see an increase in high-quality targeted research into animal welfare, so now more than ever there is value in collecting, pruning, and organizing the research such that other researchers and implementing parties – companies, foundations, nonprofits, and government offices among them – can quickly gain an overview of it.
+<br>
+The goal of the ACE Research Library project is to provide ACE with an interface that aids the staff in entering new articles and papers and to provide the visitors of ACE’s website with powerful search and drilldown mechanisms.
+<br>
+The research library has been employed by ACE since 2016 and, thanks to being agnostic of the user, can be used by anyone with similar requirements on their data organization.

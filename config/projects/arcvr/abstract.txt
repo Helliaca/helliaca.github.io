@@ -1,0 +1,4 @@
+The <a href="https://www.mpib-berlin.mpg.de/en" alt="link to mpib">Max Planck Institute for Human Development</a> frequently conducts psychological experiments in VR.
+However, due to wildly varying experiment specifications, there is a distinct lack of tools and frameworks to aid their development.<br>
+ARC-VR is a Unity3D framework that aims to ameliorate the development process by providing any and all basic VR features, such as movement, physics-interaction and UI.
+Thus ensuring the development process doesn't get congested at an early stage with the implementation of redundant, basic VR functionalities.

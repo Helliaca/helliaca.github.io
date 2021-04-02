@@ -1,0 +1,4 @@
+Radiosity is an approximation of the rendering equation commonly employed in the computer graphics industry.
+By dividing a scene's geometry into a series of patches. Their mutual visibility may computed a-priori and baked into a texture, allowing for rendering of real-time global illumination on static geometry.
+<br>
+By leveraging the power of GPU-parallelization, the process of pre-computing the indirect-lighting texture may be sped up considerably. This OpenGL-based prototype explores the advantages, drawback and pitfalls of performing radiosity calculations on the GPU.
