@@ -6,19 +6,31 @@
     </url>
    
    <url>
+       <loc>https://helliaca.github.io/build/projects/arcvr/detailed.html</loc>
+   </url>
+   <url>
        <loc>https://helliaca.github.io/build/projects/vxct/detailed.html</loc>
    </url>
    <url>
-       <loc>https://helliaca.github.io/build/projects/automodelcar/detailed.html</loc>
+       <loc>https://helliaca.github.io/build/projects/producerscrounger/detailed.html</loc>
+   </url>
+   <url>
+       <loc>https://helliaca.github.io/build/projects/rrad/detailed.html</loc>
+   </url>
+   <url>
+       <loc>https://helliaca.github.io/build/projects/portfolio_website/detailed.html</loc>
    </url>
    <url>
        <loc>https://helliaca.github.io/build/projects/convex_polygons/detailed.html</loc>
    </url>
    <url>
-       <loc>https://helliaca.github.io/build/projects/gromacs_bash/detailed.html</loc>
+       <loc>https://helliaca.github.io/build/projects/automodelcar/detailed.html</loc>
    </url>
    <url>
        <loc>https://helliaca.github.io/build/projects/hoi4lotr/detailed.html</loc>
+   </url>
+   <url>
+       <loc>https://helliaca.github.io/build/projects/gromacs_bash/detailed.html</loc>
    </url>
    <url>
        <loc>https://helliaca.github.io/build/projects/sdl2_game/detailed.html</loc>
@@ -27,19 +39,13 @@
        <loc>https://helliaca.github.io/build/projects/soft_matter_vis/detailed.html</loc>
    </url>
    <url>
-       <loc>https://helliaca.github.io/build/projects/arcvr/detailed.html</loc>
+       <loc>https://helliaca.github.io/build/projects/unitypixelshaders/detailed.html</loc>
+   </url>
+   <url>
+       <loc>https://helliaca.github.io/build/projects/ace-research/detailed.html</loc>
    </url>
    <url>
        <loc>https://helliaca.github.io/build/projects/mlcollection/detailed.html</loc>
-   </url>
-   <url>
-       <loc>https://helliaca.github.io/build/projects/portfolio_website/detailed.html</loc>
-   </url>
-   <url>
-       <loc>https://helliaca.github.io/build/projects/producerscrounger/detailed.html</loc>
-   </url>
-   <url>
-       <loc>https://helliaca.github.io/build/projects/rrad/detailed.html</loc>
    </url>
    <url>
        <loc>https://helliaca.github.io/build/projects/sample_project/detailed.html</loc>
@@ -49,9 +55,6 @@
    </url>
    <url>
        <loc>https://helliaca.github.io/build/projects/tinyglsat/detailed.html</loc>
-   </url>
-   <url>
-       <loc>https://helliaca.github.io/build/projects/unitypixelshaders/detailed.html</loc>
    </url>
    <url>
        <loc>https://helliaca.github.io/build/cv.html</loc>
