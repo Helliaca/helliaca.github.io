@@ -4,6 +4,7 @@ import os
 import shlex
 from scripts.parse import parse_all_commands
 from scripts.commands import *
+from scripts.exif_remover import exif_cleanse
 
 init_cmd_dict = {
     "priority": set_priority,
@@ -80,3 +81,6 @@ objects.sort(key=lambda x: x.priority, reverse=True)
 for obj in objects:
     print("> Processing: " + obj.id)
     obj.process()
+
+# REMOVE EXIF tags from all images in the project
+exif_cleanse(".")
