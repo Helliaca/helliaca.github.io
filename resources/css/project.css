@@ -90,6 +90,11 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+    max-width: 75%;
+}
+
+table, th, td {
+  border: 1px solid #888888;
 }
 
 @media screen and (max-width: 1240px) {

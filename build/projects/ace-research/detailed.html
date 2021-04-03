@@ -82,7 +82,7 @@
             <div id="content-container" class="fade-in-diag">
 
                 <div class="project-banner">
-                    <img alt="project banner image" class="project-banner-img" src="config/projects/ace-research/splash.jpg">
+                    <img alt="project banner image" class="project-banner-img" src="config/projects/ace-research/banner.jpg">
                     <div class="project-banner-title">ACE-Research-Library</div>
                     
                 </div>
@@ -109,7 +109,69 @@
                 </div>
 
                 <div class="project-description">
-                    <p>-- WORK IN PROGRESS --</p>
+                    <p>Donations to animal charities are usually not allocated in correspondence of their need. In accordance to the principles of <a href="https://en.wikipedia.org/wiki/Effective_altruism">effective altruism</a>, the possible good done by animal welfare donations should be enhanced by shifting respective donations to be more effective, which is best done by raising awareness and keeping the public informed through organized research papers and evidence.</p>
+<p>Academic research into animal welfare, especially high-quality, quantitative research, is still relatively scarce, but research from areas as diverse as economics, sociology, psychology, marketing, medicine, history, political science, and even computer science can at times inform policy and priorities setting to advance animal welfare.</p>
+<p><img src="config/projects/ace-research/graph.jpg" alt="graph" style="width:50%"></p>
+<p>The nonprofit organization Animal Charity Evaluators (ACE) is optimistic that the coming years will see an increase in high-quality targeted research into animal welfare, so now more than ever there is value in collecting, pruning, and organizing the research such that other researchers and implementing parties – companies, foundations, nonprofits, and government offices among them – can quickly gain an overview of it.</p>
+<p>Just such a repository of annotated research was being maintained by the organization and was publicly accessible on its website. But since it was but a list of links and abstracts organized into twelve broad categories, which was rapidly reaching its limits as the volume of research increased, we proposed a complete rework of their system.</p>
+<p>As a team of 5 we built a customized research library which has been in use under https://animalcharityevaluators.org/researchlibrary/ since 2016. The complete source code can be found under https://github.com/FUB-HCC/ACE-Research-Library.
+The goal of the ACE Research Library project was to provide ACE with an interface that aids the staff in entering new articles and papers and to provide the visitors of ACE’s website with powerful search and drilldown mechanisms. The software is open source and agnostic of the user so that it may be used by anyone with similar requirements on their data organization.</p>
+<h2>Project Scope</h2>
+<p>In detail, we set out to provide:</p>
+<ul>
+<li>a user-friendly interface for the staff for entering research papers into a database that suggests meta data to the staff member based on some that was already entered,</li>
+<li>optionally, Neonion as an alternative input method,</li>
+<li>a programmable API, so the database is agnostic to the frontend that queries it,</li>
+<li>a sample frontend that allows access to the database from a website,</li>
+<li>a full-text search that can efficiently find words and phrases via an index of the linguistically analyzed body text of the research papers, and</li>
+<li>an automatic keyword or topic extraction that provides a more fine-grained alternative to the current categorization and, in ideal cases, automates the keyword annotation.</li>
+</ul>
+<h2>Project Team</h2>
+<h3>Members</h3>
+<p>Our team consisted of:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Degree Course</th>
+<th>Roles</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dominik Bechinie</td>
+<td>Master of math and CS</td>
+<td>Flexible</td>
+</tr>
+<tr>
+<td>Denis Drescher</td>
+<td>Master of CS</td>
+<td>Software architect, customer contact</td>
+</tr>
+<tr>
+<td>Maximilian Göhner</td>
+<td>Master of biology and CS</td>
+<td>Team manager</td>
+</tr>
+<tr>
+<td>Benjamin Kahl</td>
+<td>Bachelor of CS</td>
+<td>Backend Development</td>
+</tr>
+<tr>
+<td>Taras Kolba</td>
+<td>Bachelor of CS</td>
+<td>Frontend Development</td>
+</tr>
+</tbody>
+</table>
+<p>Additionally we were supervised by <a href="https://www.mi.fu-berlin.de/en/inf/groups/hcc/members/professor/mueller-birn.html">Prof. Müller-Birn</a> at the human-centered computing group of the <a href="https://www.fu-berlin.de/en/">FU-Berlin</a>.</p>
+<p><img alt="picture of the team" src="config/projects/ace-research/splash.jpg" /></p>
+<h2>Advanced Technologies</h2>
+<p>Broadly, the project builds on top of <strong>Django</strong> web framework with a wordpress front-end.</p>
+<p>To provide all the tools that would enable us to maintain a modular <strong>MVC architecture</strong>, the separation of concerns that comes with the orthogonality of the modules were essential for us to work independently and minimize our communication overhead. The programmable API was be <strong>RESTful</strong> and built upon the <strong>JSON standard</strong>, which is light in syntax and easy to use from a JavaScript frontend.</p>
+<p>The <strong>Gunicorn</strong> webserver works well with Django and provides high performance. While we use an <strong>Nginx</strong> server as reverse proxy in front of Gunicorn for static file serving and possibly caching, Gunicorn does the heavy lifting of serving the dynamic content. <strong>PostgreSQL</strong> serves as our primary storage. <strong>Whoosh</strong> is our chosen search engine.</p>
+<p>For organization we utilized <strong>Trello</strong> as a Kanban board and <strong>Slack</strong> for communication. We utilized several slack-bots that integrated out workflow tightly with github and trello.</p>
                 </div>
 
             </div>
