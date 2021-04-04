@@ -109,22 +109,23 @@
                 </div>
 
                 <div class="project-description">
-                    <p>Donations to animal charities are usually not allocated in correspondence of their need. In accordance to the principles of <a href="https://en.wikipedia.org/wiki/Effective_altruism">effective altruism</a>, the possible good done by animal welfare donations should be enhanced by shifting respective donations to be more effective, which is best done by raising awareness and keeping the public informed through organized research papers and evidence.</p>
+                    <p>As a team of 5 we built a customized research library which has been in use under https://animalcharityevaluators.org/researchlibrary/ since 2016. The complete source code can be found under https://github.com/FUB-HCC/ACE-Research-Library.
+The goal of the ACE Research Library project was to provide ACE with an interface that aids the staff in entering new articles and papers and to provide the visitors of ACE’s website with powerful search and drilldown mechanisms. The software is open source and agnostic of the user so that it may be used by anyone with similar requirements on their data organization.</p>
+<h2>Motivation</h2>
+<p>Donations to animal charities are usually not allocated in correspondence of their need. In accordance to the principles of <a href="https://en.wikipedia.org/wiki/Effective_altruism">effective altruism</a>, the possible good done by animal welfare donations should be enhanced by shifting respective donations to be more effective, which is best done by raising awareness and keeping the public informed through organized research papers and evidence.</p>
 <p>Academic research into animal welfare, especially high-quality, quantitative research, is still relatively scarce, but research from areas as diverse as economics, sociology, psychology, marketing, medicine, history, political science, and even computer science can at times inform policy and priorities setting to advance animal welfare.</p>
 <p><img src="config/projects/ace-research/graph.jpg" alt="graph" style="width:50%"></p>
 <p>The nonprofit organization Animal Charity Evaluators (ACE) is optimistic that the coming years will see an increase in high-quality targeted research into animal welfare, so now more than ever there is value in collecting, pruning, and organizing the research such that other researchers and implementing parties – companies, foundations, nonprofits, and government offices among them – can quickly gain an overview of it.</p>
 <p>Just such a repository of annotated research was being maintained by the organization and was publicly accessible on its website. But since it was but a list of links and abstracts organized into twelve broad categories, which was rapidly reaching its limits as the volume of research increased, we proposed a complete rework of their system.</p>
-<p>As a team of 5 we built a customized research library which has been in use under https://animalcharityevaluators.org/researchlibrary/ since 2016. The complete source code can be found under https://github.com/FUB-HCC/ACE-Research-Library.
-The goal of the ACE Research Library project was to provide ACE with an interface that aids the staff in entering new articles and papers and to provide the visitors of ACE’s website with powerful search and drilldown mechanisms. The software is open source and agnostic of the user so that it may be used by anyone with similar requirements on their data organization.</p>
-<h2>Project Scope</h2>
-<p>In detail, we set out to provide:</p>
+<h2>Digital Library</h2>
+<p>According to Jeng (2005), "[a] digital library is an information system over a network that is organized and well-managed, and that supports the creation, use, and searching of digital objects. [A] digital library should be looked as a tool that supports user's information task. Users are looking for an information system that is easy and intuitive to use."</p>
+<p>Together we looked at and analyzed a number of existing research-libraries to discern what features would be of the essence. In combination with some user tests we made the primary observations that our features required at least:</p>
 <ul>
-<li>a user-friendly interface for the staff for entering research papers into a database that suggests meta data to the staff member based on some that was already entered,</li>
-<li>optionally, Neonion as an alternative input method,</li>
-<li>a programmable API, so the database is agnostic to the frontend that queries it,</li>
-<li>a sample frontend that allows access to the database from a website,</li>
-<li>a full-text search that can efficiently find words and phrases via an index of the linguistically analyzed body text of the research papers, and</li>
-<li>an automatic keyword or topic extraction that provides a more fine-grained alternative to the current categorization and, in ideal cases, automates the keyword annotation.</li>
+<li>Full text search with auto-complete</li>
+<li>Different categories</li>
+<li>Time-interval filters</li>
+<li>Automatic keyword extraction</li>
+<li>Metadata suggestions</li>
 </ul>
 <h2>Project Team</h2>
 <h3>Members</h3>
@@ -172,6 +173,34 @@ The goal of the ACE Research Library project was to provide ACE with an interfac
 <p>To provide all the tools that would enable us to maintain a modular <strong>MVC architecture</strong>, the separation of concerns that comes with the orthogonality of the modules were essential for us to work independently and minimize our communication overhead. The programmable API was be <strong>RESTful</strong> and built upon the <strong>JSON standard</strong>, which is light in syntax and easy to use from a JavaScript frontend.</p>
 <p>The <strong>Gunicorn</strong> webserver works well with Django and provides high performance. While we use an <strong>Nginx</strong> server as reverse proxy in front of Gunicorn for static file serving and possibly caching, Gunicorn does the heavy lifting of serving the dynamic content. <strong>PostgreSQL</strong> serves as our primary storage. <strong>Whoosh</strong> is our chosen search engine.</p>
 <p>For organization we utilized <strong>Trello</strong> as a Kanban board and <strong>Slack</strong> for communication. We utilized several slack-bots that integrated out workflow tightly with github and trello.</p>
+<p><img alt="picture of backend" src="config/projects/ace-research/backend.jpg" /></p>
+<h2>Backend Structure</h2>
+<p>Over the course of the projects development the underlying database model changed on multiple occasions. We ultimately opted for the model depicted below:</p>
+<p><img alt="picture of database" src="config/projects/ace-research/databasemodel.jpg" /></p>
+<p>The interfaces between front- and back-end were defined at three distinct endpoints.</p>
+<ul>
+<li>The list endpoint for querying certain pages on a complete list of all resources.</li>
+<li>The suggest endpoint for the autocomplete function.</li>
+<li>And, most importantly, the search endpoint.</li>
+</ul>
+<p>Their precise specification is depicted below.</p>
+<p><img alt="picture of endpoints" src="config/projects/ace-research/Endpoints.png" /></p>
+<h2>Quality Control</h2>
+<p>Once the project was nearing completion we conducted several user-tests and interviews with a variety of test subjects.</p>
+<p>Whilst the interviews helped us to outline the desired requirements, user-tests were a powerful form of quality control of our actual product.
+In these, test subjects were given either administrative or end-user related tasks and recorded whilst (attempting) to perform these. The recordings of these can be found <a href="https://www.youtube.com/watch?v=UZcDUCeMcpU&amp;list=PLQu2cPkjtBZiIohj9bTwi721vAKbKdf_0&amp;index=1&amp;ab_channel=MaximilianG%C3%B6hner">here.</a></p>
+<p><img alt="picture of endpoints" src="config/projects/ace-research/QC.jpg" /></p>
+<h2>Git Statistics</h2>
+<p>This video generated with <a href="https://gource.io/">Gource</a> illustrates our development process in highly entertaining (yet also confusing) manner:</p>
+<p style="text-align:center;">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UXepjw-Eudw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+
+<p>Alternatively, this graph displays a rough timeline of github-commits in relation to their respective categories:</p>
+<p><img alt="picture of git stats" src="config/projects/ace-research/git-stats.jpg" /></p>
+<h2>The Product</h2>
+<p>Ultimately our team received high praise from both our supervisor as well as ACE themselves. The completed research library has been in use under <a href="https://animalcharityevaluators.org/researchlibrary/#/">animalcharityevaluators.org/researchlibrary</a> since 2016 and continues to be frequently updated and maintained.</p>
+<p><img alt="picture of library site" src="config/projects/ace-research/product.jpg" /></p>
                 </div>
 
             </div>
