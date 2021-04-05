@@ -1,1 +1,4 @@
-<embed style="width: 80%; height:calc(100% - 10px); margin-left: 10%;" src="resources/BKahl_cv_DE.pdf" width="500" height="375" type="application/pdf">
+<object style="width: 80%; height:calc(100% - 10px); margin-left: 10%;" data="resources/BKahl_cv_DE.pdf" width="500" height="375" type="application/pdf">
+It looks like your browser doesn't support pdf-objects. Click on the link below to download the pdf instead:<br>
+<a href="resources/BKahl_cv_DE.pdf" class="no-fade">DOWNLOAD</a>
+</object>

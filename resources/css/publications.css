@@ -24,6 +24,7 @@
 .pub-img-container img {
     position: relative;
     margin: auto;
+    width: 100%;
 }
 
 .pub-img-container a {
