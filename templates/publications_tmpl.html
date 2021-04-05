@@ -90,7 +90,7 @@
                     <div class="pub-container">
                         <div class="pub-img-wrapper">
                             <div class="pub-img-container">
-                                <a href="$insert pub_pdf_path$" alt="link to publication pdf">
+                                <a href="$insert pub_pdf_path$" class="no-fade" alt="link to publication pdf">
                                     $if pub_thumbnail_path$<img src="$insert pub_thumbnail_path$">$endif$
                                     $ifnot pub_thumbnail_path$<i class="far fa-file-pdf"></i>$endif$
                                 </a>
@@ -99,7 +99,7 @@
                         <div class="pub-text-wrapper">
                             <div class="pub-text-container">
                                 <div class="pub-title">
-                                    <b><a href="$insert pub_pdf_path$" alt="link to publication pdf">$insert pub_title$</a></b>
+                                    <b><a href="$insert pub_pdf_path$" class="no-fade" alt="link to publication pdf">$insert pub_title$</a></b>
                                 </div>
                                 <div class="pub-authors">
                                     <i>$insert pub_authors$</i>
@@ -116,31 +116,31 @@
                         </div>
                         <div class="pub-links-wrapper">
                             <div class="pub-links-container">
-                                <div class="pub-pdf-link">
+                                <div class="pub-pdf-link" class="no-fade">
                                     <a href="$insert pub_pdf_path$" alt="link to publication pdf"><i class="far fa-file-pdf"></i> $if pub_pdf_path_text$$insert pub_pdf_path_text$$endif$$ifnot pub_pdf_path_text$pdf$endif$</a>
                                 </div>
                                 $if pub_pdf_path2$
-                                <div class="pub-pdf-path">
+                                <div class="pub-pdf-path" class="no-fade">
                                     <a href="$insert pub_pdf_path2$" alt="link to publication pdf"><i class="fas fa-archive"></i> $if pub_pdf_path2_text$$insert pub_pdf_path2_text$$endif$$ifnot pub_pdf_path2_text$pdf$endif$</a>
                                 </div>
                                 $endif$
                                 $if pub_archive_path$
-                                <div class="pub-archive-path">
+                                <div class="pub-archive-path" class="no-fade">
                                     <a href="$insert pub_archive_path$" alt="link to publication pdf"><i class="fas fa-archive"></i> $if pub_archive_path_text$$insert pub_archive_path_text$$endif$$ifnot pub_archive_path_text$archive$endif$</a>
                                 </div>
                                 $endif$
                                 $if pub_archive_path2$
-                                <div class="pub-archive-path">
+                                <div class="pub-archive-path" class="no-fade">
                                     <a href="$insert pub_archive_path2$" alt="link to publication pdf"><i class="fas fa-archive"></i> $if pub_archive_path2_text$$insert pub_archive_path2_text$$endif$$ifnot pub_archive_path2_text$archive$endif$</a>
                                 </div>
                                 $endif$
                                 $if pub_external_path$
-                                <div class="pub-external-path">
+                                <div class="pub-external-path" class="no-fade">
                                     <a href="$insert pub_external_path$" alt="link to publication pdf"><i class="fas fa-external-link-alt"></i> $if pub_external_path_text$$insert pub_external_path_text$$endif$$ifnot pub_external_path_text$external$endif$</a>
                                 </div>
                                 $endif$
                                 $if pub_external_path2$
-                                <div class="pub-external-path">
+                                <div class="pub-external-path" class="no-fade">
                                     <a href="$insert pub_external_path2$" alt="link to publication pdf"><i class="fas fa-external-link-alt"></i> $if pub_external_path2_text$$insert pub_external_path2_text$$endif$$ifnot pub_external_path2_text$external$endif$</a>
                                 </div>
                                 $endif$
@@ -157,7 +157,7 @@
                     <div class="pub-container">
                         <div class="pub-img-wrapper">
                             <div class="pub-img-container">
-                                <a href="$insert pub_pdf_path$" alt="link to publication pdf">
+                                <a href="$insert pub_pdf_path$" alt="link to publication pdf" class="no-fade">
                                     $if pub_thumbnail_path$<img src="$insert pub_thumbnail_path$">$endif$
                                     $ifnot pub_thumbnail_path$<i class="far fa-file-pdf"></i>$endif$
                                 </a>
@@ -166,7 +166,7 @@
                         <div class="pub-text-wrapper">
                             <div class="pub-text-container">
                                 <div class="pub-title">
-                                    <b><a href="$insert pub_pdf_path$" alt="link to publication pdf">$insert pub_title$</a></b>
+                                    <b><a href="$insert pub_pdf_path$" class="no-fade" alt="link to publication pdf">$insert pub_title$</a></b>
                                 </div>
                                 <div class="pub-authors">
                                     <i>$insert pub_authors$</i>
@@ -184,31 +184,31 @@
                         <div class="pub-links-wrapper">
                             <div class="pub-links-container">
                                 <div class="pub-pdf-link">
-                                    <a href="$insert pub_pdf_path$" alt="link to publication pdf"><i class="far fa-file-pdf"></i> $if pub_pdf_path_text$$insert pub_pdf_path_text$$endif$$ifnot pub_pdf_path_text$pdf$endif$</a>
+                                    <a href="$insert pub_pdf_path$" class="no-fade" alt="link to publication pdf"><i class="far fa-file-pdf"></i> $if pub_pdf_path_text$$insert pub_pdf_path_text$$endif$$ifnot pub_pdf_path_text$pdf$endif$</a>
                                 </div>
                                 $if pub_pdf_path2$
                                 <div class="pub-pdf-path">
-                                    <a href="$insert pub_pdf_path2$" alt="link to publication pdf"><i class="fas fa-archive"></i> $if pub_pdf_path2_text$$insert pub_pdf_path2_text$$endif$$ifnot pub_pdf_path2_text$pdf$endif$</a>
+                                    <a href="$insert pub_pdf_path2$" class="no-fade" alt="link to publication pdf"><i class="fas fa-archive"></i> $if pub_pdf_path2_text$$insert pub_pdf_path2_text$$endif$$ifnot pub_pdf_path2_text$pdf$endif$</a>
                                 </div>
                                 $endif$
                                 $if pub_archive_path$
                                 <div class="pub-archive-path">
-                                    <a href="$insert pub_archive_path$" alt="link to publication pdf"><i class="fas fa-archive"></i> $if pub_archive_path_text$$insert pub_archive_path_text$$endif$$ifnot pub_archive_path_text$archive$endif$</a>
+                                    <a href="$insert pub_archive_path$" class="no-fade" alt="link to publication pdf"><i class="fas fa-archive"></i> $if pub_archive_path_text$$insert pub_archive_path_text$$endif$$ifnot pub_archive_path_text$archive$endif$</a>
                                 </div>
                                 $endif$
                                 $if pub_archive_path2$
                                 <div class="pub-archive-path">
-                                    <a href="$insert pub_archive_path2$" alt="link to publication pdf"><i class="fas fa-archive"></i> $if pub_archive_path2_text$$insert pub_archive_path2_text$$endif$$ifnot pub_archive_path2_text$archive$endif$</a>
+                                    <a href="$insert pub_archive_path2$" class="no-fade" alt="link to publication pdf"><i class="fas fa-archive"></i> $if pub_archive_path2_text$$insert pub_archive_path2_text$$endif$$ifnot pub_archive_path2_text$archive$endif$</a>
                                 </div>
                                 $endif$
                                 $if pub_external_path$
                                 <div class="pub-external-path">
-                                    <a href="$insert pub_external_path$" alt="link to publication pdf"><i class="fas fa-external-link-alt"></i> $if pub_external_path_text$$insert pub_external_path_text$$endif$$ifnot pub_external_path_text$external$endif$</a>
+                                    <a href="$insert pub_external_path$" class="no-fade" alt="link to publication pdf"><i class="fas fa-external-link-alt"></i> $if pub_external_path_text$$insert pub_external_path_text$$endif$$ifnot pub_external_path_text$external$endif$</a>
                                 </div>
                                 $endif$
                                 $if pub_external_path2$
                                 <div class="pub-external-path">
-                                    <a href="$insert pub_external_path2$" alt="link to publication pdf"><i class="fas fa-external-link-alt"></i> $if pub_external_path2_text$$insert pub_external_path2_text$$endif$$ifnot pub_external_path2_text$external$endif$</a>
+                                    <a href="$insert pub_external_path2$" class="no-fade" alt="link to publication pdf"><i class="fas fa-external-link-alt"></i> $if pub_external_path2_text$$insert pub_external_path2_text$$endif$$ifnot pub_external_path2_text$external$endif$</a>
                                 </div>
                                 $endif$
                             </div>

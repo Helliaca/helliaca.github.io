@@ -87,7 +87,7 @@
 
                         $forall$
                             $if is_artwork$
-                                <a href="$insert image_path$"><div class="image-entry"><img src="$insert image_path$" alt="thumbnail of larger image"></div></a>
+                                <a href="$insert image_path$" class="no-fade"><div class="image-entry"><img src="$insert image_path$" alt="thumbnail of larger image"></div></a>
                             $endif$
                         $endfor$
 
@@ -102,7 +102,7 @@
                         <span id="moreArtwork">
                             $forall$
                                 $if is_artwork_secondary$
-                                    <a href="$insert image_path$"><div class="image-entry"><img src="$insert image_path$" alt="thumbnail of larger image"></div></a>
+                                    <a href="$insert image_path$" class="no-fade"><div class="image-entry"><img src="$insert image_path$" alt="thumbnail of larger image"></div></a>
                                 $endif$
                             $endfor$
                         </span>
@@ -114,11 +114,11 @@
                                 $if is_webshader$
 
                                     $if preview_video_path$
-                                    <a href="https://www.shadertoy.com/view/$insert shadertoy_id$"><div class="image-entry"><video class="preview-video" width="auto" height="100%"><source src="$insert preview_video_path$" type="$if preview_video_type$$insert preview_video_type$$endif$$ifnot preview_video_type$video/webm$endif$" /></video></div></a>
+                                    <a href="https://www.shadertoy.com/view/$insert shadertoy_id$" class="no-fade"><div class="image-entry"><video class="preview-video" width="auto" height="100%"><source src="$insert preview_video_path$" type="$if preview_video_type$$insert preview_video_type$$endif$$ifnot preview_video_type$video/webm$endif$" /></video></div></a>
                                     $endif$
 
                                     $ifnot preview_video_path$
-                                    <a href="https://www.shadertoy.com/view/$insert shadertoy_id$"><div class="image-entry"><img src="https://www.shadertoy.com/media/shaders/$insert shadertoy_id$.jpg" alt="thumbnail of larger image"></div></a>
+                                    <a href="https://www.shadertoy.com/view/$insert shadertoy_id$" class="no-fade"><div class="image-entry"><img src="https://www.shadertoy.com/media/shaders/$insert shadertoy_id$.jpg" alt="thumbnail of larger image"></div></a>
                                     $endif$
 
                                 $endif$
