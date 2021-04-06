@@ -2,7 +2,7 @@ import os
 import PIL.Image
 from scripts.ed.exif_delete import run_exif_delete
 
-filetypes = [".jpg", ".png", ".jpeg", ".gif", ".tiff"]
+filetypes = [".jpg", ".png", ".jpeg", ".tiff"]
 
 def exif_cleanse(dir):
     exif_files = []
