@@ -117,41 +117,50 @@ After choosing an adequate material and filling in some gaps in the geometry, I 
 
 # Design prototypes
 
-Tried Adobe Xd, used photoshop instead
+## First attempts
 
-Came up with the following 3 designs: (ballpit, ortho and whitemesh)
+With a suitable background chosen, the design-phase could commence properly. I tried giving 'Adobe Xd' a try since it is widely used in the web-development industry, but ended up sticking to regular old Photoshop instead.
 
-Liked nr. 3 the most, but not entirely satisfied.
+I produced one design for each of the three background types:
 
-Looked at references some more, saw the common theme of an underlying simple (usually grey or dark-blue) background. TOgether with the increase in popularity of dark-mode websites, I decided to create a darker variant of the whitemesh.
+<img style="width: 100%; max-width: 100%;" alt="img of designs" src="config/projects/portfolio_website/designs.jpg">
 
-I noticed that the angle in the background were all roughly around 36deg, which is the angle of a "golden triangle". I liked this conincidence and decided to make this angle a common theme for my UI design. In pratice, the angle ended up being closer to 31deg though.
+Design \#1 looked decent to me, with the blurred background on containers being a highlight. However, upon further inspection, the color scheme was way too vibrant for the intended purpose. The highly saturated mix of purple and bright-blue seemed too funky for a portfolio-website and trying to tone down the colors made the design bland.
 
-Created new design based on it. Liked it. Created designs for sub-pages. On we go.
+\#2 was a significantly more minimalistic style that might be applicable to a long scrolling background. It was, however \#3 which I personally liked the most. I found that using the angular arrangement of the background picture to dictate the website's layout a neat idea and the subsurface-based background provided a distinct but not over-the-top theme. Yet I still wasn't fully satisfied, and decided to keep iterating upon it.
 
-Implemented it in html and css
+## Final design
+
+After looking at some references from other developers I noticed something that most of them had in common: These websites were usually built with a mono-colored or simple gradient (usually grey or dark-blue) as the background. This provided a clean and flexible look and played into the recent popularity of 'dark-mode' websites. I decided to follow suit, and apply a darker color to design \#3 as well as simplify it a fair amount. The result was the following:
+
+![img of design](config/projects/portfolio_website/final_design.jpg)
+
+Although I was afraid it might be a little 'edgy', the design did ultimately satisfy me, so I proceeded to implement it in HTML and CSS. I also created designs based on it for the sub-pages of this website (projects, publications, more etc.). Now it was time to start populating it with content.
 
 
 # Python framework
 
-I dont like over-engineered solutions. An SQL -database backend would be exactly that.
+I'm not a big fan of over-engineered solutions, and to build an SQL database backend and serve its content dynamically would be exactly that. Instead I decided to base my website on static HTML with a semi-dynamic python backend.
 
-Instead I decided to make a semi-dynamic backend. (Only static html, but I could regenarate it by running python script anytime)
+There are a variety of libraries, such as Jekyll, which accomplish this goal. I decided to build my own, mostly for fun.
 
-I realize there are exisitng frameworks like Jekyll (?) and whatnot, but mostly for fun I decided to build my own.
+The framework would consist of a simple *build.py* script which, when executed, would build the website by parsing settings-objects and filling them into templates, similarly to how Django works.
 
-The framework would consist of template-files and configuration-files ("objects").
+## Templates
+
+The templates work as they do in django. They are pre-built HTML files with dynamic tokens that are filled
 
 Template files would be similar to those used in django, and provide following tokens:
 
-if X, ifnot X, forall and insert X
+- `§if X§ A §endif§`: If 'X' is defined as a variable within the current context, insert 'A' here.
+- `§ifnot X§ A §endif§`: If 'X' is not defined as a variable within the current context, insert 'A' here.
+- `§forall§ A §endfor§`: Insert 'A' here for all objects that are defined
+- `§insert X§`: Insert the value of variable 'X' here.
 
-cfg-files would set variable values in either a local or global context/namespace. They could then use these values to fill templates.
-Values could not just be static string, but also read from txt files or converted from markdown to html.
+Variables can be set by cfg-files and are divided into two namespaces. Globally set variables are set, as the name indicates, across all files and templates. Locally set variables are only valid for that specific file/object. Values can be set to a static string but also read from text-files or converted from markdown to html.
 
-If you wanna see how a file like this looks like, check out the cfg-file for this very project:
-(...)
+If you want to see how one of these cfg-files looks like, take a look at the [file for this very page](config/projects/portfolio_website/portfolio_website.cfg).
 
-Build.py would build scan the config directory for all cfg-files and execute their respective commands, thus building the website.
+The `build.py` script scans the projects `config/` directory for cfg files and executes their respective commands in order of their priority.
 
-Additionally it would remove metadata from all pictures.
+Additionally, the script also checks for meta-data in image files, and offers to remove these.
