@@ -109,12 +109,52 @@
                 </div>
 
                 <div class="project-description">
-                    <h1>VXCT</h1>
-<h2>What does it do?</h2>
+                    <h1>What does it do?</h1>
 <p>VXCT is an OpenGL 4.5 based implementation of the Voxel Cone Tracing rendering algorithm.</p>
 <p>It allows for easy visualization of all data utilized during the process such as 3D textures, individual lighting components and more. Customized scenes and models can be defined and loaded into the rendering environment with ease.</p>
 <p>The development took place as part of a Bachelor's thesis at the <a href="https://www.fu-berlin.de/">Freie Universität Berlin</a>. A revised and corrected version of said thesis can be viewed and used as a form of documentation <a href="https://drive.google.com/file/d/1ZS57rgKCYl-T-sqEzVSDuj0E7VQEB6EY/view?usp=sharing">here.</a></p>
 <p><img alt="Example Pictures" src="https://i.imgur.com/TSqa8XK.jpg" /></p>
+<h1>Global Illumination</h1>
+<p>The last decades have brought forth an ever-increasing need of photorealistic image synthesis within various fields such as virtual reality (VR), visual effects (VFX) and video games. The Rendering Equation, formulated by James Kajiya in 1989, describes a generalized mathematical model that has served as an underlying basis for a wide range of shader-based rendering algorithms.</p>
+<p>The challenge in solving the rendering equation through approximation originates from the plethora of light-based phenomena that can occur in the real world, such as caustics, light-scattering or refraction. One particular phenomenon has continuously fallen into the spotlight with a multitude of solutions having been invented for it: Indirect light.</p>
+<p>Going mostly unnoticed in people’s everyday life, indirect light surrounds every aspect of environment illumination. Without it, all the parts of a room not facing a window would be in absolute darkness. Mirrors would simply display a blank, silver color with no reflection image and a simple umbrella would plunge the area underneath into a total twilight. Mathematical models that tackle the issue of indirect light are called <em>global illumination</em> models.</p>
+<p><img alt="pic of models" src="config/projects/vxct/ill_models_top.jpg" /></p>
+<h2>Raytracing and Radiosity</h2>
+<p>The <a href="https://en.wikipedia.org/wiki/Rendering_equation">Rendering Equation</a> generalizes the rendering problem in an integral equation well-suited for computer graphics applications. However, given that the equation is both infinitely recursive and includes a hemispherical integral, makes it impossible to fully compute in any reasonable timespan. Instead, we need to find suitable <em>approximations</em> to it.</p>
+<h3>Raytracing</h3>
+<p>Raytracing is possibly the simplest approach towards approximating the rendering equation. Instead of a hemispherical integral we simply compute a weighted sum of a finite amount of rays and rather than perform infinite recursive steps, we only count up to limited amount of recursive light-bounces.</p>
+<p>The results are highly photorealistic, but despite the generous simplifications cannot be computed quickly. The tremendous amount of ray-triangle intersections that need to be performed for any sizeable scene makes this method ill suited for realtime applications, such as games.</p>
+<h3>Radiosity</h3>
+<p>The radiosity approach makes use of the finite element method by subdividing the environment’s geometry into a series of smaller, subdivided surfaces. A coefficient, the <em>view factor</em>, is calculated and assigned to each pair of surfaces. It describes the degree of their mutual visibility. With the help of these pre-computed view factors, indirect (and direct) light can be baked directly into the geometry in a series of passes. This process takes a significant amount of time, but the result can then be saved into a texture.</p>
+<p>The a-priori computed light-texture is simple to render in real-time and is valid for all possible camera-angles. The problem is that only diffuse reflections are accounted for and that the geometry has to be static (it cannot be moved).</p>
+<p><img alt="pic of models" src="config/projects/vxct/add1.jpg" /></p>
+<h2>Voxel Cone Tracing</h2>
+<p><em>Voxel Cone Tracing</em> is an algorithm introduced by Crassin et al. in 2011 which can compute both diffuse indirect light as well as specular reflections in realtime.</p>
+<p>The <a href="https://en.wikipedia.org/wiki/Phong_reflection_model">Phong reflection model</a> is used to compute direct light. On top of this we compute separate indirect-diffuse, indirect-specular and shadow layers with the help of <em>cone traces</em>.</p>
+<p><img alt="pic of models" src="config/projects/vxct/models.jpg" /></p>
+<p><img alt="pic of models" src="config/projects/vxct/vxct_flow.jpg" /></p>
+<p>Unlike raytracing or radiosity, voxel cone tracing is less of a theoretical approach, and more 'algorithmic trickery' by cleverly employing hardware acceleration concepts that were initially intended for different uses.</p>
+<h3>Cone Tracing</h3>
+<p>'Cone traces' are performed by volume ray marching along a given direction. With each step we sample the surrounding volume for surfaces and retrieve their emitted direct light.</p>
+<p><img alt="pic of models" src="config/projects/vxct/cone_trace.jpg" /></p>
+<p>These volume sampling steps are done on a 3D mipmap of the voxelized, phong-rendered scene. By using mipmaps, we can quickly read out a rough approximation of the average reflected color within a volume. As the diameter of the volume increases we simply decrease the LOD of the respective mipmap. In a 2D environment, this is roughly how it would look like:</p>
+<p><img alt="pic of models" src="config/projects/vxct/2dcone.jpg" /></p>
+<h3>Voxelization</h3>
+<p>All indirect light heading through the cone’s body towards its origin can be estimated by simply averaging the direct light reflected by any surfaces the cone encounters. Consequently, the scene’s direct, diffuse lighting data (calculated using Phong) will first have to be injected into a corresponding 3D texture of the scene. The task at hand is thus, to convert a scene composed of triangle meshes into a 3d grid representation of their Phong-model colors. Utilizing the benefits of GPU acceleration by voxelizing the scene directly on the GPU itself through the use of shaders, can greatly improve the time required for this process. To start, a 3D texture of RGBA voxels is created on the GPU with all RGBA values being equal to 0.</p>
+<p><img alt="pic of models" src="config/projects/vxct/3d_tex_example.jpg" /></p>
+<p>A  fragment  shader  is  executed  at  least  once  for  every  fragment that maps onto a to-be-rendered triangle.  In this sense, by applying an ortho-graphic projection matrix in the vertex shader, each call of the fragment shader will, in essence, correspond to a voxel projected onto said triangle.  The size of the corresponding 3D texture is equal to the fragment resolution that is being rendered, or rather, the resolution of the viewport. The execution of this process as a graphics pipeline on the GPU enables an almost instantaneous voxelization of any modestly sized scene onto a reasonably small 3Dtexture (such as 64x64x64).</p>
+<p><img alt="pic of models" src="config/projects/vxct/voxelization.jpg" /></p>
+<p>However, as described so far, the rasterization process will voxelize the scene only from one direction, which can leave large gaps in the 3D texture if surfaces are not facing the camera. For this reason, we must first undergo a <em>dominant axis selection</em> process.</p>
+<p><img alt="pic of models" src="config/projects/vxct/3wayprojection.jpg" /></p>
+<p>The overall process is summarized in the following graph:</p>
+<p><img alt="pic of models" src="config/projects/vxct/summary.jpg" /></p>
+<h1>Implementation</h1>
+<p>The implementation my thesis is based on was done using OpenGL 4.5 in C++. The overall dataflow of the program looks like this:</p>
+<p><img alt="pic of models" src="config/projects/vxct/data_flow.jpg" /></p>
+<p>I applied some shader trickery to end up with slightly better results in my shadow, specular and diffuse BRDFS:</p>
+<p><img alt="pic of models" src="config/projects/vxct/diffuse_brdf.jpg" />
+<img alt="pic of models" src="config/projects/vxct/spec_brdf.jpg" />
+<img alt="pic of models" src="config/projects/vxct/occ_brdf.jpg" /></p>
 <h1>Instructions</h1>
 <h2>Setup</h2>
 <p>If you are looking to only run this application without making code-based changes, simply head on over to the github releases tab and download the newest version. Make sure your GPU and driver are compatible with OpenGL 4.5.</p>

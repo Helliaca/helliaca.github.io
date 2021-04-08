@@ -1,6 +1,4 @@
-# VXCT
-
-## What does it do?
+# What does it do?
 
 VXCT is an OpenGL 4.5 based implementation of the Voxel Cone Tracing rendering algorithm.
 
@@ -9,6 +7,86 @@ It allows for easy visualization of all data utilized during the process such as
 The development took place as part of a Bachelor's thesis at the [Freie Universität Berlin](https://www.fu-berlin.de/). A revised and corrected version of said thesis can be viewed and used as a form of documentation [here.](https://drive.google.com/file/d/1ZS57rgKCYl-T-sqEzVSDuj0E7VQEB6EY/view?usp=sharing)
 
 ![Example Pictures](https://i.imgur.com/TSqa8XK.jpg)
+
+# Global Illumination
+
+The last decades have brought forth an ever-increasing need of photorealistic image synthesis within various fields such as virtual reality (VR), visual effects (VFX) and video games. The Rendering Equation, formulated by James Kajiya in 1989, describes a generalized mathematical model that has served as an underlying basis for a wide range of shader-based rendering algorithms.
+
+The challenge in solving the rendering equation through approximation originates from the plethora of light-based phenomena that can occur in the real world, such as caustics, light-scattering or refraction. One particular phenomenon has continuously fallen into the spotlight with a multitude of solutions having been invented for it: Indirect light.
+
+Going mostly unnoticed in people’s everyday life, indirect light surrounds every aspect of environment illumination. Without it, all the parts of a room not facing a window would be in absolute darkness. Mirrors would simply display a blank, silver color with no reflection image and a simple umbrella would plunge the area underneath into a total twilight. Mathematical models that tackle the issue of indirect light are called *global illumination* models.
+
+![pic of models](config/projects/vxct/ill_models_top.jpg)
+
+## Raytracing and Radiosity
+
+The [Rendering Equation](https://en.wikipedia.org/wiki/Rendering_equation) generalizes the rendering problem in an integral equation well-suited for computer graphics applications. However, given that the equation is both infinitely recursive and includes a hemispherical integral, makes it impossible to fully compute in any reasonable timespan. Instead, we need to find suitable *approximations* to it.
+
+### Raytracing
+
+Raytracing is possibly the simplest approach towards approximating the rendering equation. Instead of a hemispherical integral we simply compute a weighted sum of a finite amount of rays and rather than perform infinite recursive steps, we only count up to limited amount of recursive light-bounces.
+
+The results are highly photorealistic, but despite the generous simplifications cannot be computed quickly. The tremendous amount of ray-triangle intersections that need to be performed for any sizeable scene makes this method ill suited for realtime applications, such as games.
+
+### Radiosity
+
+The radiosity approach makes use of the finite element method by subdividing the environment’s geometry into a series of smaller, subdivided surfaces. A coefficient, the *view factor*, is calculated and assigned to each pair of surfaces. It describes the degree of their mutual visibility. With the help of these pre-computed view factors, indirect (and direct) light can be baked directly into the geometry in a series of passes. This process takes a significant amount of time, but the result can then be saved into a texture.
+
+The a-priori computed light-texture is simple to render in real-time and is valid for all possible camera-angles. The problem is that only diffuse reflections are accounted for and that the geometry has to be static (it cannot be moved).
+
+![pic of models](config/projects/vxct/add1.jpg)
+
+## Voxel Cone Tracing
+
+*Voxel Cone Tracing* is an algorithm introduced by Crassin et al. in 2011 which can compute both diffuse indirect light as well as specular reflections in realtime.
+
+The [Phong reflection model](https://en.wikipedia.org/wiki/Phong_reflection_model) is used to compute direct light. On top of this we compute separate indirect-diffuse, indirect-specular and shadow layers with the help of *cone traces*.
+
+![pic of models](config/projects/vxct/models.jpg)
+
+![pic of models](config/projects/vxct/vxct_flow.jpg)
+
+Unlike raytracing or radiosity, voxel cone tracing is less of a theoretical approach, and more 'algorithmic trickery' by cleverly employing hardware acceleration concepts that were initially intended for different uses.
+
+### Cone Tracing
+
+'Cone traces' are performed by volume ray marching along a given direction. With each step we sample the surrounding volume for surfaces and retrieve their emitted direct light.
+
+![pic of models](config/projects/vxct/cone_trace.jpg)
+
+These volume sampling steps are done on a 3D mipmap of the voxelized, phong-rendered scene. By using mipmaps, we can quickly read out a rough approximation of the average reflected color within a volume. As the diameter of the volume increases we simply decrease the LOD of the respective mipmap. In a 2D environment, this is roughly how it would look like:
+
+![pic of models](config/projects/vxct/2dcone.jpg)
+
+### Voxelization
+
+All indirect light heading through the cone’s body towards its origin can be estimated by simply averaging the direct light reflected by any surfaces the cone encounters. Consequently, the scene’s direct, diffuse lighting data (calculated using Phong) will first have to be injected into a corresponding 3D texture of the scene. The task at hand is thus, to convert a scene composed of triangle meshes into a 3d grid representation of their Phong-model colors. Utilizing the benefits of GPU acceleration by voxelizing the scene directly on the GPU itself through the use of shaders, can greatly improve the time required for this process. To start, a 3D texture of RGBA voxels is created on the GPU with all RGBA values being equal to 0.
+
+![pic of models](config/projects/vxct/3d_tex_example.jpg)
+
+A  fragment  shader  is  executed  at  least  once  for  every  fragment that maps onto a to-be-rendered triangle.  In this sense, by applying an ortho-graphic projection matrix in the vertex shader, each call of the fragment shader will, in essence, correspond to a voxel projected onto said triangle.  The size of the corresponding 3D texture is equal to the fragment resolution that is being rendered, or rather, the resolution of the viewport. The execution of this process as a graphics pipeline on the GPU enables an almost instantaneous voxelization of any modestly sized scene onto a reasonably small 3Dtexture (such as 64x64x64).
+
+![pic of models](config/projects/vxct/voxelization.jpg)
+
+However, as described so far, the rasterization process will voxelize the scene only from one direction, which can leave large gaps in the 3D texture if surfaces are not facing the camera. For this reason, we must first undergo a *dominant axis selection* process.
+
+![pic of models](config/projects/vxct/3wayprojection.jpg)
+
+The overall process is summarized in the following graph:
+
+![pic of models](config/projects/vxct/summary.jpg)
+
+# Implementation
+
+The implementation my thesis is based on was done using OpenGL 4.5 in C++. The overall dataflow of the program looks like this:
+
+![pic of models](config/projects/vxct/data_flow.jpg)
+
+I applied some shader trickery to end up with slightly better results in my shadow, specular and diffuse BRDFS:
+
+![pic of models](config/projects/vxct/diffuse_brdf.jpg)
+![pic of models](config/projects/vxct/spec_brdf.jpg)
+![pic of models](config/projects/vxct/occ_brdf.jpg)
 
 # Instructions
 
