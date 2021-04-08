@@ -1,7 +1,3 @@
--- WORK IN PROGRESS --
-
-(Intro)
-
 Building myself a personal portfolio website has long been on my todo-list. Despite not really being a web-developer or designer, I made the decision to build the whole thing from scratch.
 
 For starters, I would have to come up with a suitable design that would match a general theme of computer-graphics, whilst maintaining a degree of professionalism and cleanness.
