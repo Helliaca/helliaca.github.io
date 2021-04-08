@@ -1,12 +1,82 @@
-# AutoModelCar Simulator
-
-## What does it do?
-
 The AutoModelCar-Simulator is a [Unity3D](https://unity.com/) and [RosSharp](https://github.com/siemens/ros-sharp)-based simulator of the [AutoModelCar](https://github.com/AutoModelCar/AutoModelCarWiki/wiki).
 
 It allows you to easily run and test simple ROS nodes in a virtual environment without requiring access to an actual AutoModelCar. The environment provided closely resembles the conditions found at the [FU-Berlin](https://www.fu-berlin.de/) robotics laboratory.
 
 A PDF documenting the development and inner workings of the application can be viewed [here.](https://github.com/Helliaca/AutoModelCar_Simulator/blob/master/AutoModelCarSimulator.pdf)
+
+# Context
+
+The [AutoNOMOS Model](https://github.com/AutoModelCar/AutoModelCarWiki/wiki) car is a 1:10 model vehicle developed at the Freie Universität Berlin for educational purposes. Equipped with the sensors most commonly used in self-driving cars, it is meant to be programmed to drive fully autonomously. To students, these are only available in limited numbers and only whilst present at the FU-Berlin robotics laboratory. The goal of this project is to provide a simulation that allows students to run and test their programs without immediate access to an actual AMC unit.
+
+Most freely distributed simulation frameworks are based on complex physics-modelling meant to provide a high degree of physical fidelity. The down-scaled and simplified nature of the AMC makes most of this complexity redundant and computationally expensive. Phenomena such as oversteering or understeering rarely occur within the limited confines of the AMC model due to the highly limited speed and weight possibilities. In addition, to the unnecessarily complex physics-computations, precise  measurements of the vehicles physical parameters, such as weight distribution, suspension geometry and friction coefficients are required for a simulation to run smoothly. These values are not always readily available or can be subject to change. This simulator provides a mathematically lightweight,  real-time simulation alternative designed specifically for usage with an AutoNOMOS Modelcar. The completed project as well as its documentation can be found [here](https://github.com/Helliaca/AutoModelCar_Simulator)
+
+![picture of AMC](config/projects/automodelcar/AMC.jpg)
+<div class="subtitle">The "AutoNOMOS Model" Car (AMC) positioned at a starting line</div>
+
+# Goals
+
+We set a list of clearly defined requirements the application aims to fulfill. In detail, the software needs to provide:
+
+- Support for most common sensor types. Notably LiDAR, camera, GPS and motor-ticks.
+- A reasonable approximation of real-world sensor data, given a respective virtual environment.
+- A reasonable approximation for car movement relative to values passed to actuators.
+- Allow controller programs to run like regular ROS nodes, making a real AMC and a simulated one interchangeable at will.
+- Support for multi-car simulations.
+- Allow additional sensors to be mounted on vehicles or placed arbitrarily into the environment.
+- Allow obstacles and other environmental objects to be placed or moved at will.
+- Allow for easy adaptability in case of changes to the car. (Such as different ROS topic names or datatypes)
+- Provide the same results independent of client hardware or simulation performance.
+- A simple and user-friendly UI that requires no expertise in how the underlying code functions.
+
+# Results
+
+Here's a video comparison of the same ROS code (a simple obstacle-avoidance program) running on both a real AMC as well as a simulated one: (Please excuse the horrendous compression artifacts)
+
+<p style="text-align:center;">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0-lc6--KMSQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+
+And here's is how the camera images look like:
+
+![picture of AMC](config/projects/automodelcar/pics.jpg)
+<div class="subtitle">Camera images in reality (left) and the simulator (right) as well as a respective binary image for line-detection.</div>
+
+# Implementation
+
+## API
+
+As outlined with the goals above, a primary feature of the simulator is its interchangeability with a real AMC unit. For this reason the simulator subscribes and publishes to a number of ROS topics by using a series of bridging APIs:
+
+![img of api map](config/projects/automodelcar/APIs.jpg)
+
+On the Unity3D side, *RosSharp* allows easy integration of ROS topics with the C# components of Unity. On the other side, Rosbridge then manages the actual connection with the ROS topics manipulated by the running algorithms.
+
+As for the topics themselves, our simulator went through iterations but we ultimately settled on the following list of topics for each vehicle, which closely resembles the topics utilized by actual AMC units:
+
+![img of api map](config/projects/automodelcar/topics.jpg)
+
+## Ackermann Model
+
+At any given time, the differential rotation and position of a simulated car is derived from the Ackermann steering model.
+
+Initially developed by Georg Lankensperger in 1817 and subsequently patented by  Rudolph Ackermann in 1818, the Ackermann model is designed to solve the problem of two wheels having different turning radii despite being on the same axle of a four-wheeled vehicle. For the purposes of this simulation we utilize it to calculate the expected turning circle of a car, provided that parameters such as inter-wheel distances and steering angles are available. Working under the assumption that a vehicle solely moves in a circular path around a point dramatically simplifies the required calculations for movement prediction.
+
+![img of api map](config/projects/automodelcar/ackermann.jpg)
+
+## Program Structure
+
+A globally defined *Anchor* object acts as the central hub that all simulation components are connected to. The *RosConnector* object, used to publish and subscribe to topics, is referenced here as well as an API for console output. In addition, a list of props and cars define the additional objects present in the scene. Props are simple obstacle objects with a 3D model and defined collision boundaries. Cars act exactly the same as props, except that they can also be moved through the steering- and speed-topics.
+
+![img of api map](config/projects/automodelcar/structure.jpg)
+
+## Simulation Environment
+
+In order to ensure reasonable fidelity of a cars camera images, we reconstructed the FU-Berlin robotics laboratory as a virtual simulation environment. The 3D models and their UV coordinates were created using Blender. Textures were condensed from a series of reference-photographs as well as images from the public domain. Once assembled, regular Unity-native tools and shaders were used to apply appropriate lighting to these objects.
+
+![img of api map](config/projects/automodelcar/enviro.jpg)
+
+
+# Documentation
 
 ## How to get started?
 
