@@ -245,7 +245,8 @@ The `settings.txt` file lists following values:
 ```
 RosBridgeServer_Url: Url of the rosbridge server
 RosBridgeServer_Timeout: Time in seconds before connection timeout to rosbridge server
-RosBridgeServer_Protocol: Protocol to use for rosbridge server connection. Values can be "Web_Socket_Sharp" or "Web_Socket_NET"
+RosBridgeServer_Protocol: Protocol to use for rosbridge server connection.
+        Values can be "Web_Socket_Sharp" or "Web_Socket_NET"
 
 OnStart_Spawn_Car: Spawn a car once the program starts. true/false
 OnStart_Car_SpawnLocation_X: X coordinate of where to spawn that car (float)
