@@ -86,9 +86,7 @@ In these, test subjects were given either administrative or end-user related tas
 
 This video generated with [Gource](https://gource.io/) illustrates our development process in highly entertaining (yet also confusing) manner:
 
-<p style="text-align:center;">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/UXepjw-Eudw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</p>
+[Youtube Link](https://www.youtube.com/watch?v=UXepjw-Eudw)
 
 Alternatively, this graph displays a rough timeline of github-commits in relation to their respective categories:
 

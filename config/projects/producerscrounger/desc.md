@@ -1,13 +1,8 @@
 -- WORK IN PROGRESS --
 
-(TODO: Short intro into producer scroungers)
-
 Here's our project leader, [Charley Wu](https://charleywu.github.io/), giving a talk on our project as part of the Cognition, Collectives, and Human Culture workshop for [CogSci 2020](https://cognitioncollectivesandculture.github.io/theme1/2020/07/29/CharleyWu.html):
 
-<p style="text-align:center;">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/_rDE49k1ENM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</p>
-
+[Youtube Link](https://www.youtube.com/watch?v=_rDE49k1ENM)
 
 # Producers and Scroungers
 
@@ -17,9 +12,7 @@ Collective search is an important and widespread phenomenon across biological sy
 
 Here's a classic example of this model in action made by Keynan, Ridley & Lotem (2014):
 
-<p style="text-align:center;">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/B1h1mDgSjOc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</p>
+[Youtube Link](https://www.youtube.com/watch?v=B1h1mDgSjOc)
 
 Its quite clear that this model doesn't just manifest itself among animals in the search for food, but also within many aspects of modern society, examples of which can be seen time and time again. For instance, in the world of video games, developer corporations will quickly pounce on suddenly surging trends started by someone else. The genres auf *battle royale*, *autochess* or *MOBA* all had their roots in minor projects made by small-time developers or hobbyists. Yet, once successful, a manifold of large-scale corporations quickly jumped on these bandwagons by releasing their own versions. (PUBG, Fortnite, TFT, Underlords, LoL, Dota2 and many others)
 
@@ -39,7 +32,7 @@ Yet the majority of these results are derived from simulations, with little expe
 
 Using *Minecraft*, which by itself fits neatly into the producer-scrounger model, we developed an experiment for studying collective search in human groups.
 
-(TODO: short experiment specification)
+Four players are placed on a field of melons (or pumpkins). When harvested, these fruits can either yield a reward or nothing at all. For melons, the rewards tend to be clustered together while with pumpkins they are scattered at random. Every time a player finds a reward a blue splash signals this to the other players.
 
 As in natural environments, the task imposes a limited field of view, which creates a resource allocation problem: visual attention can either be allocated to focus on individual exploration or to look towards peers for social imitation. At the heart of this task is a social coordination problem, where too many imitators can cause a collapse in both individual and group fitness (Rogers, 1988).
 
@@ -48,6 +41,7 @@ As in natural environments, the task imposes a limited field of view, which crea
 ### Framework
 
 (TODO: Forge mod structure and features)
+The vast majority of Minecraft modding is done Java and, as such, we opted for the "Forge" mod loader to do most of the heavy lifting for us.
 
 (TODO: Visual of fireworks video and stuff)
 

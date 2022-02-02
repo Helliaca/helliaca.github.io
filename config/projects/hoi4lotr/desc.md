@@ -16,9 +16,7 @@ Upon release the mod very quickly exploded in popularity, despite [Old World Blu
 
 It has been showcased and played by large number of popular HoI4 content creators and streamers. Here is popular youtuber *Alex The Rambler* giving his best to survive while playing as Isengard:
 
-<p style="text-align:center;">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/le_TmXKHV7g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</p>
+[Youtube Link](https://www.youtube.com/watch?v=le_TmXKHV7g)
 
 Other popular youtubers include [Pravus](https://www.youtube.com/watch?v=MZABMk9pBDw), [ISP](https://www.youtube.com/watch?v=QlsU93XQbPc) and [Rimmy](https://www.youtube.com/watch?v=LyCC3-nLb8c), although the latter two regarded the mod more critically, particularly the seemingly absurd alternate-history paths.
 

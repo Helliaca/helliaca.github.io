@@ -11,9 +11,6 @@ My first two ideas were to either create a 'Deus Ex'-style polygonal pattern or 
 
 As my primary inspiration I took a Deus Ex: MD wallpaper by [limb0ist on deviantart](https://www.deviantart.com/limb0ist/art/Deus-Ex-MD-abstract-wallpaper-525676724) as well as the splash screen image of the [Unity 2020 Editor](https://blogs.unity3d.com/es/2020/02/27/an-update-on-our-gdc-2020-plans/):
 
-<img style="width: 50%;" alt="Deus ex style" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e21dcca4-4037-45f3-8c4c-4b9a53dc6bc5/d8oz2r8-5111687d-05f8-4534-b838-217c00a8a0f7.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvZTIxZGNjYTQtNDAzNy00NWYzLThjNGMtNGI5YTUzZGM2YmM1XC9kOG96MnI4LTUxMTE2ODdkLTA1ZjgtNDUzNC1iODM4LTIxN2MwMGE4YTBmNy5qcGcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.gLjuvdbIYoDx7Ru64qRpped_Op-_xOcVmdIraMAMhp8">
-<img style="width: 50%;" alt="Unity 2020 splash image" src="https://blogs.unity3d.com/wp-content/uploads/2020/02/Unity-GDC2020-BlogHeader-01.png">
-
 
 ## Methodolgy
 
