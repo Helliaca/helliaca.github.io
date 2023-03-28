@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>BK - RTRAD</title>
+
+    <!-- Base path -->
+    <base href="../../../">
+
+    <!-- Meta data -->
+    <meta charset="UTF-8">
+    <meta name="author" content="Benjamin Kahl">
+    <meta name="keywords" content="Benjamin, Kahl, Helliaca">
+    <meta name="description" content="Personal Website of Benjamin Kahl aka Helliaca">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="resources/favicon.ico"/>
+
+    <!-- Regular css sheets -->
+    <link rel="stylesheet" href="resources/css/common.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/topbar.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/body.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/projects.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/project.css" type="text/css">
+
+    <!-- Font awesome sheet  -->
+    <link rel="stylesheet" href="resources/fontawesome-free-5.15.3-web/css/all.css" type="text/css">
+
+    <!-- Fade-in-out module -->
+    <link rel="stylesheet" href="resources/fade-in-out/fade-in-out.css" type="text/css">
+    <script src="resources/fade-in-out/jquery-3.6.0.min.js"></script>
+    <script src="resources/fade-in-out/fade-in-out.js"></script>
+
+    <!-- Mobile-menu module -->
+    <script src="resources/responsive.js"></script>
+</head>
+
+<body onunload="">
+    <div id="root">
+
+        <!-- TOPBAR -->
+        <div id="topbar-container">
+
+            <!-- TOPBAR LOGO -->
+            <a href="index.html"><div id="topbar-logo">
+                <h1>BENJAMIN KAHL</h1>
+            </div></a>
+
+            <!-- TOPBAR SOCIAL MEDIA ICONS -->
+            <div id="topbar-socialmedia">
+                <a href="https://mailhide.io/e/c44uRMcF" onclick="popup=window.open('https://mailhide.io/e/c44uRMcF','mailhidepopup','width=580,height=635'); return false;"  class="fas fa-envelope" aria-label="Send email"></a>
+                <a href="https://github.com/Helliaca" class="fab fa-github" aria-label="Github link"></a>
+                <a href="https://www.linkedin.com/in/benjamin-kahl-97a56a20a/" class="fab fa-linkedin-in" aria-label="Linkedin link"></a>
+                <a href="https://www.deviantart.com/helliaca" class="fab fa-deviantart" aria-label="Deviantart link"></a>
+            </div>
+
+            <!-- TOPBAR LINKS/NAV -->
+            <div id=topbar-links>
+                <a href="build/more.html" aria-label="Link to see miscellaneous content"><div class="topbar-link"><div class="topbar-link-text"> MORE </div></div></a>
+                <a href="build/publications.html"><div class="topbar-link"><div class="topbar-link-text"> PUBLICATIONS </div></div></a>
+                <a href="build/cv.html"><div class="topbar-link"><div class="topbar-link-text"> CV </div></div></a>
+                <a href="build/projects.html"><div class="topbar-link active"><div class="topbar-link-text"> PROJECTS </div></div></a>
+                <a href="index.html"><div class="topbar-link"><div class="topbar-link-text"> HOME </div></div></a>
+            </div>
+
+            <!-- NAVBAR FOR MOBILE -->
+            <a href="javascript:void(0);" class="no-fade" id="topbar-mobile-menu" onclick="toggleMobileMenu()"><div><i class="fa fa-bars"></i></div></a>
+            <div id="topbar-links-mobile">
+                <a href="index.html"><div class="topbar-link-mobile"> HOME </div></a>
+                <a href="build/projects.html"><div class="topbar-link-mobile"> PROJECTS </div></a>
+                <a href="build/cv.html"><div class="topbar-link-mobile"> CV </div></a>
+                <a href="build/publications.html"><div class="topbar-link-mobile"> PUBLICATIONS </div></a>
+                <a href="build/more.html" aria-label="Link to see miscellaneous content"><div class="topbar-link-mobile"> MORE </div></a>
+            </div>
+
+
+        </div>
+
+        <!-- BODY -->
+        <div id="body-container">
+
+            <div id="content-container" class="fade-in-diag">
+
+                <div class="project-banner">
+                    <img alt="project banner image" class="project-banner-img" src="config/projects/rtrad/banner_4x.jpg">
+                    <div class="project-banner-title">RTRAD</div>
+                    <div class="project-banner-subtitle">Hardware-accelerated Radiosity using RTX</div>
+                </div>
+
+                <div class="project-toolbar">
+                    <div class="project-toolbar-back">
+                        <a href="build/projects.html" class="fas fa-arrow-alt-circle-left"></a>
+                    </div>
+
+                    <div class="project-toolbar-links">
+                        <a href="https://raw.githubusercontent.com/Helliaca/RTRad/main/MT-11.pdf" class="far fa-file-pdf no-fade"></a>
+                        
+                        <a href="https://github.com/Helliaca/RTRad" class="fab fa-github no-fade"></a>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </div>
+
+                <div class="project-description">
+                    <h1>RTRad</h1>
+<h2>What is it?</h2>
+<p>RTRad is an enhanced implementation of <em>progressive refinement radiosity</em> using Nvidia's RTX technology to accelerate visibility calculations.</p>
+<p>The project is built on <a href="https://github.com/NVIDIAGameWorks/Falcor/releases/tag/4.4">Falcor 4.4</a> and contains a highly configureable pipeline.
+GI lightmaps can be generated in a variety of different ways and individual data components can easily be visualized. Custom scenes and models can be defined and loaded into the rendering environment using the <code>.pyscene</code> format.</p>
+<p>The development took place as part of a Masters's thesis at the <a href="https://www.fu-berlin.de/">Freie Universität Berlin</a>. The thesis contains a detailed account on all features and requirements and can be viewed as a form of documentation <a href="https://github.com/Helliaca/RTRad/blob/main/MT-11.pdf">here</a>.</p>
+<p>Here's a simple demonstration video that serves as an overview:</p>
+<p><a href="https://www.youtube.com/watch?v=84rVIG8G1Eg"><img alt="Demo Video" src="https://i.imgur.com/aFJFiaD.png" /></a></p>
+<h1>Instructions</h1>
+<h2>Setup</h2>
+<p>If you are looking to run this application without making code-based changes, simply head on over to the <a href="https://github.com/Helliaca/RTRad/releases">github releases tab</a> and download the newest version. Make sure you have a GPU which supports DirectX Raytracing with a reasonably recent driver installed.</p>
+<p>For a development setup you can use newer versions of Visual Studio, but you will need to have Visual Studio 2019 installed in order to build the original Falcor 4.4 from source.
+You also need:</p>
+<ul>
+<li>Windows 10 version 20H2 (October 2020 Update) or newer</li>
+<li><a href="https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk/">Windows 10 SDK (10.0.19041.0) for Windows 10, version 2004</a></li>
+</ul>
+<p>Once you've got those:
+- Clone the git repository
+- Go into <code>/Tools</code> and run <code>update_dependencies.bat</code>
+- Open the sln file in Visual Studio, if VS asks you if you want to upgrade the project, select "No Upgrade" on all options
+- Right click the "RTRad" project and click on "Set us Startup Project"
+- Select the "Debug D3D12" configuration
+- Start/Build the project</p>
+<h3>Common issues</h3>
+<p>Some issues can occur whilst setting things up. Ultimately, make sure that you:</p>
+<ul>
+<li>Have all the dependencies installed (VS2019 and Windows 10 SDK)</li>
+<li>Have selected the "Debug D3D12" configuration</li>
+<li>Have RTRad selected as your startup project</li>
+<li>If you <code>Right-Click &gt; Properties</code> any of the two projects (Falcor and RTRad) it should have "10.0.19041.0" as the Windows SDK version and "Visual Studio 2019 (v142)" as the Platform Toolset.</li>
+<li>The C++ Language Standard should be "ISO C++ 17 Standard"</li>
+<li>Falcor's configuration type should be set to "Dynamic Library (.dll)" and RTRad to "Application (.exe)"</li>
+<li>Make sure there are no whitepsaces in your working directory</li>
+</ul>
+<h2>Generating Lightmaps</h2>
+<p>Once you get the project running, you will see a basic scene with a GUI.</p>
+<p>The upper left-most panel will let you run a new radiosity pass (corresponding to one bounce of light) or reset back to zero.
+The upper right-most panel lets you select a resolution for the lightmap. Stick to low resolutions unless you use one of the faster methods/variants listed further below.</p>
+<p>In the bottom left you can set "Batching Settings", which determine how many pixels (ie. radiosity patches) are processed before returning control back to the CPU. If you experience crashes or freezes, try lowering the batch-size. Passes generally run faster with the largest batch-size you can get away with (depends on GPU).</p>
+<p>You can press "F2" to toggle the GUI and "P" to bring up the profiler. Whilst the profiler is active, the pass-time of the current (ie. last) pass will be displayed on the bottom of the "RTRad" panel.</p>
+<p><img alt="RTRad UI" src="https://i.imgur.com/SeQu51h.jpg" /></p>
+<h3>Methods</h3>
+<p>There are roughly 4 different variants of progressive radiosity you can execute:</p>
+<ul>
+<li><em>Pure Progressive Radiosity</em> by selecting the integral type as "Area" and sampling method to be "None". This executes a complete radiosity pass where all other patches area sampled to calculate lighting contribution. This method provides the best lighting but is prohibitive for larger lightmaps.</li>
+<li><em>Undersampled</em> by selecting the integral type as "Area" and sampling settings to be one of the three "Undersampling" options, "Monte-Carlo" generally provides the best results. You will also have to select a "Sampling Window". The larger this one is, the faster the algorithm will run. I generally recommend a 1/128 ratio between lightmap resolution and sampling window, which will let you compute large lightmaps in a fairly small time with virtually no cost in visual fidelity.</li>
+<li><em>Adaptive Subdivision</em> by selecting the integral type as "Area" and sampling settings as "Adaptive Subdivision". This is a mostly slower version of Undersampling but which can provide lightmaps that require smaller memory by packing them into quad-trees. The speed of this algorithm will depend on how the max. node size and gradient threshold interact with the scene composition and is generally hard to predict accurately.</li>
+<li><em>Hemispheric</em> by selecting the integral type as "Hemispheric". This is generally the fastest method and best-suited for very large lightmaps. Unfortunately, it can provide unsatisfactory results in scenes with small light-sources. You can select how many samples you shoot for each pixel in the lightmap, though the method is fast enough so that you can leave this at the maximum value of 1024.</li>
+</ul>
+<p>Here's a simple comparison (lightmap of 256x256 pixels):</p>
+<p><img alt="Comparison Image" src="https://i.imgur.com/x3L759V.png" /></p>
+<blockquote>
+<p><strong><em>NOTE:</em></strong> The <em>first</em> pass you execute after loading a scene can be slower than subsequent ones, because the acceleration structure needs to be rebuilt.</p>
+</blockquote>
+<h3>Visualizing Data</h3>
+<p>You can select what data you want visualized in which way by adjusting the "Visualization Settings". You can select which texture and mipmap to display, in addition to showing the texture's resolution and alpha channel.</p>
+<p>Textures can be rendered as a model, or as masked / unmasked UV-textures. You can also toggle the bilinear magnification filter.</p>
+<p>Here are some examples of what data can be visualized: (Left-to-right: normal vectors, voxel-map, texture resolution and alpha-embedded quad-tree)</p>
+<p><img alt="Visualization Examples" src="https://i.imgur.com/e9TCewt.png" /></p>
+<h3>Scene Management</h3>
+<p>In the "Scene Settings" panel you can adjust a scene to your liking as well as view useful information on the geometry and acceleration structures.</p>
+<p>To load a new scene, you can click on the "Load Scene" button and navigate to the <code>Source/RTRad/Scenes</code> directory to select any of the <code>.pyscene</code> files.</p>
+<p>RTRad comes with six different testing scenes to cover a wide variety of use-cases:</p>
+<p><img alt="Scenes Overview" src="https://i.imgur.com/eGupPwt.jpg" /></p>
+<p>To create your own scene, simply create a new <code>.pyscene</code> file and adjust it to your liking. Refer to the <a href="https://falcor.docsforge.com/master/usage/scenes/">python-scene-files documentation</a> for further details.</p>
+<blockquote>
+<p><strong><em>NOTE:</em></strong> For a scene to work out-of-the-box with RTRad it needs non-overlapping UV coordinates (for lightmaps) in the UV0 channel.</p>
+</blockquote>
+<!---
+Note: Here's an archived link to the documentation page in case it gets taken down or changes:
+https://web.archive.org/web/20200924030604/https://falcor.docsforge.com/master/usage/scene-formats/
+-->
+
+<h3>Extra Features</h3>
+<p>RTRad comes with a number of additional features such as visiblity caching, sew-seams and voxel-raymarching. Here's a rough overview:</p>
+<ul>
+<li><em>Viscaching</em>: This option is available for lightmaps of 512x512 and below. When enabled, visibility information is cached, making the very first pass slower, but subsequent passes significantly faster.</li>
+<li><em>SewSeams</em>: When enabled, each radiosity pass will be followed up by a SewSeams pass, which fixes some of the leaking shadow on geometry edges.</li>
+<li><em>Voxel-Raymarching</em>: You can substitute ray-traces by marching through a voxelmap instead. This is usually slower <em>and</em> less accurate, but serves as a point-of-reference.</li>
+<li><em>Conservative Rasterization</em>: You can create the initial input textures by utilizing conservative rasterization. This will make the Sew-Seams pass redundant, but only works if your primitves generally occupy more than one pixel in the UV lightmap.</li>
+</ul>
+<p><img alt="Image" src="https://i.imgur.com/hB4Bq5a.jpg" /></p>
+<h3>License</h3>
+<p>This project is licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a> whilst its underlying framework (Falcor 4.4) has its <a href="https://github.com/Helliaca/RTRad/blob/main/Source/Falcor/LICENSE.md">own license</a>.</p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
