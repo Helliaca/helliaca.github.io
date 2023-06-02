@@ -154,27 +154,19 @@ input#showSecondaryProjects:checked ~ label#showSecondaryProjectsLabel {
     transform: scale(1.15);
 }
 
-@media screen and (max-width: 1240px) {
-    .project-img-wrapper {
+@media screen and (max-width: 760px) {
+	.project-img-wrapper {
         margin: 0px auto;
         width: 90%;
     }
-
-    .project-text-wrapper {
+	
+	.project-text-wrapper {
         width: 100%;
     }
-
+	
     .project-container {
-        display: block;
-    }
-    .small-project-container {
-        width: 40%;
-    }
-}
-
-@media screen and (max-width: 680px) {
-    .project-container {
-        margin: 0px 0px;
+		display: block;
+        margin: 25px 25px;
     }
     .small-projects-container {
         margin: 0px 0px;
