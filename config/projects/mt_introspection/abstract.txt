@@ -1,0 +1,1 @@
+An OpenSesame-based study based on timed binary choices and mouse-tracking.

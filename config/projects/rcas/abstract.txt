@@ -1,4 +1,3 @@
-The <a href="https://www.mpib-berlin.mpg.de/en" alt="link to mpib">Max Planck Institute for Human Development</a> frequently conducts psychological experiments in VR.
-However, due to wildly varying experiment specifications, there is a distinct lack of tools and frameworks to aid their development.<br>
-ARC-VR is a Unity3D framework that aims to ameliorate the development process by providing any and all basic VR features, such as movement, physics-interaction and UI.
-Thus ensuring the development process doesn't get congested at an early stage with the implementation of redundant, basic VR functionalities.
+With the rising popularity of standalone, mobile VR headsets, cognitive studies are more difficult to run, since the experimenter cannot control or see the view of the participant.
+RCAS (Remote-Control-And-Streaming) is a Unity framework intended to enable remote control of an application running on a remote mobile VR headset in addition to live-streaming the VR view.
+Developed as a freelance project for the Max Planck Institute for Human Cognitive and Brain Sciences, it is lightweight and allows for an image to be streamed from a mobile VR headset to a phone or other device in addition to allowing the experimented to control the experiment through RCE as well as retrieved any data recorded on the headset.

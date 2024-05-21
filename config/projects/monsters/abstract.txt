@@ -1,4 +1,2 @@
-The <a href="https://www.mpib-berlin.mpg.de/en" alt="link to mpib">Max Planck Institute for Human Development</a> frequently conducts psychological experiments in VR.
-However, due to wildly varying experiment specifications, there is a distinct lack of tools and frameworks to aid their development.<br>
-ARC-VR is a Unity3D framework that aims to ameliorate the development process by providing any and all basic VR features, such as movement, physics-interaction and UI.
-Thus ensuring the development process doesn't get congested at an early stage with the implementation of redundant, basic VR functionalities.
+The Runners Study is in many ways similar to the 'Statues' or 'Red Light, Green Light' games. Four animated monsters advancew on the participant at different speeds. By using eye-tracking, the participant can stop one of these monsters by looking at it. The monsters have different colors and patterns, which correlate with a monster's speed. 
+The purpose of the study is to investigate whether embedding the learning process in performing instrumental actions, where all the relationships they need to learn about are always visible to them, can help with the learning of cue-outcome relationships in young children.
