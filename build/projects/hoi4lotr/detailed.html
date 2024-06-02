@@ -113,19 +113,61 @@
 <p>I believe that it was precisely this unusual clash of settings that lead to this mods unusually high popularity. At first glance, the grim, bloody and industrial reality of world war 2 seems completely unsuitable to the lovely, fantasy-setting of LotR, where near-unkillable paragons regularly fend of hordes of distinctly evil enemies.</p>
 <p>However, upon further inspection it seems to me that LotR has at least <em>some</em> general themes that don't completely miss-align with common world-war narratives. While Tolkien seemingly denied having drawn inspiration from his experiences of both world wars, the same cannot be said for Peter Jackson and his ever-popular movie adaptations.</p>
 <p>Within the context of this mod, merely depicting the orcs in Moria as communists or Mordor as a fascist state seems absurd, yet since it isn't completely devoid of logic or analogy, a joke is born.</p>
-<p>Here are some of my favorite events from the mod which we wrote up in a (hopefully) humorous fashion:</p>
-<p><img alt="image of events" src="config/projects/hoi4lotr/events.jpg" /></p>
-<h3>Reception</h3>
-<p>Upon release the mod very quickly exploded in popularity, despite <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1303741106">Old World Blues</a>, one of HoI4's most popular mods of all time being released about a week earlier.</p>
-<p>It has been showcased and played by large number of popular HoI4 content creators and streamers. Here is popular youtuber <em>Alex The Rambler</em> giving his best to survive while playing as Isengard:</p>
-<p><a href="https://www.youtube.com/watch?v=le_TmXKHV7g">Youtube Link</a></p>
-<p>Other popular youtubers include <a href="https://www.youtube.com/watch?v=MZABMk9pBDw">Pravus</a>, <a href="https://www.youtube.com/watch?v=QlsU93XQbPc">ISP</a> and <a href="https://www.youtube.com/watch?v=LyCC3-nLb8c">Rimmy</a>, although the latter two regarded the mod more critically, particularly the seemingly absurd alternate-history paths.</p>
-<p>Unfortunately, I've struggled to keep the mod up-to-date with the current version of the game, nevermind introducing new content updates. Thankfully some community members have stepped up and provided much needed support on github or elsewhere.</p>
-<p>Despite the lackluster updates, the mod has amassed (at the time of writing) a total of over 250.000 unique visitors, a steady amount of over 60.000 subscribers and over 1.700 positive ratings. Here are it's lifetime stats on the steam workshop:</p>
-<p><img alt="graph" src="config/projects/hoi4lotr/stats.png" /></p>
-<p>The mod is available on the <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1314446921">steam workshop</a> as well as on <a href="https://github.com/Helliaca/HoI4-LotrMod">github</a>.</p>
-<p>To finish off, here's two infantry divisions of the army of Gondor stationed at Osgiliath, presumably worried about what is to come.</p>
-<p><img alt="screenshot" src="config/projects/hoi4lotr/division.jpg" /></p>
+<h3>Features</h3>
+<p>After remaining in somewhat of a coma for several years, the mod has enjoyed a ressurgence starting in 2022.</p>
+<p>One of the first things I tackled after this reboot was the tech tree. I spent a long time experimenting around in photohop, trying to come up with a suitable design and produce/find the necessary assets for it. I believe the end result looks quite good!</p>
+<p><img alt="image of techtree" src="config/projects/hoi4lotr/tech_tree.jpg" /></p>
+<p>Subsequently, I got to work on reworking our unit-models. Up until this point, our models had been reskins of the base HoI4 infantry model with rifles replaced by crossbows.</p>
+<p>I opted to import sword+shield animations from Mixamo, and create adequate models for the mixamo rig. To complement this, I also went through the effort using custom scripts to re-map a set of spear+shield animations from the Unreal Marketplace onto this new rig.</p>
+<p>One of the biggest challenges with models has been to maintain them reasonably low-poly. Despite the endevaour, I believe we're getting out a lot from models that are, at most 5k triangles in size.</p>
+<p><img alt="image of unitmodels" src="config/projects/hoi4lotr/unitmodels.png" /></p>
+<p>Another major step I took with the rework, was our brand-new map.</p>
+<p>The most commonly used tool for map-generation in the HoI4 modding community is MapGen. However, MapGen always generates a brand-new map, with entirely new province-ids, state-ids etc. As such, one key challenge was to build a number of custom tools that could port all our old content (states, focus trees, units etc.) from the old map to the new one.</p>
+<p>In addition, I took the liberty of making big changes to HoI4's default map shaders and introduce a fancy zoom-out effect that transitions the map from terrain, into a drawn paper-map.</p>
+<p>In my opinion, custom shaders are heavily under-utilized in HoI4 modding, and I believe it helped make our mod look good as well as feel unique and immersive.</p>
+<p>The lack of custom shaders in HoI4  modding is not without reason. I too had to overcome several hurldes and think outside the box to come up with a solution. I ended up using the alpha-channel of the cityemissive texture to store a greyscale version of the painted map. This alpha channel is usually reserved for city-lights during night, but I disabled those entirely as they didn't really fit the theme of our mod anyway.
+Then, I used some arbitrary shader hokus-pokus to inject color into the drawn paper map to yield the final result.</p>
+<p>I believe the result was worth it, as the aesthetics of our mod, and particularly our map, have been held in high praise by many players.</p>
+<p><img alt="image of map" src="config/projects/hoi4lotr/map.jpg" /></p>
+<p>Another major selling-point of our mod is it's revamped Ring-mechanic.</p>
+<p>Believe me, this took <em>a lot</em> of scripting to get working. Using a dynamic map, a scripted GUI displays the route and location of the fellowship of the ring at any given time (including different paths), as well as the members. If the fellowship passes through a country's territory, the country can assemble a hunting party (consisting of the country's unit leaders) and attack said fellowship.</p>
+<p>Despite being a little too RNG-based, this mechanic is a fantastic example of how procedural storytelling can take place in strategy games. It's led to some absolutely amazing (and even outright hilarious) occurences taking place. It also serves as a great foundation to include a plethora of interactions for various countries.</p>
+<p><img alt="image of map" src="config/projects/hoi4lotr/ring_mech.jpg" /></p>
+<p>Our advisor rework has likewise been very well received. As with all the UX reworks I have done, the aesthetics have been praised, and the uniqueness of some advisor traits has also found favor among many players.</p>
+<p><img alt="image of map" src="config/projects/hoi4lotr/advisors.jpg" /></p>
+<p>Speaking of aesthetics, our custom equipment designers are a more recent addition that I'm also a little too smug about ;)</p>
+<p><img alt="image of map" src="config/projects/hoi4lotr/designers.jpg" /></p>
+<p>There are many, many other aspects of the mod that I've worked on, but it's a few too many to list them all here (and always expanding), so here's an arbitrary collection of screenshots!</p>
+<p>Our Ithilien Crisis mechanic:</p>
+<p><img alt="image of map" src="config/projects/hoi4lotr/ithilien_crisis.png" /></p>
+<p>Our custom MIOs / Guilds:</p>
+<p><img alt="image of map" src="config/projects/hoi4lotr/mios.png" /></p>
+<p>Our Elven Assembly mechanic:</p>
+<p><img alt="image of map" src="config/projects/hoi4lotr/assembly.png" /></p>
+<p>Our Galadriel's Mirror mechanic:</p>
+<p><img alt="image of map" src="config/projects/hoi4lotr/mirror.png" /></p>
+<p>Our Elven Factions mechanic:</p>
+<p><img alt="image of map" src="config/projects/hoi4lotr/loth_factions.png" /></p>
+<p>Our Gondor peasant uprising:</p>
+<p><img alt="image of map" src="config/projects/hoi4lotr/gondor_uprising.png" /></p>
+<p>Some of our custom achievements:</p>
+<p><img alt="image of map" src="config/projects/hoi4lotr/achievements.jpg" /></p>
+<h3>Coverage</h3>
+<p>The mod has remained on page 2 of the most subscribed mods of HoI4 for several years. Since the reboot, it's been on a steady trend upwards.</p>
+<p>At the time of writing it is sitting at around 110.000 subscribers and over 8800 favourites, with a total unique subscriber count of over 250.000.</p>
+<p>It's brought to life several sub-mods, including translations but also expansions and entire spinoff-mods. Here are some of my favourites:</p>
+<ul>
+<li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3103846888">Lord of the Rings: Expanded</a></li>
+<li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3130209860">Lord of the Rings: Northern Wastes</a></li>
+<li><a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3110380978">LOTR: Third Age Redux</a></li>
+</ul>
+<p>It's also received significant coverage from some of HoI4's most well-known content creators, including (but not limited to):</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=lque6c_ipzo">Alex the Rambler</a></li>
+<li><a href="https://www.youtube.com/watch?v=1TIEFEgF0lU">TommyKay</a></li>
+<li><a href="https://www.youtube.com/watch?v=QlsU93XQbPc">iSorrowproductions</a></li>
+</ul>
+<p>The mod's development remains active and maintains a thriving discord community that organizes regular multiplayer games. I am very excited to continue seeing this project grow!</p>
                 </div>
 
             </div>
