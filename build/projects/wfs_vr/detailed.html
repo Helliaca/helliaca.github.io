@@ -109,7 +109,191 @@
                 </div>
 
                 <div class="project-description">
-                    <p>-- WORK IN PROGRESS --</p>
+                    <h1>Integration of WFS Spatial Audio with Unity VR Projects</h1>
+<h1>1 Premise</h1>
+<p>Wave field synthesis (WFS) is an audio rendering technique that creates virtual acoustic environments by
+simulating sound waves. Loudspeaker arrays synthesize artificial wavefronts that seem to originate from a
+given start-point by super-imposing a large set of individual, elementary sound-waves.</p>
+<p>Such systems have the potential to provide an unprecedented amount of immersion for behavioral studies
+that are audio-sensitive and utilize VR.</p>
+<p>Due to their high cost, complexity and sensitivity to room acoustics, WFS systems are hitherto seldom used
+and have not yet reached market maturity. This novelty and limited accessibility opens up a new front of
+research thus far untrodden in the field of psychology.</p>
+<p>Unlike commonly available, software-based spatial audio solutions such asSteam Audio^1 orDolby Atmos^2 ,
+WFS-based systems do not rely on HRTFs. As such, WFS systems are agnostic to the listener and
+circumvent the inter-subject variability that inhibit the reliability of HRTF-based systems^3 in behavioural
+studies.</p>
+<h2>1.1 Goals</h2>
+<p>As an initial stepping-stone, we seek to combine WFS into a simple VR-based experiment that measures
+how accurately participants perceive the origin-points of artificial wavefronts. Further points of interest
+include (but are not limited to) which factors affect localization-accuracy, which advantages and limitations
+WFS systems have over their more accessible counterparts, and which type of studies would benefit most
+from it’s integration.</p>
+<h2>1.2 WFS Setup</h2>
+<p>The employed WFS setup consists of four arrays of 16 loudspeakers each, arranged into a square with
+a surface area of 2×2m. Inside this area the participant can move around freely and hear the virtual
+sounds-sources.</p>
+<p>All speakers are at the same height, thus only allowing the spatial rendering to be done on a XZ-plane at
+this height.</p>
+<p>They are complemented by 3 subwoofers positioned on the ground.</p>
+<p>(^1) https://valvesoftware.github.io/steam-audio/
+(^2) https://www.dolby.com/technologies/dolby-atmos/
+(^3) https://pubmed.ncbi.nlm.nih.gov/20496243/</p>
+<p>Figure 1:The employed WFS setup. The area marked in black tape corresponds to the WFS-area the participant
+can move around in.</p>
+<p>Figure 2:Difference between WFS-space and virtual-space: Whilst the participant can only move around and hear
+the artificial wave-fronts inside a 2×2m area, the size of the virtual environment (where virtual objects sound sources
+can be placed) extends far beyond.</p>
+<h1>2 Initial Prototype</h1>
+<p>As a first step, a simple prototype was assembled that takes the form of a simple task where the participant
+is placed into a virtual environment (resembling a bar) of 10×10m with a series of telephones placed
+arbitrarily at various locations inside.</p>
+<p>Every 3-10 seconds, one of the phones emits a ringing sound, and the participant is prompted to select the
+phone they believe to have rung using a virtual ’laser-pointer’.</p>
+<p>If the selected phone was the correct one, it disappears. The trial ends once no phones are left inside the
+room.</p>
+<p>Figure 3:Participant in virtual space (visualized by a robot) pointing out a phone. Third person view (left) and
+first-person view (right).</p>
+<p>Figure 4:Participant inside the WFS system selecting a phone. The VR view is streamed over WIFI to aMeta
+Quest Proheadset and presented to the participant. For a full video-demonstration, refer to the following link:
+https://www.youtube.com/watch?v=CWmqsejxNqI.</p>
+<h2>2.1 Technology</h2>
+<p>The prototype was build usingUnity 2021.3.17, usingextOSC^4 to communicate with the WFS-renderer’s
+OSC interface. Most of the VR components of the prototype were put together using the in-house built
+ARC-VR^5 framework.</p>
+<p>For individual sound-sources (as is the case with this experiment), extOSC provides a remarkably seamless
+and straight-forwards integration of the WFS system. Requiring multiple simultaneous audio-sources may
+complicate the procedure and has, thus far, not been tested or implemented.</p>
+<h2>2.2 WFS-related Problems and Limitations</h2>
+<p>2.2.1 Auditory Depth-Perception</p>
+<p>Early testing of this prototype indicated that the direction of a ringing phone’s location was highly percepti-
+ble, but that it’s distance was not. For multiple sound-sources placed along a line originating at the listener,
+it became difficult to distinguish one from the other. Possibly due to a lack of volume-attenuation.</p>
+<p>Generally, going beyond a count of 10+ phones increased the difficulty of the task substantially.</p>
+<p>2.2.2 Lack of Height Localization</p>
+<p>The underlying WFS setup can only produce wavefronts on a plane at the height of the speaker-array. Since
+the prototype places phones at varying heights (both above and below the height of the speaker-array)
+there is a steady miss-match in the sound origins and visual models.</p>
+<p>Put simply, the ring of a phone located on a shelf does not necessarily sound like it is coming from above,
+nor does a phone located on a table sound like is coming from below.</p>
+<p>2.2.3 Lack of Occlusion</p>
+<p>The WFS renderer is agnostic to any obstacles located in the virtual environment that a participant might
+expect to dampen or obfuscate sounds. For instance, ducking behind the bar-counter does not affect sound
+clarity at all. Room acoustics in general do not conform to those the virtual space would entail and may
+require an additional step of sound-processing.</p>
+<p>As such, the present experiment is only adequate for sound-sources that are in the direct line-of-view of
+the participant and that would not be expected to create echoes or indirect sound-waves.</p>
+<p>2.2.4 Limited Space</p>
+<p>Because of the above described depth-perception challenge, moving around the virtual space proved highly
+beneficial in locating a phone’s position, due to the auditory parallax-effect that would take place whilst
+moving.</p>
+<p>(^4) https://github.com/Iam1337/extOSC
+(^5) https://github.com/MPIB/arc-vr</p>
+<p>Figure 5:Hypothetical example of a sound being dampened by an occluder. Obstacles surface echoes are not
+simulated by the WFS renderer.</p>
+<p>Figure 6:Benefits of moving around the virtual space: The change in direction of a distant phone is lesser than that
+of a closer one, giving an indication of depth/distance.</p>
+<p>The employed WFS setup only provides a small area for movement, which furthermore limits the possibilities
+of phones being placed inside the virtual space that overlaps the WFS-space (most were placed outside, in
+the pure virtual space).</p>
+<p>2.2.5 Lining up Virtual-Space and WFS-space</p>
+<p>Since the WFS renderer and VR application are separate, there are some challenges in lining up the visual
+virtual space of the VR headset with the audio virtual-space of the WFS system.</p>
+<p>The prototype includes a calibration step at the beginning prompting the participant to stand at the center
+of the WFS-space and look in a certain direction to line up the origin and rotation of both spaces.</p>
+<p>Such a manual calibration can introduce inaccuracies as the VR headset’s location and rotation will always
+be at least somewhat imperfect and may vary based on each calibration.</p>
+<p>Figure 7:Participant in virtual space (represented by a robot) presented with pre-trial calibration step. By standing
+in the center of the WFS-space and looking at in the given direction, the virtual spaces are lined up.</p>
+<h2>2.3 Concept Limitations</h2>
+<p>The design of the underlying experiment comes with some rather glaring limitations.</p>
+<p>Most obvious of these is the nature of only providing the participant a limited number of phones (and thus
+locations) to choose from.</p>
+<p>As such, the accuracy of sound localization could be very poor, and a participant would still be able to
+select the correct one if only two options are available (out of random chance, or rough hints from the
+localization), whilst the localization could also be superb, but a participant would still likely select the
+wrong option if the room includes a large number of phones.</p>
+<p>This arbitrary limitations pollutes any qualitative measurement for accuracy.</p>
+<h1>3 Improved Prototypes</h1>
+<p>As a follow-up to the initial prototype, we devised a set of three re-designs that, hopefully, allow for a reliable
+measurement of an euclidean-distancedelta-valuebetween the location the participant perceives/indicates,
+and the location that the wavefront was actually created at.</p>
+<h2>3.1 Phone-Placement Version</h2>
+<p>In this variant, the participant does notchooseone of several options, but instead points out the location
+they believe the sound to have originated from directly.</p>
+<p>After a ring is sounded, the participant’s VR controller is given a ’virtual phone’ which they can move and
+place into a desired location using the controller’s trigger button.</p>
+<p>Figure 8:The participant in virtual space, represented by robot, placing a virtual phone at the location of the
+perceived sound. Third-person view (left) and from first-person view (right)</p>
+<p>Notes/Observations:</p>
+<ul>
+<li>Due to being tied to the exact location of a participant’s hand/controller, phones cannot not be
+    placed outside of the limited WFS-space, thus all sounds have to originate from within as well.</li>
+<li>The participant can place phones above or below the height of the speakers, even though the current
+    WFS system can only localize sounds at one height.</li>
+<li>This version provides the most intuitive and simple controls for inexperienced VR users, the most
+    accurate placement, but is severely constrained by being able to only place sound-sources inside of
+    the WFS-space.</li>
+<li>This variant opens up the possibility of using a VR-tracked, 3D-printed phone to give the participants
+    to place for increased ecological validity.</li>
+</ul>
+<h2>3.2 Dot-Circle Version</h2>
+<p>In this variant the participant is provided an array of dots in a circle at head-height around the center of
+the WFS-space, of which they can select the one they believed to be closest to the sound’s origin.</p>
+<p>Observations:</p>
+<ul>
+<li>This more abstract variant makes no reference at all to ’telephones’. Whilst less immersive, it could
+    thus work better with entirely different sounds.</li>
+<li>Adjusting the delta-angle of the placed dots to choose from allows for the measurement of an average
+    distance/angle at which the accuracy of localization begins to vein. (Imagine a series of trials where
+    the density of dots increases/decreases with each one).</li>
+</ul>
+<p>Figure 9:The participant in virtual space, represented by robot, pointing out the sound’s location from a circle of
+options. Third-person view (left) and from first-person view (right)</p>
+<ul>
+<li>This version allows sounds to originate from outside the WFS area, but since all the dots are located
+    on a circle around the room’s center, the participant does not indicate the ’depth’ at which the sound
+    originated from, only the direction. A depth-selection would either require one of the other variants,
+    or limiting the phone-distance to a single value per trial.</li>
+<li>Since the primary input parameter is measured as anangleinstead of a distance, this variant would
+    provide a counter-balance to the expected inverse-square decrease in accuracy.</li>
+<li>This variant dis-incentivizes the participant from moving around the virtual space, as the parallax-
+    effect is no longer as useful.</li>
+</ul>
+<h2>3.3 Laser-Pointer</h2>
+<p>In this variant, the participant can point out a location on a virtual ’canvas’ at head-height by using a
+virtual laser-pointer.</p>
+<p>Figure 10:The participant in virtual space, represented by robot, pointing out the sound’s location on the selection-
+canvas from a third-person view (left) and from first-person view (right)</p>
+<p>Observations:</p>
+<ul>
+<li>
+<p>This variant allows participants to both place phones inside and outside the WFS area. As such, it
+    provides the highest resolution/options for positions out of all tested versions.</p>
+</li>
+<li>
+<p>The accuracy of a selected location scales to inverse square of the distance between the participant
+    and the location and thus leads to a natural increase in the expected delta-values. In other words,
+    noise from tracking inaccuracies or the participant’s hand movements are amplified the larger the
+    selected location is, due to the increased length of the laser-ray.</p>
+</li>
+<li>Having a laser-canvas on the XZ-plane at head-height isn’t the most intuitive system and can provide
+    an accuracy advantage to participants that duck or crouch.</li>
+<li>The selection plane being close to eye-height can make it difficult to see and select a location. A
+    conceivable solution would be to move the selection plane up or down from the actual height of the
+    speakers.</li>
+</ul>
+<h1>4 Further Considerations</h1>
+<h2>4.1 Laser-Pointer Grid-array</h2>
+<p>One possible option to ameliorate the issues of the Laser-Pointer version would be to combine it with the
+Dot-Circle version. Essentially, having the pointer snap to given points on a grid, thus reducing (if not
+eliminating) the noise from distance-based inaccuracy in selection.</p>
+<h2>4.2 Variation Ringing Sounds</h2>
+<p>In the current version, the ring-sound employed is always identical. It seems prudent to employ different
+sounds, or variations in pitch and frequency.</p>
+<h2>4.3 Background Noise</h2>
+<p>The sound that needs to be located is currently the only sound-source that is being employed. One possible
+avenue of interest could be to measure the influence of additional sound-sources on localization accuracy.</p>
                 </div>
 
             </div>
