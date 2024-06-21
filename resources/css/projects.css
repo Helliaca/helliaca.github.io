@@ -6,6 +6,14 @@
     display: flex;
 }
 
+.to-overview-container {
+    margin: 50px 80px;
+    position: relative;
+    background-color: #191919;
+    border: 3px solid #333333;
+    display: block;
+}
+
 .project-container:nth-of-type(odd) {
     flex-flow: row-reverse;
 }
@@ -50,7 +58,18 @@
     transition: 0.6s;
 }
 
+.project-to-overview {
+    width: 100%;
+    text-align: center;
+    background-color: #333333;
+    transition: 0.6s;
+}
+
 .project-read-more:hover {
+    background-color: #222222;
+}
+
+.project-to-overview:hover {
     background-color: #222222;
 }
 
@@ -159,12 +178,16 @@ input#showSecondaryProjects:checked ~ label#showSecondaryProjectsLabel {
         margin: 0px auto;
         width: 90%;
     }
-	
+
 	.project-text-wrapper {
         width: 100%;
     }
-	
+
     .project-container {
+		display: block;
+        margin: 25px 25px;
+    }
+    .to-overview-container {
 		display: block;
         margin: 25px 25px;
     }

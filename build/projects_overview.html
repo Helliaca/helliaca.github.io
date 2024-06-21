@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>BK - Projects</title>
+    <title>BK - Sample Projects</title>
 
     <!-- Base path -->
     <base href="../">
@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="resources/css/topbar.css" type="text/css">
     <link rel="stylesheet" href="resources/css/body.css" type="text/css">
     <link rel="stylesheet" href="resources/css/projects.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/project.css" type="text/css">
 
     <!-- Font awesome sheet  -->
     <link rel="stylesheet" href="resources/fontawesome-free-5.15.3-web/css/all.css" type="text/css">
@@ -80,76 +81,24 @@
 
             <div id="content-container" class="fade-in-diag">
 
-                <div class="to-overview-container">
-                    <a aria-label="Link to read more" href="build/projects_overview.html">
-                        <div class="project-to-overview">
-                            For a brief overview of some of my favourite projects, Click here!
-                        </div>
-                    </a>
+                <div class="project-banner">
+                    <img alt="project banner image" class="project-banner-img" src="config/projects_overview/projects_overview_splash.jpg">
+                    <div class="project-banner-title">Sample Projects</div>
+                    <!-- <div class="project-banner-subtitle">Brief overview of some of my projects</div> -->
                 </div>
 
-                $forall$
-                $if is_project$
-                <div class="project-container">
-                    <div class="project-img-wrapper">
-                        <div class="project-img-container">
-                            <a href="$insert project_page_path$"><img alt="project spash image" src="$insert project_image_path$"></a>
-                        </div>
-                    </div>
-
-                    <div class="project-text-wrapper">
-                        <div class="project-text-container">
-                            <a href="$insert project_page_path$">
-                                <div class="project-title">
-                                    $insert project_title$
-                                </div>
-                            </a>
-
-                            <div class="project-buttons">
-                                $if project_pdf_link$<a aria-label="Link to pdf" href="$insert project_pdf_link$" class="far fa-file-pdf no-fade"></a>$endif$
-                                $if project_github_link$<a aria-label="Link to github" href="$insert project_github_link$" class="fab fa-github no-fade"></a>$endif$
-                                $if project_youtube_link$<a aria-label="Link to youtube" href="$insert project_youtube_link$" class="fab fa-youtube no-fade"></a>$endif$
-                                $if project_steam_link$<a aria-label="Link to steampage" href="$insert project_steam_link$" class="fab fa-steam no-fade"></a>$endif$
-                                $if project_generic_link$<a aria-label="Link to external website" href="$insert project_generic_link$" class="fas fa-external-link-alt no-fade"></a>$endif$
-                                $if project_custom_link$$if project_custom_link_icon$<a aria-label="Link to external website" href="$insert project_custom_link$" class="$insert project_custom_link_icon$ no-fade"></a>$endif$$endif$
-                            </div>
-
-                            $if project_subtitle$
-                            <div class="project-subtitle">
-                                <b>$insert project_subtitle$</b>
-                            </div>
-                            $endif$
-
-                            <div class="project-desc">
-                                $insert project_abstract$
-                            </div>
-
-                            <a aria-label="Link to read more" href="$insert project_page_path$">
-                                <div class="project-read-more">
-                                    Read more
-                                </div>
-                            </a>
-                        </div>
+                <div class="project-toolbar">
+                    <div class="project-toolbar-back">
+                        <a href="build/projects.html" class="fas fa-arrow-alt-circle-left"></a>
                     </div>
                 </div>
-                $endif$
-                $endfor$
 
-                <div class="small-projects-container">
-                    $forall$
-                    $if is_project_small$
-                        <div class="small-project-container">
-                            <div class="small-project-img-container">
-                                <a href="$insert project_page_path$"><img alt="project spash image" src="$insert project_image_path$"></a>
-                            </div>
-                            <a href="$insert project_page_path$"><div class="small-project-title">$insert project_title$</div></a>
-                            <div class="small-project-desc">$insert project_abstract$</div>
-                        </div>
-                    $endif$
-                    $endfor$
+                <div class="project-description">
+                    <p>-- COMING SOON --</p>
+<p style="text-align:center;">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/NCJms_LPzu8?si=GHvcvKmmwpMjkruc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</p>
                 </div>
-
-                <br><br><br><br><br>
 
             </div>
 
