@@ -354,9 +354,10 @@ Here's an overview:
 
 [ -- SCREENSHOTS COMING SOON --]
 
+ -->
+
 ## CS 1.6 Maps
 
-Back in ancient dinosaur-times, when I was still a teenager, I loved creating maps for CS 1.6. I made a long series of maps that ranged all the way from competitive multiplayer, to utterly absurd, experimental gimmicks such as a "Quidditch" map (don't ask). There is a total of 23 maps. See below for an overview of my favorites!
+Back in ancient dinosaur-times, when I was still a teenager, I loved creating maps for CS 1.6. I made a long series of maps that ranged all the way from competitive multiplayer, to utterly absurd, experimental gimmicks such as a "Quidditch" map (don't ask). There is a total of 23 maps, and many of them had a secret easter-egg "world domination room" hidden inside them. See below for an overview of my favorites!
 
-[ -- SCREENSHOTS COMING SOON --]
- -->
+![graph image](config/projects/projects_overview/cs16_maps.png)
