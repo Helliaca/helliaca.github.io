@@ -55,7 +55,7 @@ The experiment shown above represents the second iteration of this concept. The 
 
 Here’s a video of the earlier version:
 
-![graph](config/fishing_dilemma/splash.png)
+![graph](config/projects/fishing_dilemma/splash.png)
 
 ## WFS VR
 
@@ -305,6 +305,14 @@ The implementation is highly technical and complex, involving various shader mat
 
 # Ancient history
 
+## UnityPixelShaders
+
+UnityPixelShaders is a collection of fancy, cool looking pixel shaders I've made throughout the years. It includes many different things from raymarched fractionals to water and glass shaders. Have look below to see some examples:
+
+<p style="text-align:center;">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Wiv5lOUgmPE?si=bKFkrZxkhwBFezGc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</p>
+
 ## SDL2Game
 
 Built as part of a brief university <a href="https://github.com/krother/cplusplus_abv_zedat">games with C++ workshop</a>, this simple 2D game-engine provides powerful features, including destructive terrain, rope-physics and more Fundamental ones, such as ray-casts, animations, parallax scrolling and basic physics.
@@ -327,15 +335,17 @@ The game is absolutely jam-packed with insider jokes and terrible references. An
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/0Gr_jcT40Qc?si=zRANi-JjeWrOX22j" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </p>
 
-<!--
 ## Skinc Reborn
 
 I programmed Skinc Reborn all the way back in 2014, before I even started studying computer science. It was an ambitous project, including a fully fledged single-player campaign/gauntlet, destructible terrain and an interactie tutorial.
 
 I used SFML for the underlying 2D graphics and WinForms for the menu-system. Albeit a little rough around the edges, this project taught me a lot about game engines, graphics and so much more!
 
-[ -- VIDEO COMING SOON --]
+<p style="text-align:center;">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2POHrpJs_Uo?si=wAQaKpUsXxf_Mhwm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</p>
 
+<!--
 ## CSGO Maps
 
 I've always been a big fan of the games made by Valve, and have frequently dabbled and experimented with modding and mapping for Source-Engine games. This includes a range of CS:GO maps that range from highly detailed to complete gimmicks.
@@ -346,7 +356,7 @@ Here's an overview:
 
 ## CS 1.6 Maps
 
-Back in ancient dinosaur-times, when I was still a teenager, I loved creating maps for CS 1.6. I made a long series of maps that ranged all the way from competitive multiplayer, to utterly absurd, experimental gimmicks such as a "Quidditch" map (don't ask). See below for an overview of my favorites!
+Back in ancient dinosaur-times, when I was still a teenager, I loved creating maps for CS 1.6. I made a long series of maps that ranged all the way from competitive multiplayer, to utterly absurd, experimental gimmicks such as a "Quidditch" map (don't ask). There is a total of 23 maps. See below for an overview of my favorites!
 
 [ -- SCREENSHOTS COMING SOON --]
  -->

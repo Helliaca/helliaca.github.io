@@ -112,12 +112,15 @@
                     <p>The Fisher's Dilemma is a foraging study I developed at the <a href="https://www.mpib-berlin.mpg.de/en">Max-Planck Institute for Human Development</a>. Its goal is to examine how people utilize social information to forage for resources and how their behavior shifts between cooperative and competitive environments.</p>
 <p>The core gameplay is remarkably straightforward: Players fish from several ponds, and the analysis focuses on how long it takes them to find the optimal pond and the extent to which observing other players influences their decisions.</p>
 <p>Here’s a demonstration video of how it looks:</p>
-<p>[ -- COMING SOON -- ]</p>
+<p style="text-align:center;">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/vxSoKIp9HFo?si=YIclpJscaybUWhuD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</p>
+
 <p>A major challenge in this project was the multiplayer aspect and the underlying net code. Instead of relying on existing networking libraries, I decided to push my boundaries and develop a completely new, self-made net code library specifically for this project.</p>
 <p>This library, which I named HNetwork, functions as a client-agnostic, network-synchronized Dictionary that holds the current game state. Clients interpret and render this state for each player. Synchronization is managed through a combination of TCP and UDP packets, using self-written serializers to ensure efficient communication.</p>
 <p>The experiment shown above represents the second iteration of this concept. The previous version was significantly simpler, featuring only two ponds and allowing players to switch ponds instantaneously.</p>
-<p>Here’s an image of the earlier version:</p>
-<p><img alt="graph" src="config/fishing_dilemma/splash.png" /></p>
+<p>Here’s a video of the earlier version:</p>
+<p><img alt="graph" src="config/projects/fishing_dilemma/splash.png" /></p>
                 </div>
 
             </div>
