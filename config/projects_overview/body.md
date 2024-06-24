@@ -43,7 +43,9 @@ The core gameplay is remarkably straightforward: Players fish from several ponds
 
 Here’s a demonstration video of how it looks:
 
-[ -- COMING SOON -- ]
+<p style="text-align:center;">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/vxSoKIp9HFo?si=YIclpJscaybUWhuD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</p>
 
 A major challenge in this project was the multiplayer aspect and the underlying net code. Instead of relying on existing networking libraries, I decided to push my boundaries and develop a completely new, self-made net code library specifically for this project.
 
