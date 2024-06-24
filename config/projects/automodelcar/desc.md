@@ -32,7 +32,9 @@ We set a list of clearly defined requirements the application aims to fulfill. I
 
 Here's a video comparison of the same ROS code (a simple obstacle-avoidance program) running on both a real AMC as well as a simulated one: (Please excuse the horrendous compression artifacts)
 
-[Youtube Link](https://www.youtube.com/watch?v=0-lc6--KMSQ)
+<p style="text-align:center;">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/0-lc6--KMSQ?si=Gzsn4BCzuQ7yuUR7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</p>
 
 And here's is how the camera images look like:
 

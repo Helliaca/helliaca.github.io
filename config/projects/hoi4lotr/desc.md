@@ -92,14 +92,16 @@ At the time of writing it is sitting at around 110.000 subscribers and over 8800
 
 It's brought to life several sub-mods, including translations but also expansions and entire spinoff-mods. Here are some of my favourites:
 
-- [Lord of the Rings: Expanded](https://steamcommunity.com/sharedfiles/filedetails/?id=3103846888)
-- [Lord of the Rings: Northern Wastes](https://steamcommunity.com/sharedfiles/filedetails/?id=3130209860)
-- [LOTR: Third Age Redux](https://steamcommunity.com/sharedfiles/filedetails/?id=3110380978)
+![image of unitmodels](config/projects/hoi4lotr/lotr_submods.png)
 
 It's also received significant coverage from some of HoI4's most well-known content creators, including (but not limited to):
 
-- [Alex the Rambler](https://www.youtube.com/watch?v=lque6c_ipzo)
-- [TommyKay](https://www.youtube.com/watch?v=1TIEFEgF0lU)
-- [iSorrowproductions](https://www.youtube.com/watch?v=QlsU93XQbPc)
+<p style="text-align:center;">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/lque6c_ipzo?si=iiNJfdewvsGZnYDE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</p>
+
+<p style="text-align:center;">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/1TIEFEgF0lU?si=ZxcTH5ljzcjmKDYG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</p>
 
 The mod's development remains active and maintains a thriving discord community that organizes regular multiplayer games. I am very excited to continue seeing this project grow!

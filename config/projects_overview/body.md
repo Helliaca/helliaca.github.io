@@ -53,7 +53,7 @@ The experiment shown above represents the second iteration of this concept. The 
 
 Here’s a video of the earlier version:
 
-[ -- COMING SOON -- ]
+![graph](config/fishing_dilemma/splash.png)
 
 ## WFS VR
 
@@ -199,54 +199,148 @@ The most significant challenge in this project was configuring and programming t
 
 When I began the project, there was only an abstract concept with no defined aesthetic or "visual story" to grant it ecological validity. I eventually conceived the idea of players using metal detectors to search a field for coins, which I demonstrated with this basic, initial prototype:
 
+<p style="text-align:center;">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/FcglXG6trLU?si=atoCPbjT4WEOYieN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</p>
 
 The project leadership approved this idea, leading us to the next challenge: player models. We aimed for realistic player models but ultimately decided on a gender-neutral design to avoid interfering with the experiment's results. We chose a basic humanoid mannequin:
 
+<p style="text-align:center;">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/zVoNbsIJV84?si=-FCmNLIyL_QXBknU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</p>
 
 Another crucial aspect was signaling to other players when someone had found a reward patch. We wanted an animation to show other players that a player was digging out coins. After testing various options, we settled on a shovel excavation animation:
 
+<p style="text-align:center;">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/6FgAhtBAEyI?si=Qt4qd4ms516aITRp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</p>
 
 Designing the environment was another significant task. We created many versions, each with pros and cons. Ultimately, we chose the "courtyard" version, as it was least likely to interfere with player choice, and the surrounding buildings' colors provided a simple way to highlight different experimental conditions:
 
+<p style="text-align:center;">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/vEMAG_3U7fM?si=xMKNBLyo_oTDOpTG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</p>
 
 To make the experiment more interactive and engaging, we introduced a minigame where players click on appearing coins with the cursor while extracting them. To limit the effects of player skill and previous gaming experience, we significantly simplified the controls. Here is the final version:
 
+<p style="text-align:center;">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/StMnLTMG1xk?si=qmSe4qT7Ur7zpN2W" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</p>
 
 The experiment also featured an extensive tutorial to introduce players to the controls and rules of the game:
 
+<p style="text-align:center;">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/cCFCDHqYG_c?si=_4ZzkeZzMrmhWPcm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</p>
 
 For further information, refer to our [GitHub repository](https://github.com/DominikDeffner/VirtualCollectiveForaging) and our [publication in Nature Communications](https://rdcu.be/dCC3Z).
 
-## Cross Street Game
+## AVHD
 
-Initial prototype: https://www.youtube.com/watch?v=1wq6776S-Qc&ab_channel=BenjaminKahl
+The AVHD project was designed to study how human behavior in traffic situations changes based on whether a car is controlled by another human or by an autonomous robot car.
 
-Later prototype: https://www.youtube.com/watch?v=6c4KILTMhV8&ab_channel=BenjaminKahl
+The experiment's paradigm is simple. The participant, wearing a VR headset, is placed on one side of a street and given an incentive to reach a bus on the other side as quickly as possible without being run over. They must choose between crossing immediately, trusting that the approaching car will stop, or moving to a safe crossing point, which would constitute a detour. The experiment aims to compare decision-making when the approaching car is controlled by another participant versus when it is controlled by a computer:
 
-Due to the pandemic the project was shelved
+![graph image](config/projects/avhd/paradigm.png)
+
+Initially, I built an environment with a two-way street and cars moving at high speed:
+
+<p style="text-align:center;">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/1wq6776S-Qc?si=znuQXnFnhKhSkUAC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</p>
+
+We eventually concluded that we didn't have enough real-world space for a setup where the participant could cross a double street. Thus, we scaled it back to a single street, featuring a dense convoy of cars followed by a significant gap and then the target car. In the video below, you can see the AI I programmed for the car, represented by a green/yellow/red light. The AI takes into account the player's position and trajectory, estimating the likelihood of a collision based on several parameters:
+
+<p style="text-align:center;">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/6c4KILTMhV8?si=-Q_huBKALYPyT9Ja" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</p>
+
+Unfortunately, this project was shelved due to the COVID-19 pandemic, which prevented us from inviting participants and recording data. It has not been revived since.
 
 ## AutoModelCar
+
+The AutoModelCar-Simulator is a Unity3D and ROSSharp-based simulator designed for the AutoModelCar, a miniature robot car developed at Freie Universität Berlin. The simulator allows users to run and test simple ROS nodes in a virtual environment, eliminating the need for immediate access to an actual AutoModelCar. The simulated environment closely resembles the conditions of the FU-Berlin robotics laboratory, providing a practical tool for students to develop and test their programs remotely.
+
+![graph image](config/projects/automodelcar/pics.jpg)
+
+Using ROSSharp and Unity, we built a sophisticated simulator that replicates the functionality of the AutoModelCar. The simulator generates camera images, LIDAR, and gyro data, closely mimicking the real-world sensors. The car's steering mechanics are based on the Ackermann model's mathematics, carefully calibrated to match the real robots' behavior.
+
+![graph image](config/projects/automodelcar/splash.png)
+
+We also developed a modular UI system that allows users to dynamically modify the simulation environment, akin to the real laboratory setup. Users can add, remove, or modify objects and view status and data graphs of the simulated cars. Below is a video comparison showing the same program running first on a real robot and then on a simulated one:
+
+<p style="text-align:center;">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/0-lc6--KMSQ?si=Gzsn4BCzuQ7yuUR7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</p>
 
 # Computer Graphics
 
 ## RTRad
 
+RTRad was a research project completed as my Master's Thesis. It implements progressive refinement radiosity with a unique twist: it's executed entirely on the GPU and leverages Nvidia's RTX technology for visibility computations.
+
+The program was built on Nvidia's Falcor 4.4 framework and includes a variety of useful settings, visualizations, and pre-built scenes. The underlying algorithm features numerous optimizations that I implemented, resulting in highly competitive performance compared to existing industry solutions. You can read more about these optimizations [here](https://benjamin.kahl.fi/build/projects/rtrad/detailed.html). The thesis has been cited in [several works](https://scholar.google.com/scholar?cites=14145215159720007985&as_sdt=2005&sciodt=0,5&hl=en) addressing similar topics.
+
+![graph image](config/projects/rtrad/graph.jpg)
+
+The technical and mathematical details of this project are extensive, and a few paragraphs wouldn't do it justice. However, here's a brief demonstration video showcasing some of the final result's features:
+
+<p style="text-align:center;">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/84rVIG8G1Eg?si=kXqViDNzl6OxOHtq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</p>
+
 ## VXCT
+
+VXCT was a computer graphics research project completed as my Bachelor's Thesis. It is an OpenGL-based implementation of the Voxel Cone Tracing algorithm for real-time indirect illumination.
+
+The resulting program is highly customizable and includes a variety of custom software components, such as scene-serializing, displaying debug information, and setting/reading parameters in real-time through a command line.
+
+The implementation is highly technical and complex, involving various shader mathematics. The final result was highly enlightening and performed admirably. The thesis has been cited [several times](https://scholar.google.com/scholar?cites=11457800566733753563&as_sdt=2005&sciodt=0,5&hl=en), and the corresponding [GitHub codebase](https://github.com/Helliaca/VXCT) has been forked and built upon by several other enthusiasts.
+
+![graph image](config/projects/vxct/complex_scene.jpg)
 
 # Ancient history
 
 ## SDL2Game
 
-## FizzoFeed2
+Built as part of a brief university <a href="https://github.com/krother/cplusplus_abv_zedat">games with C++ workshop</a>, this simple 2D game-engine provides powerful features, including destructive terrain, rope-physics and more Fundamental ones, such as ray-casts, animations, parallax scrolling and basic physics.
 
-## SkincReborn
+Take a look at the video below to see it in action!
+
+<p style="text-align:center;">
+<iframe align="middle" width="560" height="315" src="https://www.youtube.com/embed/upb3DJJbQIM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+
+The underlying [codebase on github](https://github.com/Helliaca/SDL2-Game) has spawned several derivative forks and been praised for being highly educational and clear.
+
+## Fizzo Feed 2
+
+Fizzo Feed 2 is a personal meme-game that I made in 2016 in about 2 days as a gift/joke to a friend of mine who was notorious for his questionable performance of Fizz in the popular multiplayer game [League of Legends](https://www.leagueoflegends.com).
+
+The game is absolutely jam-packed with insider jokes and terrible references. And, of course, it includes a highly authentic chat experience as you would find it in 2016's LoL!
+
+<p style="text-align:center;">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/0Gr_jcT40Qc?si=zRANi-JjeWrOX22j" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</p>
+
+## Skinc Reborn
+
+I programmed Skinc Reborn all the way back in 2014, before I even started studying computer science. It was an ambitous project, including a fully fledged single-player campaign/gauntlet, destructible terrain and an interactie tutorial.
+
+I used SFML for the underlying 2D graphics and WinForms for the menu-system. Albeit a little rough around the edges, this project taught me a lot about game engines, graphics and so much more!
+
+[ -- VIDEO COMING SOON --]
 
 ## CSGO Maps
 
+I've always been a big fan of the games made by Valve, and have frequently dabbled and experimented with modding and mapping for Source-Engine games. This includes a range of CS:GO maps that range from highly detailed to complete gimmicks.
+
+Here's an overview:
+
+[ -- SCREENSHOTS COMING SOON --]
+
 ## CS 1.6 Maps
+
+Back in ancient dinosaur-times, when I was still a teenager, I loved creating maps for CS 1.6. I made a long series of maps that ranged all the way from competitive multiplayer, to utterly absurd, experimental gimmicks such as a "Quidditch" map (don't ask). See below for an overview of my favorites!
+
+[ -- SCREENSHOTS COMING SOON --]

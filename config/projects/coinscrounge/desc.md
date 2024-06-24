@@ -1,75 +1,42 @@
-Videos outlining the development process:
+CoinScrounge was a semi follow-up study to our ProducerScrounger experiment. Like its predecessor, it is a foraging game where players search for hidden reward patches on a field and observe whether other players have found something.
+Technical Challenges
 
-Tutorial
-https://www.youtube.com/watch?v=cCFCDHqYG_c&ab_channel=BenjaminKahl
+The most significant challenge in this project was configuring and programming the underlying netcode to ensure the multiplayer aspect worked reliably and smoothly. I used Unity Netcode for GameObjects, which was still in pre-release at that point, leading to numerous problems. After extensive troubleshooting, I managed to build a stable and reliable system, learning a lot in the process.
 
-Round
-https://www.youtube.com/watch?v=StMnLTMG1xk&ab_channel=BenjaminKahl
+When I began the project, there was only an abstract concept with no defined aesthetic or "visual story" to grant it ecological validity. I eventually conceived the idea of players using metal detectors to search a field for coins, which I demonstrated with this basic, initial prototype:
 
-Close to final version
-https://www.youtube.com/watch?v=d6xrE3uZqsQ&ab_channel=BenjaminKahl
+<p style="text-align:center;">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/FcglXG6trLU?si=atoCPbjT4WEOYieN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</p>
 
-More polished environment and minigame
-https://www.youtube.com/watch?v=sgj2jD2eDw0&ab_channel=BenjaminKahl
+The project leadership approved this idea, leading us to the next challenge: player models. We aimed for realistic player models but ultimately decided on a gender-neutral design to avoid interfering with the experiment's results. We chose a basic humanoid mannequin:
 
-evironments
-https://www.youtube.com/watch?v=vEMAG_3U7fM&ab_channel=BenjaminKahl
+<p style="text-align:center;">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/zVoNbsIJV84?si=-FCmNLIyL_QXBknU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</p>
 
-environment and digging anim
-https://www.youtube.com/watch?v=6FgAhtBAEyI&ab_channel=BenjaminKahl
+Another crucial aspect was signaling to other players when someone had found a reward patch. We wanted an animation to show other players that a player was digging out coins. After testing various options, we settled on a shovel excavation animation:
 
-3rd person animations
-https://www.youtube.com/watch?v=zVoNbsIJV84&ab_channel=BenjaminKahl
+<p style="text-align:center;">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/6FgAhtBAEyI?si=Qt4qd4ms516aITRp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</p>
 
-Earliest Prototype
-https://www.youtube.com/watch?v=FcglXG6trLU&ab_channel=BenjaminKahl
+Designing the environment was another significant task. We created many versions, each with pros and cons. Ultimately, we chose the "courtyard" version, as it was least likely to interfere with player choice, and the surrounding buildings' colors provided a simple way to highlight different experimental conditions:
 
+<p style="text-align:center;">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/vEMAG_3U7fM?si=xMKNBLyo_oTDOpTG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</p>
 
-# Virtual Collective Foraging
+To make the experiment more interactive and engaging, we introduced a minigame where players click on appearing coins with the cursor while extracting them. To limit the effects of player skill and previous gaming experience, we significantly simplified the controls. Here is the final version:
 
-This repository contains the full data and scripts to reproduce all analyses and figures as well as the experimental game itself used in:
+<p style="text-align:center;">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/StMnLTMG1xk?si=qmSe4qT7Ur7zpN2W" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</p>
 
-****Deffner, D., Mezey, D., Kahl, B., Schakowski, A., Romanczuk, P., Wu, C. & Kurvers, R. (2024) Collective incentives reduce over-exploitation of social information in unconstrained human groups. Nature Communications. 15, 2683.****
+The experiment also featured an extensive tutorial to introduce players to the controls and rules of the game:
 
-Paper here: https://doi.org/10.1038/s41467-024-47010-3
+<p style="text-align:center;">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/cCFCDHqYG_c?si=_4ZzkeZzMrmhWPcm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</p>
 
-"master_file.r" sources all other scripts and implements the entire project workflow from raw Unity data to plots in the manuscript.
-
-The "Scripts" folder contains all relevant R scripts for data processing and analysis:
-
-- "functions.R" loads all required functions and packages
-- "data_prep.R" runs data preparation script to construct dataframes for analysis from raw Unity outputs
-- "HiddenMarkovModels_prep.R" contructs extended dataframe and stan data list for Social Hidden Markov Decision model
-- "Behavior_prep.R" computes behavioral summary statistics for each player/group and round
-- "Behavior_individual_level.R" runs and plots behavioral analyses at individual level
-- "Behavior_group_level.R" runs and plots behavioral analyses at group level
-- "Behavior_main_plot" produces main behavioral plot (Fig.2)
-- "Behavior_solitary.R" runs and plots behavioral analyses for solo control condition
-- "HiddenMarkovModels_baseline.R" runs baseline Social Hidden Markov Decision model and produces main text plots
-- "Viterbi.r" computes most likely state sequences for all participants through Viterbi algorithm
-- "HiddenMarkovModels_ESM_Plots.R" produces supplementary HMM plots
-- "HiddenMarkovModels_temporal.R" runs and plots temporal Social Hidden Markov Decision model
-- "CollectiveDynamics.R" runs and plots collective visual-spatial dynamics analyses using time-lagged Gaussian-process regressions
-
-The "Stan model code" folder contains stan files for the (baseline and time-varying) Social Hidden Markov Decision model as well as the time-lagged Gaussian-process model
-- "m_SHMDM.stan" is the baseline HMM (called in "HiddenMarkovModels_baseline.R")
-- "m_SHMDM_temporal.stan" is the time-varying HMM (called in "HiddenMarkovModels_temporal.R")
-- "m_temporal_success.stan" is monotonic-effect model for success over time (called in "HiddenMarkovModels_temporal.R")
-- "m_time_laggedGP.stan" is the time-lagged Gaussian-process model to analyze collective visual-spatial dynamics (called in "CollectiveDynamics.R")
-
-The "Data" folder contains all raw data for both "Group" and "Solo" conditions. Each sub-folder contains data from one experimental session. There are separate .txt files for participant demographics and for player and patch data from each round (indexing starts at 0). Variable names should be quite descriptive, but please get in touch in case anything is unclear.
-
-***Software requirements***
-
-The analysis code was written in R 4.0.3. Statistical models are fit using the Stan MCMC engine via the rstan (2.21.2) and cmdstanr (0.5.3) packages, which require a C++ compiler. Installation  instructions are available at https://github.com/stan-dev/rstan/wiki/RStan-Getting-Started and https://mc-stan.org/cmdstanr/articles/cmdstanr.html. See also the Stan user guide at https://mc-stan.org/users/documentation. The rethinking package (2.12) is required to process fitted model outputs (installation instructions at http://xcelab.net/rm/software/).
-
-***Unity experiment files***
-
-TLDR: If you just want to play the experimental game (as a solo participant), extract all files in "CoinScrounge_ClientBuild.zip" and open "CoinScrounge.exe". After the application has started, click "Start Game". If you want anything else, read on!
-
-"CoinScrounge_Source.zip" is the Unity project (using version Unity 2020.3.21f1). Note that it has been stripped of all 3D Models, animations and textures that were not made by ourselves. This means that opening and running it will result in missing/blank visuals, errors and missing assets. If you want to actually run the experiment, use the built executables instead. Nevertheless, all prefabs, scenes and scripts are included, which lets you see the entire project setup and source code.
-The code and prefabs are separated into modules inside the Assets/ directory. The project starts with the "StartingScene" scene.
-
-"CoinScrounge_ClientBuild.zip" acts as the application that the participant interacts with. It can also be used as a host, or server, but the dedicated "CoinScrounge_ServerBuild.zip" runs as a console application without any of the visuals. Both builds include a "settings.avr" file which can be used to change parameters/settings as well as reveal some hidden options. Pressing RightCtrl+Tab within the client will bring up a debug-screen with some additional options.
-
-[![DOI](https://zenodo.org/badge/648584677.svg)](https://zenodo.org/doi/10.5281/zenodo.10650332)
+For further information, refer to our [GitHub repository](https://github.com/DominikDeffner/VirtualCollectiveForaging) and our [publication in Nature Communications](https://rdcu.be/dCC3Z).
