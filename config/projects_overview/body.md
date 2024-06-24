@@ -75,9 +75,11 @@ The initial prototype provided valuable insights and observations, which you can
 
 ![graph](config/projects_overview/wfs_prototypes.png)
 
+<!--
 The project ultimately culminated in a version that utilizes hand-tracking for selection and features an audio guide to assist participants throughout the experiment. Take a look at the final prototype below:
 
 [ -- COMING SOON -- ]
+ -->
 
 ## Lord of the Rings Mod (Hearts of Iron IV)
 
@@ -323,6 +325,7 @@ The game is absolutely jam-packed with insider jokes and terrible references. An
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/0Gr_jcT40Qc?si=zRANi-JjeWrOX22j" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </p>
 
+<!--
 ## Skinc Reborn
 
 I programmed Skinc Reborn all the way back in 2014, before I even started studying computer science. It was an ambitous project, including a fully fledged single-player campaign/gauntlet, destructible terrain and an interactie tutorial.
@@ -344,3 +347,4 @@ Here's an overview:
 Back in ancient dinosaur-times, when I was still a teenager, I loved creating maps for CS 1.6. I made a long series of maps that ranged all the way from competitive multiplayer, to utterly absurd, experimental gimmicks such as a "Quidditch" map (don't ask). See below for an overview of my favorites!
 
 [ -- SCREENSHOTS COMING SOON --]
+ -->
