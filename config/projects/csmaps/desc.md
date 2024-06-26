@@ -16,9 +16,11 @@ Here's an overview of some of them:
 
 **es_prison_escape:** A custom gamemode that incorporates class-based combat, procedurally changing levels and a custom win-condition. It's found a lot of favour as a 1v1 map in particular and has accumulated well over 1400 subscribers.
 
+<!--
 ![graph image](config/projects/csmaps/fy_schoolconspiracy.png)
 
 **fy_schoolconspiracy:** On the surface just a regular map of a school building, but by unlocking several secrets and solving some environmental puzzles, the player can enter a hidden "world domination room" and launch a missile. 200+ subscribers.
+-->
 
 ## CS 1.6 Maps
 
