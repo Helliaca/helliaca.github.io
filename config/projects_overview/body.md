@@ -51,12 +51,6 @@ A major challenge in this project was the multiplayer aspect and the underlying 
 
 This library, which I named HNetwork, functions as a client-agnostic, network-synchronized Dictionary that holds the current game state. Clients interpret and render this state for each player. Synchronization is managed through a combination of TCP and UDP packets, using self-written serializers to ensure efficient communication.
 
-The experiment shown above represents the second iteration of this concept. The previous version was significantly simpler, featuring only two ponds and allowing players to switch ponds instantaneously.
-
-Here’s a video of the earlier version:
-
-![graph](config/projects/fishing_dilemma/splash.png)
-
 ## WFS VR
 
 In collaboration with [Fraunhofer IDMT](https://www.idmt.fraunhofer.de/), the Max-Planck Institute for Human Development (MPIB) has been experimenting with wave-field synthesis (WFS) setups to create immersive sound environments. Wave-field synthesis allows for the creation of sound waves from any given point of origin by superimposing a large set of individual, elementary sound waves. This occurs in real space without the need for simulated Head-Related Transfer Functions (HRTF).
@@ -158,21 +152,8 @@ Here’s a demonstration video of one of our final versions:
 ## ProducerScroungers
 
 The ProducerScroungers experiment was one of my first projects at the Max-Planck Institute for Human Development (MPIB). Built within Minecraft, this foraging game places players in a field of melons or pumpkins where they search for rewards. These rewards are either fully random or clustered together, allowing players to use social information to assess trade-offs between searching for new reward patches themselves or following other players who have found one.
-Producer-Scrounger Model
-
-The producer-scrounger model has significant precedent in psychology and has been extensively studied in animals. Here’s a classic example of this model in action by Keynan, Ridley, & Lotem (2014):
-
-<p style="text-align:center;">
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/B1h1mDgSjOc?si=5D4QLbyWGj50YejE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</p>
 
 The project I developed consisted of several components. One of these was a complex Minecraft mod that handled the experiment itself: setting up fields and reward patterns, guiding players through interactive tutorials, synchronizing game states, and logging data.
-
-After the initial pilot round, the project leader, Charley Wu, presented the preliminary results at the Cognition, Collectives, and Human Culture workshop for CogSci 2020:
-
-<p style="text-align:center;">
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/_rDE49k1ENM?si=DPf3eA84s0Fy324d" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</p>
 
 In addition to the Minecraft mod, this project included a substantial Python codebase for analyzing and visualizing the recorded data. This included a script that could convert any given round into a 2D bird's-eye video, showcasing each player's movements and actions:
 
@@ -201,40 +182,10 @@ Technical Challenges
 
 The most significant challenge in this project was configuring and programming the underlying netcode to ensure the multiplayer aspect worked reliably and smoothly. I used Unity Netcode for GameObjects, which was still in pre-release at that point, leading to numerous problems. After extensive troubleshooting, I managed to build a stable and reliable system, learning a lot in the process.
 
-When I began the project, there was only an abstract concept with no defined aesthetic or "visual story" to grant it ecological validity. I eventually conceived the idea of players using metal detectors to search a field for coins, which I demonstrated with this basic, initial prototype:
-
-<p style="text-align:center;">
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/FcglXG6trLU?si=atoCPbjT4WEOYieN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</p>
-
-The project leadership approved this idea, leading us to the next challenge: player models. We aimed for realistic player models but ultimately decided on a gender-neutral design to avoid interfering with the experiment's results. We chose a basic humanoid mannequin:
-
-<p style="text-align:center;">
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/zVoNbsIJV84?si=-FCmNLIyL_QXBknU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</p>
-
-Another crucial aspect was signaling to other players when someone had found a reward patch. We wanted an animation to show other players that a player was digging out coins. After testing various options, we settled on a shovel excavation animation:
-
-<p style="text-align:center;">
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/6FgAhtBAEyI?si=Qt4qd4ms516aITRp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</p>
-
-Designing the environment was another significant task. We created many versions, each with pros and cons. Ultimately, we chose the "courtyard" version, as it was least likely to interfere with player choice, and the surrounding buildings' colors provided a simple way to highlight different experimental conditions:
-
-<p style="text-align:center;">
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/vEMAG_3U7fM?si=xMKNBLyo_oTDOpTG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</p>
-
-To make the experiment more interactive and engaging, we introduced a minigame where players click on appearing coins with the cursor while extracting them. To limit the effects of player skill and previous gaming experience, we significantly simplified the controls. Here is the final version:
+When I began the project, there was only an abstract concept with no defined aesthetic or "visual story" to grant it ecological validity. I eventually conceived the idea of players using metal detectors to search a field for coins.
 
 <p style="text-align:center;">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/StMnLTMG1xk?si=qmSe4qT7Ur7zpN2W" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</p>
-
-The experiment also featured an extensive tutorial to introduce players to the controls and rules of the game:
-
-<p style="text-align:center;">
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/cCFCDHqYG_c?si=_4ZzkeZzMrmhWPcm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </p>
 
 For further information, refer to our [GitHub repository](https://github.com/DominikDeffner/VirtualCollectiveForaging) and our [publication in Nature Communications](https://rdcu.be/dCC3Z).

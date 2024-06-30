@@ -129,9 +129,6 @@ Flow-Field Pathfinding</p>
 
 <p>A major challenge in this project was the multiplayer aspect and the underlying net code. Instead of relying on existing networking libraries, I decided to push my boundaries and develop a completely new, self-made net code library specifically for this project.</p>
 <p>This library, which I named HNetwork, functions as a client-agnostic, network-synchronized Dictionary that holds the current game state. Clients interpret and render this state for each player. Synchronization is managed through a combination of TCP and UDP packets, using self-written serializers to ensure efficient communication.</p>
-<p>The experiment shown above represents the second iteration of this concept. The previous version was significantly simpler, featuring only two ponds and allowing players to switch ponds instantaneously.</p>
-<p>Here’s a video of the earlier version:</p>
-<p><img alt="graph" src="config/projects/fishing_dilemma/splash.png" /></p>
 <h2>WFS VR</h2>
 <p>In collaboration with <a href="https://www.idmt.fraunhofer.de/">Fraunhofer IDMT</a>, the Max-Planck Institute for Human Development (MPIB) has been experimenting with wave-field synthesis (WFS) setups to create immersive sound environments. Wave-field synthesis allows for the creation of sound waves from any given point of origin by superimposing a large set of individual, elementary sound waves. This occurs in real space without the need for simulated Head-Related Transfer Functions (HRTF).</p>
 <p>My task was to explore how this technology could be combined with virtual reality (VR) to enhance ecological validity through highly immersive sound setups.</p>
@@ -197,19 +194,8 @@ The project ultimately culminated in a version that utilizes hand-tracking for s
 
 <h1>A couple of years old</h1>
 <h2>ProducerScroungers</h2>
-<p>The ProducerScroungers experiment was one of my first projects at the Max-Planck Institute for Human Development (MPIB). Built within Minecraft, this foraging game places players in a field of melons or pumpkins where they search for rewards. These rewards are either fully random or clustered together, allowing players to use social information to assess trade-offs between searching for new reward patches themselves or following other players who have found one.
-Producer-Scrounger Model</p>
-<p>The producer-scrounger model has significant precedent in psychology and has been extensively studied in animals. Here’s a classic example of this model in action by Keynan, Ridley, &amp; Lotem (2014):</p>
-<p style="text-align:center;">
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/B1h1mDgSjOc?si=5D4QLbyWGj50YejE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</p>
-
+<p>The ProducerScroungers experiment was one of my first projects at the Max-Planck Institute for Human Development (MPIB). Built within Minecraft, this foraging game places players in a field of melons or pumpkins where they search for rewards. These rewards are either fully random or clustered together, allowing players to use social information to assess trade-offs between searching for new reward patches themselves or following other players who have found one.</p>
 <p>The project I developed consisted of several components. One of these was a complex Minecraft mod that handled the experiment itself: setting up fields and reward patterns, guiding players through interactive tutorials, synchronizing game states, and logging data.</p>
-<p>After the initial pilot round, the project leader, Charley Wu, presented the preliminary results at the Cognition, Collectives, and Human Culture workshop for CogSci 2020:</p>
-<p style="text-align:center;">
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/_rDE49k1ENM?si=DPf3eA84s0Fy324d" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</p>
-
 <p>In addition to the Minecraft mod, this project included a substantial Python codebase for analyzing and visualizing the recorded data. This included a script that could convert any given round into a 2D bird's-eye video, showcasing each player's movements and actions:</p>
 <p style="text-align:center;">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/vUHaAhjfFVo?si=fQ-3OV75DhNu_nk0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -230,34 +216,9 @@ Producer-Scrounger Model</p>
 <p>CoinScrounge was a semi follow-up study to our ProducerScrounger experiment. Like its predecessor, it is a foraging game where players search for hidden reward patches on a field and observe whether other players have found something.
 Technical Challenges</p>
 <p>The most significant challenge in this project was configuring and programming the underlying netcode to ensure the multiplayer aspect worked reliably and smoothly. I used Unity Netcode for GameObjects, which was still in pre-release at that point, leading to numerous problems. After extensive troubleshooting, I managed to build a stable and reliable system, learning a lot in the process.</p>
-<p>When I began the project, there was only an abstract concept with no defined aesthetic or "visual story" to grant it ecological validity. I eventually conceived the idea of players using metal detectors to search a field for coins, which I demonstrated with this basic, initial prototype:</p>
-<p style="text-align:center;">
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/FcglXG6trLU?si=atoCPbjT4WEOYieN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</p>
-
-<p>The project leadership approved this idea, leading us to the next challenge: player models. We aimed for realistic player models but ultimately decided on a gender-neutral design to avoid interfering with the experiment's results. We chose a basic humanoid mannequin:</p>
-<p style="text-align:center;">
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/zVoNbsIJV84?si=-FCmNLIyL_QXBknU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</p>
-
-<p>Another crucial aspect was signaling to other players when someone had found a reward patch. We wanted an animation to show other players that a player was digging out coins. After testing various options, we settled on a shovel excavation animation:</p>
-<p style="text-align:center;">
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/6FgAhtBAEyI?si=Qt4qd4ms516aITRp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</p>
-
-<p>Designing the environment was another significant task. We created many versions, each with pros and cons. Ultimately, we chose the "courtyard" version, as it was least likely to interfere with player choice, and the surrounding buildings' colors provided a simple way to highlight different experimental conditions:</p>
-<p style="text-align:center;">
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/vEMAG_3U7fM?si=xMKNBLyo_oTDOpTG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</p>
-
-<p>To make the experiment more interactive and engaging, we introduced a minigame where players click on appearing coins with the cursor while extracting them. To limit the effects of player skill and previous gaming experience, we significantly simplified the controls. Here is the final version:</p>
+<p>When I began the project, there was only an abstract concept with no defined aesthetic or "visual story" to grant it ecological validity. I eventually conceived the idea of players using metal detectors to search a field for coins.</p>
 <p style="text-align:center;">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/StMnLTMG1xk?si=qmSe4qT7Ur7zpN2W" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</p>
-
-<p>The experiment also featured an extensive tutorial to introduce players to the controls and rules of the game:</p>
-<p style="text-align:center;">
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/cCFCDHqYG_c?si=_4ZzkeZzMrmhWPcm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </p>
 
 <p>For further information, refer to our <a href="https://github.com/DominikDeffner/VirtualCollectiveForaging">GitHub repository</a> and our <a href="https://rdcu.be/dCC3Z">publication in Nature Communications</a>.</p>
