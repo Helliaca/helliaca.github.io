@@ -1,8 +1,10 @@
 Hi there! Over the years, I've had the pleasure of working on a variety of exciting projects. This page gives you a little peek into some of them and showcases my contributions and work. Keep in mind, this is just a small selection, and each project is only briefly summarized.
 
-# Recent Projects
-
 ## CTower
+
+<div class="overview-toolbar-links">
+	<a aria-label="Link to pdf" href="build/projects/ctower/detailed.html" class="no-fade"><i class="fas fa-external-link-alt"></i> <b>Project Page</b></a>
+</div>
 
 Let's start with one of my more recent projects, CTower, which is currently in progress. CTower is a turn-based strategy game that I am developing with a handful of friends, with myself as the lead developer.
 
@@ -35,49 +37,13 @@ Here's a brief demo of a more recent prototype:
 
 Despite the considerable technical challenges, this project is very much a for-fun project with friends, hence the rather 'interesting' placeholder assets and names :D
 
-## The Fisher's Dilemma
-
-The Fisher's Dilemma is a foraging study I developed at the [Max-Planck Institute for Human Development](https://www.mpib-berlin.mpg.de/en). Its goal is to examine how people utilize social information to forage for resources and how their behavior shifts between cooperative and competitive environments.
-
-The core gameplay is remarkably straightforward: Players fish from several ponds, and the analysis focuses on how long it takes them to find the optimal pond and the extent to which observing other players influences their decisions.
-
-Here’s a demonstration video of how it looks:
-
-<p style="text-align:center;">
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/vxSoKIp9HFo?si=YIclpJscaybUWhuD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</p>
-
-A major challenge in this project was the multiplayer aspect and the underlying net code. Instead of relying on existing networking libraries, I decided to push my boundaries and develop a completely new, self-made net code library specifically for this project.
-
-This library, which I named HNetwork, functions as a client-agnostic, network-synchronized Dictionary that holds the current game state. Clients interpret and render this state for each player. Synchronization is managed through a combination of TCP and UDP packets, using self-written serializers to ensure efficient communication.
-
-## WFS VR
-
-In collaboration with [Fraunhofer IDMT](https://www.idmt.fraunhofer.de/), the Max-Planck Institute for Human Development (MPIB) has been experimenting with wave-field synthesis (WFS) setups to create immersive sound environments. Wave-field synthesis allows for the creation of sound waves from any given point of origin by superimposing a large set of individual, elementary sound waves. This occurs in real space without the need for simulated Head-Related Transfer Functions (HRTF).
-
-My task was to explore how this technology could be combined with virtual reality (VR) to enhance ecological validity through highly immersive sound setups.
-
-The experimental WFS setup at MPIB consisted of 64 loudspeakers and three subwoofers. This is what it looks like:
-
-![graph](config/projects_overview/wfs_setup_img.jpg)
-
-For the first prototype, I created a simple game where the player is placed in a large, bar-like room with telephones positioned at various locations. The objective is for the player to identify which telephone is ringing. Here’s a demonstration of this prototype:
-
-<p style="text-align:center;">
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/CWmqsejxNqI?si=P8PrBM4NTd2eG6Lf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</p>
-
-The initial prototype provided valuable insights and observations, which you can read about in detail here. These findings led to the development of numerous subsequent prototypes with varying selection mechanics.
-
-![graph](config/projects_overview/wfs_prototypes.png)
-
-<!--
-The project ultimately culminated in a version that utilizes hand-tracking for selection and features an audio guide to assist participants throughout the experiment. Take a look at the final prototype below:
-
-[ -- COMING SOON -- ]
- -->
-
 ## Lord of the Rings Mod (Hearts of Iron IV)
+
+<div class="overview-toolbar-links">
+	<a aria-label="Link to pdf" href="build/projects/hoi4lotr/detailed.html" class="no-fade"><i class="fas fa-external-link-alt"></i> <b>Project Page</b></a>
+	<a aria-label="Link to pdf" href="https://steamcommunity.com/sharedfiles/filedetails/?id=1314446921" class="no-fade"><i class="fab fa-steam"></i> <b>Steam Page</b></a>
+	<a aria-label="Link to pdf" href="https://github.com/Helliaca/HoI4-LotrMod" class="no-fade"><i class="fab fa-github"></i> <b>Github Page</b></a>
+</div>
 
 The Lord of the Rings Mod for Hearts of Iron IV is probably my most prominent project. Having developed the first version back in 2018, the mod has undergone several overhauls, reboots, and iterations, improving all the way to its current state. It is still actively developed, with much-appreciated contributions from several community members, although the vast majority of the mod remains my own work.
 
@@ -113,7 +79,55 @@ Given this great interest from our community, I also developed a plethora of too
 
 For further information, refer to the projects [Steam Page](https://steamcommunity.com/sharedfiles/filedetails/?id=1314446921) and [github repository](https://github.com/HoI4-LOTRMod-Team/HoI4-LotrMod).
 
+## Fisherman's Dilemma
+
+<div class="overview-toolbar-links">
+	<a aria-label="Link to pdf" href="build/projects/fishing_dilemma/detailed.html" class="no-fade"><i class="fas fa-external-link-alt"></i> <b>Project Page</b></a>
+</div>
+
+The Fisher's Dilemma is a foraging study I developed at the [Max-Planck Institute for Human Development](https://www.mpib-berlin.mpg.de/en). Its goal is to examine how people utilize social information to forage for resources and how their behavior shifts between cooperative and competitive environments.
+
+The core gameplay is remarkably straightforward: Players fish from several ponds, and the analysis focuses on how long it takes them to find the optimal pond and the extent to which observing other players influences their decisions.
+
+Here’s a demonstration video of how it looks:
+
+<p style="text-align:center;">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/vxSoKIp9HFo?si=YIclpJscaybUWhuD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</p>
+
+A major challenge in this project was the multiplayer aspect and the underlying net code. Instead of relying on existing networking libraries, I decided to push my boundaries and develop a completely new, self-made net code library specifically for this project.
+
+This library, which I named HNetwork, functions as a client-agnostic, network-synchronized Dictionary that holds the current game state. Clients interpret and render this state for each player. Synchronization is managed through a combination of TCP and UDP packets, using self-written serializers to ensure efficient communication.
+
+## WFS VR
+
+<div class="overview-toolbar-links">
+	<a aria-label="Link to pdf" href="build/projects/wfs_vr/detailed.html" class="no-fade"><i class="fas fa-external-link-alt"></i> <b>Project Page</b></a>
+</div>
+
+In collaboration with [Fraunhofer IDMT](https://www.idmt.fraunhofer.de/), the Max-Planck Institute for Human Development (MPIB) has been experimenting with wave-field synthesis (WFS) setups to create immersive sound environments. Wave-field synthesis allows for the creation of sound waves from any given point of origin by superimposing a large set of individual, elementary sound waves. This occurs in real space without the need for simulated Head-Related Transfer Functions (HRTF).
+
+My task was to explore how this technology could be combined with virtual reality (VR) to enhance ecological validity through highly immersive sound setups.
+
+The experimental WFS setup at MPIB consisted of 64 loudspeakers and three subwoofers. This is what it looks like:
+
+![graph](config/projects_overview/wfs_setup_img.jpg)
+
+For the first prototype, I created a simple game where the player is placed in a large, bar-like room with telephones positioned at various locations. The objective is for the player to identify which telephone is ringing. Here’s a demonstration of this prototype:
+
+<p style="text-align:center;">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/CWmqsejxNqI?si=P8PrBM4NTd2eG6Lf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</p>
+
+The initial prototype provided valuable insights and observations, which you can read about in detail here. These findings led to the development of numerous subsequent prototypes with varying selection mechanics.
+
+![graph](config/projects_overview/wfs_prototypes.png)
+
 ## Runners Study
+
+<div class="overview-toolbar-links">
+	<a aria-label="Link to pdf" href="build/projects/monsters/detailed.html" class="no-fade"><i class="fas fa-external-link-alt"></i> <b>Project Page</b></a>
+</div>
 
 The Runners Study is a VR experiment I developed at the Max-Planck Institute for Human Development (MPIB). It draws inspiration from classic street games like 'Statues' or 'Red Light, Green Light.' In this experiment, four animated monsters advance on the player at different speeds. By using eye-tracking, the participant can stop one of these monsters simply by looking at it.
 
@@ -147,9 +161,13 @@ Here’s a demonstration video of one of our final versions:
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/V05TO1v-DzA?si=e1EJ1eFq3nmKTm_h" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </p>
 
-# A couple of years old
-
 ## ProducerScroungers
+
+<div class="overview-toolbar-links">
+	<a aria-label="Link to pdf" href="build/projects/producerscrounger/detailed.html" class="no-fade"><i class="fas fa-external-link-alt"></i> <b>Project Page</b></a>
+	<a aria-label="Link to pdf" href="https://www.biorxiv.org/content/10.1101/2021.02.03.429553v2.full.pdf" class="no-fade"><i class="fab fa-file-pdf"></i> <b>Publication</b></a>
+	<a aria-label="Link to pdf" href="https://github.com/charleywu/minecraftforaging" class="no-fade"><i class="fab fa-github"></i> <b>Github Page</b></a>
+</div>
 
 The ProducerScroungers experiment was one of my first projects at the Max-Planck Institute for Human Development (MPIB). Built within Minecraft, this foraging game places players in a field of melons or pumpkins where they search for rewards. These rewards are either fully random or clustered together, allowing players to use social information to assess trade-offs between searching for new reward patches themselves or following other players who have found one.
 
@@ -177,6 +195,12 @@ For more detailed information, please refer to our [github repository](https://g
 
 ## CoinScrounge
 
+<div class="overview-toolbar-links">
+	<a aria-label="Link to pdf" href="build/projects/coinscrounge/detailed.html" class="no-fade"><i class="fas fa-external-link-alt"></i> <b>Project Page</b></a>
+	<a aria-label="Link to pdf" href="https://rdcu.be/dCC3Z" class="no-fade"><i class="fab fa-file-pdf"></i> <b>Publication</b></a>
+	<a aria-label="Link to pdf" href="https://github.com/DominikDeffner/VirtualCollectiveForaging" class="no-fade"><i class="fab fa-github"></i> <b>Github Page</b></a>
+</div>
+
 CoinScrounge was a semi follow-up study to our ProducerScrounger experiment. Like its predecessor, it is a foraging game where players search for hidden reward patches on a field and observe whether other players have found something.
 Technical Challenges
 
@@ -192,6 +216,11 @@ For further information, refer to our [GitHub repository](https://github.com/Dom
 
 ## AVHD
 
+<div class="overview-toolbar-links">
+	<a aria-label="Link to pdf" href="build/projects/avhd/detailed.html" class="no-fade"><i class="fas fa-external-link-alt"></i> <b>Project Page</b></a>
+</div>
+
+
 The AVHD project was designed to study how human behavior in traffic situations changes based on whether a car is controlled by another human or by an autonomous robot car.
 
 The experiment's paradigm is simple. The participant, wearing a VR headset, is placed on one side of a street and given an incentive to reach a bus on the other side as quickly as possible without being run over. They must choose between crossing immediately, trusting that the approaching car will stop, or moving to a safe crossing point, which would constitute a detour. The experiment aims to compare decision-making when the approaching car is controlled by another participant versus when it is controlled by a computer.
@@ -204,7 +233,14 @@ In the video below, you can see the AI I programmed for the car, represented by 
 
 Unfortunately, this project was shelved due to the COVID-19 pandemic, which prevented us from inviting participants and recording data.
 
-## AutoModelCar
+## AutoModelCar Simulator
+
+<div class="overview-toolbar-links">
+	<a aria-label="Link to pdf" href="build/projects/automodelcar/detailed.html" class="no-fade"><i class="fas fa-external-link-alt"></i> <b>Project Page</b></a>
+	<a aria-label="Link to pdf" href="https://raw.githubusercontent.com/Helliaca/AutoModelCar_Simulator/master/AutoModelCarSimulator.pdf" class="no-fade"><i class="fab fa-file-pdf"></i> <b>Publication</b></a>
+	<a aria-label="Link to pdf" href="https://github.com/Helliaca/AutoModelCar_Simulator" class="no-fade"><i class="fab fa-github"></i> <b>Github Page</b></a>
+</div>
+
 
 The AutoModelCar-Simulator is a Unity3D and ROSSharp-based simulator designed for the AutoModelCar, a miniature robot car developed at Freie Universität Berlin. The simulator allows users to run and test simple ROS nodes in a virtual environment, eliminating the need for immediate access to an actual AutoModelCar. The simulated environment closely resembles the conditions of the FU-Berlin robotics laboratory, providing a practical tool for students to develop and test their programs remotely.
 
@@ -220,9 +256,13 @@ We also developed a modular UI system that allows users to dynamically modify th
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/0-lc6--KMSQ?si=Gzsn4BCzuQ7yuUR7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </p>
 
-# Computer Graphics
-
 ## RTRad
+
+<div class="overview-toolbar-links">
+	<a aria-label="Link to pdf" href="build/projects/rtrad/detailed.html" class="no-fade"><i class="fas fa-external-link-alt"></i> <b>Project Page</b></a>
+	<a aria-label="Link to pdf" href="https://raw.githubusercontent.com/Helliaca/RTRad/main/MT-11.pdf" class="no-fade"><i class="fab fa-file-pdf"></i> <b>Publication</b></a>
+	<a aria-label="Link to pdf" href="https://github.com/Helliaca/RTRad" class="no-fade"><i class="fab fa-github"></i> <b>Github Page</b></a>
+</div>
 
 RTRad was a research project completed as my Master's Thesis. It implements progressive refinement radiosity with a unique twist: it's executed entirely on the GPU and leverages Nvidia's RTX technology for visibility computations.
 
@@ -236,6 +276,12 @@ The technical and mathematical details of this project are extensive, and a few 
 
 ## VXCT
 
+<div class="overview-toolbar-links">
+	<a aria-label="Link to pdf" href="build/projects/vxct/detailed.html" class="no-fade"><i class="fas fa-external-link-alt"></i> <b>Project Page</b></a>
+	<a aria-label="Link to pdf" href="https://drive.google.com/file/d/1ZS57rgKCYl-T-sqEzVSDuj0E7VQEB6EY/view" class="no-fade"><i class="fab fa-file-pdf"></i> <b>Publication</b></a>
+	<a aria-label="Link to pdf" href="https://github.com/Helliaca/VXCT" class="no-fade"><i class="fab fa-github"></i> <b>Github Page</b></a>
+</div>
+
 VXCT was a computer graphics research project completed as my Bachelor's Thesis. It is an OpenGL-based implementation of the Voxel Cone Tracing algorithm for real-time indirect illumination.
 
 The resulting program is highly customizable and includes a variety of custom software components, such as scene-serializing, displaying debug information, and setting/reading parameters in real-time through a command line.
@@ -244,9 +290,12 @@ The implementation is highly technical and complex, involving various shader mat
 
 ![graph image](config/projects/vxct/complex_scene.jpg)
 
-# Ancient history
-
 ## UnityPixelShaders
+
+<div class="overview-toolbar-links">
+	<a aria-label="Link to pdf" href="build/projects/unitypixelshaders/detailed.html" class="no-fade"><i class="fas fa-external-link-alt"></i> <b>Project Page</b></a>
+</div>
+
 
 UnityPixelShaders is a collection of fancy, cool looking pixel shaders I've made throughout the years. It includes many different things from raymarched fractionals to water and glass shaders. Have look below to see some examples:
 
@@ -255,6 +304,10 @@ UnityPixelShaders is a collection of fancy, cool looking pixel shaders I've made
 </p>
 
 ## Photogammetry
+
+<div class="overview-toolbar-links">
+	<a aria-label="Link to pdf" href="build/projects/photogammetry/detailed.html" class="no-fade"><i class="fas fa-external-link-alt"></i> <b>Project Page</b></a>
+</div>
 
 As part of several different projects at the MPIB I've worked a lot with photogammetry. One of these projects consisted of producing full scans of a room's interior:
 
@@ -266,14 +319,17 @@ As part of several different projects at the MPIB I've worked a lot with photoga
 
 I've also made extensive use of life-sized 3D scanners to capture 3D models of real people, then rigged and animated them, only to place them back into reality through passthrough-VR!
 
-![graph image](config/projects/photogammetry/IMG_20240626_152850.jpg)
+<div style="display: flex; flex-direction: row;">
+<img src="config/projects/photogammetry/IMG_20240626_152850.jpg" alt="image" style="height:500px;width:auto;flex:1;">
+<iframe width="549" height="500" src="https://www.youtube-nocookie.com/embed/v0NtekulibU" title="VR_3dPersonScan" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="flex: 1;"></iframe>
+</div>
 
-<p style="text-align:center;">
-<iframe width="549" height="976" src="https://www.youtube-nocookie.com/embed/v0NtekulibU" title="VR_3dPersonScan" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</p>
 
+## SDL2 Game
 
-## SDL2Game
+<div class="overview-toolbar-links">
+	<a aria-label="Link to pdf" href="build/projects/sdl2_game/detailed.html" class="no-fade"><i class="fas fa-external-link-alt"></i> <b>Project Page</b></a>
+</div>
 
 Built as part of a brief university <a href="https://github.com/krother/cplusplus_abv_zedat">games with C++ workshop</a>, this simple 2D game-engine provides powerful features, including destructive terrain, rope-physics and more Fundamental ones, such as ray-casts, animations, parallax scrolling and basic physics.
 
@@ -295,18 +351,13 @@ The game is absolutely jam-packed with insider jokes and terrible references. An
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/0Gr_jcT40Qc?si=zRANi-JjeWrOX22j" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </p>
 
-## Skinc Reborn
 
-I programmed Skinc Reborn all the way back in 2014, before I even started studying computer science. It was an ambitous project, including a fully fledged single-player campaign/gauntlet, destructible terrain and an interactie tutorial.
+## CS:GO Maps
 
-I used SFML for the underlying 2D graphics and WinForms for the menu-system. Albeit a little rough around the edges, this project taught me a lot about game engines, graphics and so much more!
-
-<p style="text-align:center;">
-<iframe width="560" height="315" src="https://www.youtube.com/embed/2POHrpJs_Uo?si=wAQaKpUsXxf_Mhwm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</p>
-
-
-## CSGO Maps
+<div class="overview-toolbar-links">
+	<a aria-label="Link to pdf" href="build/projects/csmaps/detailed.html" class="no-fade"><i class="fas fa-external-link-alt"></i> <b>Project Page</b></a>
+	<a aria-label="Link to pdf" href="https://github.com/Helliaca/csmaps" class="no-fade"><i class="fab fa-github"></i> <b>Github Page</b></a>
+</div>
 
 I've always been a big fan of the games made by Valve, and have frequently dabbled and experimented with modding and mapping for Source-Engine games. This includes a range of CS:GO maps that range from highly detailed to complete gimmicks.
 
@@ -323,15 +374,3 @@ Here's an overview of some of them:
 ![graph image](config/projects/csmaps/es_prison_escape.png)
 
 **es_prison_escape:** A custom gamemode that incorporates class-based combat, procedurally changing levels and a custom win-condition. It's found a lot of favour as a 1v1 map in particular and has accumulated well over 1400 subscribers.
-
-<!--
-![graph image](config/projects/csmaps/fy_schoolconspiracy.png)
-
-**fy_schoolconspiracy:** On the surface just a regular map of a school building, but by unlocking several secrets and solving some environmental puzzles, the player can enter a hidden "world domination room" and launch a missile. 200+ subscribers.
--->
-
-## CS 1.6 Maps
-
-Back in ancient dinosaur-times, when I was still a teenager, I loved creating maps for CS 1.6. I made a long series of maps that ranged all the way from competitive multiplayer, to utterly absurd, experimental gimmicks such as a "Quidditch" map (don't ask). There is a total of 23 maps, and many of them had a secret easter-egg "world domination room" hidden inside them. See below for an overview of my favorites!
-
-![graph image](config/projects/csmaps/cs16_maps.png)

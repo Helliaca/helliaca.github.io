@@ -59,6 +59,29 @@
     font-size: 60px;
 }
 
+.overview-toolbar-links {
+    width: 100%;
+    display: table-cell;
+    vertical-align: left;
+    text-align: left;
+}
+
+.overview-toolbar-links a {
+    color: #BBBBBB;
+    margin: 5px 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 20px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 30px;
+    height: 30px;
+    background-color: #333333;
+    border-radius: 12px;
+}
+
 .project-toolbar-links {
     width: 100%;
     display: table-cell;
