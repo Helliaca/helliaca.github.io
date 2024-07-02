@@ -165,7 +165,7 @@ Here’s a demonstration video of one of our final versions:
 
 <div class="overview-toolbar-links">
 	<a aria-label="Link to pdf" href="build/projects/producerscrounger/detailed.html" class="no-fade"><i class="fas fa-external-link-alt"></i> <b>Project Page</b></a>
-	<a aria-label="Link to pdf" href="https://www.biorxiv.org/content/10.1101/2021.02.03.429553v2.full.pdf" class="no-fade"><i class="fab fa-file-pdf"></i> <b>Publication</b></a>
+	<a aria-label="Link to pdf" href="https://www.biorxiv.org/content/10.1101/2021.02.03.429553v2.full.pdf" class="no-fade"><i class="far fa-file-pdf"></i> <b>Publication</b></a>
 	<a aria-label="Link to pdf" href="https://github.com/charleywu/minecraftforaging" class="no-fade"><i class="fab fa-github"></i> <b>Github Page</b></a>
 </div>
 
@@ -197,7 +197,7 @@ For more detailed information, please refer to our [github repository](https://g
 
 <div class="overview-toolbar-links">
 	<a aria-label="Link to pdf" href="build/projects/coinscrounge/detailed.html" class="no-fade"><i class="fas fa-external-link-alt"></i> <b>Project Page</b></a>
-	<a aria-label="Link to pdf" href="https://rdcu.be/dCC3Z" class="no-fade"><i class="fab fa-file-pdf"></i> <b>Publication</b></a>
+	<a aria-label="Link to pdf" href="https://rdcu.be/dCC3Z" class="no-fade"><i class="far fa-file-pdf"></i> <b>Publication</b></a>
 	<a aria-label="Link to pdf" href="https://github.com/DominikDeffner/VirtualCollectiveForaging" class="no-fade"><i class="fab fa-github"></i> <b>Github Page</b></a>
 </div>
 
@@ -237,7 +237,7 @@ Unfortunately, this project was shelved due to the COVID-19 pandemic, which prev
 
 <div class="overview-toolbar-links">
 	<a aria-label="Link to pdf" href="build/projects/automodelcar/detailed.html" class="no-fade"><i class="fas fa-external-link-alt"></i> <b>Project Page</b></a>
-	<a aria-label="Link to pdf" href="https://raw.githubusercontent.com/Helliaca/AutoModelCar_Simulator/master/AutoModelCarSimulator.pdf" class="no-fade"><i class="fab fa-file-pdf"></i> <b>Publication</b></a>
+	<a aria-label="Link to pdf" href="https://raw.githubusercontent.com/Helliaca/AutoModelCar_Simulator/master/AutoModelCarSimulator.pdf" class="no-fade"><i class="far fa-file-pdf"></i> <b>Publication</b></a>
 	<a aria-label="Link to pdf" href="https://github.com/Helliaca/AutoModelCar_Simulator" class="no-fade"><i class="fab fa-github"></i> <b>Github Page</b></a>
 </div>
 
@@ -260,7 +260,7 @@ We also developed a modular UI system that allows users to dynamically modify th
 
 <div class="overview-toolbar-links">
 	<a aria-label="Link to pdf" href="build/projects/rtrad/detailed.html" class="no-fade"><i class="fas fa-external-link-alt"></i> <b>Project Page</b></a>
-	<a aria-label="Link to pdf" href="https://raw.githubusercontent.com/Helliaca/RTRad/main/MT-11.pdf" class="no-fade"><i class="fab fa-file-pdf"></i> <b>Publication</b></a>
+	<a aria-label="Link to pdf" href="https://raw.githubusercontent.com/Helliaca/RTRad/main/MT-11.pdf" class="no-fade"><i class="far fa-file-pdf"></i> <b>Publication</b></a>
 	<a aria-label="Link to pdf" href="https://github.com/Helliaca/RTRad" class="no-fade"><i class="fab fa-github"></i> <b>Github Page</b></a>
 </div>
 
@@ -278,7 +278,7 @@ The technical and mathematical details of this project are extensive, and a few 
 
 <div class="overview-toolbar-links">
 	<a aria-label="Link to pdf" href="build/projects/vxct/detailed.html" class="no-fade"><i class="fas fa-external-link-alt"></i> <b>Project Page</b></a>
-	<a aria-label="Link to pdf" href="https://drive.google.com/file/d/1ZS57rgKCYl-T-sqEzVSDuj0E7VQEB6EY/view" class="no-fade"><i class="fab fa-file-pdf"></i> <b>Publication</b></a>
+	<a aria-label="Link to pdf" href="https://drive.google.com/file/d/1ZS57rgKCYl-T-sqEzVSDuj0E7VQEB6EY/view" class="no-fade"><i class="far fa-file-pdf"></i> <b>Publication</b></a>
 	<a aria-label="Link to pdf" href="https://github.com/Helliaca/VXCT" class="no-fade"><i class="fab fa-github"></i> <b>Github Page</b></a>
 </div>
 
@@ -301,6 +301,26 @@ UnityPixelShaders is a collection of fancy, cool looking pixel shaders I've made
 
 <p style="text-align:center;">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Wiv5lOUgmPE?si=bKFkrZxkhwBFezGc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</p>
+
+## ARC-VR
+
+<div class="overview-toolbar-links">
+	<a aria-label="Link to pdf" href="build/projects/arcvr/detailed.html" class="no-fade"><i class="fas fa-external-link-alt"></i> <b>Project Page</b></a>
+	<a aria-label="Link to pdf" href="https://www.vr-toolbox.org/" class="no-fade"><i class="fas fa-external-link-alt"></i> <b>Website</b></a>
+	<a aria-label="Link to pdf" href="https://github.com/MPIB/arc-vr" class="no-fade"><i class="fab fa-github"></i> <b>Github Page</b></a>
+</div>
+
+ARC-VR is a Unity-based framework for developing VR cognitive studies, which I created during my tenure at the Max Planck Institute for Human Development (MPIB). It is highly modular and customizable, including components for various VR-based use cases such as locomotion, avatars, physics interactions, and more.
+
+<p style="text-align:center;">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/NHDEzg9Detg?si=D_PqV2vjDwW0nbJX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</p>
+
+I programmed all the modules and components from the ground up, using OpenXR as the only external API/library. I also held a highly praised talk on VR in cognitive science at the MPIB, where I demonstrated the capabilities of this framework:
+
+<p style="text-align:center;">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/i877VvlbYxo?si=2_YI_iIJMZioFyqr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </p>
 
 ## Photogammetry
