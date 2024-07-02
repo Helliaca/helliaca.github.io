@@ -95,33 +95,6 @@
 
                 <div class="project-description">
                     <p>Hi there! Over the years, I've had the pleasure of working on a variety of exciting projects. This page gives you a little peek into some of them and showcases my contributions and work. Keep in mind, this is just a small selection, and each project is only briefly summarized.</p>
-<h2>CTower</h2>
-<div class="overview-toolbar-links">
-    <a aria-label="Link to pdf" href="build/projects/ctower/detailed.html" class="no-fade"><i class="fas fa-external-link-alt"></i> <b>Project Page</b></a>
-</div>
-
-<p>Let's start with one of my more recent projects, CTower, which is currently in progress. CTower is a turn-based strategy game that I am developing with a handful of friends, with myself as the lead developer.</p>
-<p>The game presents several technical challenges. While we are still finalizing some gameplay elements, we have established two key features: a large, dynamic map composed of hundreds of thousands of individually moving hexagons and a massive number of enemies.</p>
-<p>Here's an early demo video I assembled:</p>
-<p style="text-align:center;">
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/tMNLnyCX2Ts?si=hrgAYddpsr42-V4R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</p>
-
-<p>One of the core components of the game is the HexGrid. Despite each hexagon moving individually, the entire field operates as a single object. This is achieved by morphing the grid GPU-side through the vertex shader based on custom UV data. Each hexagon points to a specific pixel in a texture, allowing a 1024x1024 field of hexagons to be rendered efficiently. Movement, status effects, and flags are encoded as a bit-representation in a single texture, optimizing performance.
-Flow-Field Pathfinding</p>
-<p>For managing the horde of enemies (1024 in this demo), we employ a flow-field containing a direction vector for each hexagon of the HexGrid. This system enables realistic movements that account for clogging, enemy density, and dynamic obstacles. The flow-field is regularly updated using a multithreaded task with <a href="https://docs.unity3d.com/Packages/com.unity.burst@0.2-preview.20/manual/index.html">Unity's Burst Compiler</a>, ensuring parallel processing without impacting framerate. Enemies and their health bars are rendered using instanced rendering.</p>
-<p>Here’s an early demo showcasing the flow-field pathfinding with a large crowd of enemies:</p>
-<p style="text-align:center;">
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Hy7BPKwPA0I?si=UgGtQzsr5YaYqlys" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</p>
-
-<p>Recently, we made some pivotal decisions to steer the project in a new direction. We shifted towards a turn-based combat system and significantly simplified our resource-management system.</p>
-<p>Here's a brief demo of a more recent prototype:</p>
-<p style="text-align:center;">
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/NCJms_LPzu8?si=nVZ56I-FCTU-R99V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</p>
-
-<p>Despite the considerable technical challenges, this project is very much a for-fun project with friends, hence the rather 'interesting' placeholder assets and names :D</p>
 <h2>Lord of the Rings Mod (Hearts of Iron IV)</h2>
 <div class="overview-toolbar-links">
     <a aria-label="Link to pdf" href="build/projects/hoi4lotr/detailed.html" class="no-fade"><i class="fas fa-external-link-alt"></i> <b>Project Page</b></a>
@@ -150,6 +123,33 @@ Flow-Field Pathfinding</p>
 <p><img alt="image of unitmodels" src="config/projects/hoi4lotr/lotr_submods.png" /></p>
 <p>Given this great interest from our community, I also developed a plethora of tools to help volunteers with the development process, including the highly useful <a href="https://hoi4-lotrmod-team.github.io/HoI4-LotrMod/">GFX Search tool</a> that helps developers find GFX assets and code documentation easily.</p>
 <p>For further information, refer to the projects <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1314446921">Steam Page</a> and <a href="https://github.com/HoI4-LOTRMod-Team/HoI4-LotrMod">github repository</a>.</p>
+<h2>CTower</h2>
+<div class="overview-toolbar-links">
+    <a aria-label="Link to pdf" href="build/projects/ctower/detailed.html" class="no-fade"><i class="fas fa-external-link-alt"></i> <b>Project Page</b></a>
+</div>
+
+<p>Let's proceed with one of my more recent projects, CTower, which is currently still in progress. CTower is a turn-based strategy game that I am developing with a handful of friends, with myself as the lead developer.</p>
+<p>The game presents several technical challenges. While we are still finalizing some gameplay elements, we have established two key features: a large, dynamic map composed of hundreds of thousands of individually moving hexagons and a massive number of enemies.</p>
+<p>Here's an early demo video I assembled:</p>
+<p style="text-align:center;">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/tMNLnyCX2Ts?si=hrgAYddpsr42-V4R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</p>
+
+<p>One of the core components of the game is the HexGrid. Despite each hexagon moving individually, the entire field operates as a single object. This is achieved by morphing the grid GPU-side through the vertex shader based on custom UV data. Each hexagon points to a specific pixel in a texture, allowing a 1024x1024 field of hexagons to be rendered efficiently. Movement, status effects, and flags are encoded as a bit-representation in a single texture, optimizing performance.
+Flow-Field Pathfinding</p>
+<p>For managing the horde of enemies (1024 in this demo), we employ a flow-field containing a direction vector for each hexagon of the HexGrid. This system enables realistic movements that account for clogging, enemy density, and dynamic obstacles. The flow-field is regularly updated using a multithreaded task with <a href="https://docs.unity3d.com/Packages/com.unity.burst@0.2-preview.20/manual/index.html">Unity's Burst Compiler</a>, ensuring parallel processing without impacting framerate. Enemies and their health bars are rendered using instanced rendering.</p>
+<p>Here’s an early demo showcasing the flow-field pathfinding with a large crowd of enemies:</p>
+<p style="text-align:center;">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Hy7BPKwPA0I?si=UgGtQzsr5YaYqlys" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</p>
+
+<p>Recently, we made some pivotal decisions to steer the project in a new direction. We shifted towards a turn-based combat system and significantly simplified our resource-management system.</p>
+<p>Here's a brief demo of a more recent prototype:</p>
+<p style="text-align:center;">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/NCJms_LPzu8?si=nVZ56I-FCTU-R99V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</p>
+
+<p>Despite the considerable technical challenges, this project is very much a for-fun project with friends, hence the rather 'interesting' placeholder assets and names :D</p>
 <h2>Fisherman's Dilemma</h2>
 <div class="overview-toolbar-links">
     <a aria-label="Link to pdf" href="build/projects/fishing_dilemma/detailed.html" class="no-fade"><i class="fas fa-external-link-alt"></i> <b>Project Page</b></a>
