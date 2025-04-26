@@ -1,42 +1,5 @@
 Hi there! Over the years, I've had the pleasure of working on a variety of exciting projects. This page gives you a little peek into some of them and showcases my contributions and work. Keep in mind, this is just a small selection, and each project is only briefly summarized.
 
-## CTower
-
-<div class="overview-toolbar-links">
-	<a aria-label="Link to pdf" href="build/projects/ctower/detailed.html" class="no-fade"><i class="fas fa-external-link-alt"></i> <b>Project Page</b></a>
-</div>
-
-Let's start with one of my more recent projects, CTower, which is currently in progress. CTower is a turn-based strategy game that I am developing with a handful of friends, with myself as the lead developer.
-
-The game presents several technical challenges. While we are still finalizing some gameplay elements, we have established two key features: a large, dynamic map composed of hundreds of thousands of individually moving hexagons and a massive number of enemies.
-
-Here's an early demo video I assembled:
-
-<p style="text-align:center;">
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/tMNLnyCX2Ts?si=hrgAYddpsr42-V4R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</p>
-
-One of the core components of the game is the HexGrid. Despite each hexagon moving individually, the entire field operates as a single object. This is achieved by morphing the grid GPU-side through the vertex shader based on custom UV data. Each hexagon points to a specific pixel in a texture, allowing a 1024x1024 field of hexagons to be rendered efficiently. Movement, status effects, and flags are encoded as a bit-representation in a single texture, optimizing performance.
-Flow-Field Pathfinding
-
-For managing the horde of enemies (1024 in this demo), we employ a flow-field containing a direction vector for each hexagon of the HexGrid. This system enables realistic movements that account for clogging, enemy density, and dynamic obstacles. The flow-field is regularly updated using a multithreaded task with [Unity's Burst Compiler](https://docs.unity3d.com/Packages/com.unity.burst@0.2-preview.20/manual/index.html), ensuring parallel processing without impacting framerate. Enemies and their health bars are rendered using instanced rendering.
-
-Here’s an early demo showcasing the flow-field pathfinding with a large crowd of enemies:
-
-<p style="text-align:center;">
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Hy7BPKwPA0I?si=UgGtQzsr5YaYqlys" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</p>
-
-Recently, we made some pivotal decisions to steer the project in a new direction. We shifted towards a turn-based combat system and significantly simplified our resource-management system.
-
-Here's a brief demo of a more recent prototype:
-
-<p style="text-align:center;">
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/NCJms_LPzu8?si=nVZ56I-FCTU-R99V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</p>
-
-Despite the considerable technical challenges, this project is very much a for-fun project with friends, hence the rather 'interesting' placeholder assets and names :D
-
 ## Lord of the Rings Mod (Hearts of Iron IV)
 
 <div class="overview-toolbar-links">
@@ -78,6 +41,44 @@ Due to its large following and active community, several derivative works, inclu
 Given this great interest from our community, I also developed a plethora of tools to help volunteers with the development process, including the highly useful [GFX Search tool](https://hoi4-lotrmod-team.github.io/HoI4-LotrMod/) that helps developers find GFX assets and code documentation easily.
 
 For further information, refer to the projects [Steam Page](https://steamcommunity.com/sharedfiles/filedetails/?id=1314446921) and [github repository](https://github.com/HoI4-LOTRMod-Team/HoI4-LotrMod).
+
+
+## CTower
+
+<div class="overview-toolbar-links">
+	<a aria-label="Link to pdf" href="build/projects/ctower/detailed.html" class="no-fade"><i class="fas fa-external-link-alt"></i> <b>Project Page</b></a>
+</div>
+
+Let's proceed with one of my more recent projects, CTower, which is currently still in progress. CTower is a turn-based strategy game that I am developing with a handful of friends, with myself as the lead developer.
+
+The game presents several technical challenges. While we are still finalizing some gameplay elements, we have established two key features: a large, dynamic map composed of hundreds of thousands of individually moving hexagons and a massive number of enemies.
+
+Here's an early demo video I assembled:
+
+<p style="text-align:center;">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/tMNLnyCX2Ts?si=hrgAYddpsr42-V4R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</p>
+
+One of the core components of the game is the HexGrid. Despite each hexagon moving individually, the entire field operates as a single object. This is achieved by morphing the grid GPU-side through the vertex shader based on custom UV data. Each hexagon points to a specific pixel in a texture, allowing a 1024x1024 field of hexagons to be rendered efficiently. Movement, status effects, and flags are encoded as a bit-representation in a single texture, optimizing performance.
+Flow-Field Pathfinding
+
+For managing the horde of enemies (1024 in this demo), we employ a flow-field containing a direction vector for each hexagon of the HexGrid. This system enables realistic movements that account for clogging, enemy density, and dynamic obstacles. The flow-field is regularly updated using a multithreaded task with [Unity's Burst Compiler](https://docs.unity3d.com/Packages/com.unity.burst@0.2-preview.20/manual/index.html), ensuring parallel processing without impacting framerate. Enemies and their health bars are rendered using instanced rendering.
+
+Here’s an early demo showcasing the flow-field pathfinding with a large crowd of enemies:
+
+<p style="text-align:center;">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Hy7BPKwPA0I?si=UgGtQzsr5YaYqlys" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</p>
+
+Recently, we made some pivotal decisions to steer the project in a new direction. We shifted towards a turn-based combat system and significantly simplified our resource-management system.
+
+Here's a brief demo of a more recent prototype:
+
+<p style="text-align:center;">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/NCJms_LPzu8?si=nVZ56I-FCTU-R99V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</p>
+
+Despite the considerable technical challenges, this project is very much a for-fun project with friends, hence the rather 'interesting' placeholder assets and names :D
 
 ## Fisherman's Dilemma
 
@@ -165,7 +166,7 @@ Here’s a demonstration video of one of our final versions:
 
 <div class="overview-toolbar-links">
 	<a aria-label="Link to pdf" href="build/projects/producerscrounger/detailed.html" class="no-fade"><i class="fas fa-external-link-alt"></i> <b>Project Page</b></a>
-	<a aria-label="Link to pdf" href="https://www.biorxiv.org/content/10.1101/2021.02.03.429553v2.full.pdf" class="no-fade"><i class="fab fa-file-pdf"></i> <b>Publication</b></a>
+	<a aria-label="Link to pdf" href="https://www.biorxiv.org/content/10.1101/2021.02.03.429553v2.full.pdf" class="no-fade"><i class="far fa-file-pdf"></i> <b>Publication</b></a>
 	<a aria-label="Link to pdf" href="https://github.com/charleywu/minecraftforaging" class="no-fade"><i class="fab fa-github"></i> <b>Github Page</b></a>
 </div>
 
@@ -197,7 +198,7 @@ For more detailed information, please refer to our [github repository](https://g
 
 <div class="overview-toolbar-links">
 	<a aria-label="Link to pdf" href="build/projects/coinscrounge/detailed.html" class="no-fade"><i class="fas fa-external-link-alt"></i> <b>Project Page</b></a>
-	<a aria-label="Link to pdf" href="https://rdcu.be/dCC3Z" class="no-fade"><i class="fab fa-file-pdf"></i> <b>Publication</b></a>
+	<a aria-label="Link to pdf" href="https://rdcu.be/dCC3Z" class="no-fade"><i class="far fa-file-pdf"></i> <b>Publication</b></a>
 	<a aria-label="Link to pdf" href="https://github.com/DominikDeffner/VirtualCollectiveForaging" class="no-fade"><i class="fab fa-github"></i> <b>Github Page</b></a>
 </div>
 
@@ -237,7 +238,7 @@ Unfortunately, this project was shelved due to the COVID-19 pandemic, which prev
 
 <div class="overview-toolbar-links">
 	<a aria-label="Link to pdf" href="build/projects/automodelcar/detailed.html" class="no-fade"><i class="fas fa-external-link-alt"></i> <b>Project Page</b></a>
-	<a aria-label="Link to pdf" href="https://raw.githubusercontent.com/Helliaca/AutoModelCar_Simulator/master/AutoModelCarSimulator.pdf" class="no-fade"><i class="fab fa-file-pdf"></i> <b>Publication</b></a>
+	<a aria-label="Link to pdf" href="https://raw.githubusercontent.com/Helliaca/AutoModelCar_Simulator/master/AutoModelCarSimulator.pdf" class="no-fade"><i class="far fa-file-pdf"></i> <b>Publication</b></a>
 	<a aria-label="Link to pdf" href="https://github.com/Helliaca/AutoModelCar_Simulator" class="no-fade"><i class="fab fa-github"></i> <b>Github Page</b></a>
 </div>
 
@@ -260,7 +261,7 @@ We also developed a modular UI system that allows users to dynamically modify th
 
 <div class="overview-toolbar-links">
 	<a aria-label="Link to pdf" href="build/projects/rtrad/detailed.html" class="no-fade"><i class="fas fa-external-link-alt"></i> <b>Project Page</b></a>
-	<a aria-label="Link to pdf" href="https://raw.githubusercontent.com/Helliaca/RTRad/main/MT-11.pdf" class="no-fade"><i class="fab fa-file-pdf"></i> <b>Publication</b></a>
+	<a aria-label="Link to pdf" href="https://raw.githubusercontent.com/Helliaca/RTRad/main/MT-11.pdf" class="no-fade"><i class="far fa-file-pdf"></i> <b>Publication</b></a>
 	<a aria-label="Link to pdf" href="https://github.com/Helliaca/RTRad" class="no-fade"><i class="fab fa-github"></i> <b>Github Page</b></a>
 </div>
 
@@ -278,7 +279,7 @@ The technical and mathematical details of this project are extensive, and a few 
 
 <div class="overview-toolbar-links">
 	<a aria-label="Link to pdf" href="build/projects/vxct/detailed.html" class="no-fade"><i class="fas fa-external-link-alt"></i> <b>Project Page</b></a>
-	<a aria-label="Link to pdf" href="https://drive.google.com/file/d/1ZS57rgKCYl-T-sqEzVSDuj0E7VQEB6EY/view" class="no-fade"><i class="fab fa-file-pdf"></i> <b>Publication</b></a>
+	<a aria-label="Link to pdf" href="https://drive.google.com/file/d/1ZS57rgKCYl-T-sqEzVSDuj0E7VQEB6EY/view" class="no-fade"><i class="far fa-file-pdf"></i> <b>Publication</b></a>
 	<a aria-label="Link to pdf" href="https://github.com/Helliaca/VXCT" class="no-fade"><i class="fab fa-github"></i> <b>Github Page</b></a>
 </div>
 
@@ -301,6 +302,26 @@ UnityPixelShaders is a collection of fancy, cool looking pixel shaders I've made
 
 <p style="text-align:center;">
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Wiv5lOUgmPE?si=bKFkrZxkhwBFezGc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</p>
+
+## ARC-VR
+
+<div class="overview-toolbar-links">
+	<a aria-label="Link to pdf" href="build/projects/arcvr/detailed.html" class="no-fade"><i class="fas fa-external-link-alt"></i> <b>Project Page</b></a>
+	<a aria-label="Link to pdf" href="https://www.vr-toolbox.org/" class="no-fade"><i class="fas fa-external-link-alt"></i> <b>Website</b></a>
+	<a aria-label="Link to pdf" href="https://github.com/MPIB/arc-vr" class="no-fade"><i class="fab fa-github"></i> <b>Github Page</b></a>
+</div>
+
+ARC-VR is a Unity-based framework for developing VR cognitive studies, which I created during my tenure at the Max Planck Institute for Human Development (MPIB). It is highly modular and customizable, including components for various VR-based use cases such as locomotion, avatars, physics interactions, and more.
+
+<p style="text-align:center;">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/NHDEzg9Detg?si=D_PqV2vjDwW0nbJX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</p>
+
+I programmed all the modules and components from the ground up, using OpenXR as the only external API/library. I also held a highly praised talk on VR in cognitive science at the MPIB, where I demonstrated the capabilities of this framework:
+
+<p style="text-align:center;">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/i877VvlbYxo?si=2_YI_iIJMZioFyqr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </p>
 
 ## Photogammetry
