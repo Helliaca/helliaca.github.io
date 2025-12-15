@@ -1,3 +1,4 @@
+
 ---
 
 Development of this software has been kindly supported by
@@ -9,7 +10,6 @@ Development of this software has been kindly supported by
 DigiProMIN, a BMBFSFJ (Federal Ministry for Education, Family Affairs, Senior Citizens, Women and Youth) funded project
 
 ---
-
 
 
 
