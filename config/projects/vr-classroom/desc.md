@@ -1,3 +1,18 @@
+---
+
+Development of this software has been kindly supported by
+
+- [Prof. Dr. Dirk Richter](https://www.uni-potsdam.de/de/erziehungswissenschaftliche-bildungsforschung/prof-dr-dirk-richter) (Professorship of Educational Research in the Educational Sciences, University of Potsdam), in collaboration with
+- [Prof. Dr. Yizhen Huang](https://uni-tuebingen.de/en/faculties/faculty-of-economics-and-social-sciences/subjects/department-of-social-sciences/education-sciences-and-psychology/institute/staff/huang-yizhen/) (Junior Professor of Education Sciences and Psychology, University of Tübingen) and 
+- [Prof. Dr. Eric Richter](https://www.ku.de/ppf/paedagogik/lehrstuehle-professuren/ppf/paedagogik/lehrstuhl-fuer-schulpaedagogik/mitarbeitende/prof-dr-eric-richter) (Professorship of School Pedagogy, Catholic University of EichstaettIngolstadt)
+
+DigiProMIN, a BMBFSFJ (Federal Ministry for Education, Family Affairs, Senior Citizens, Women and Youth) funded project
+
+---
+
+
+
+
 ## Project Overview
 
 While the **VR Classroom** project existed prior to my involvement, it initially faced significant challenges regarding stability and performance. I was originally contracted by the University of Potsdam to address these bottlenecks and optimize the existing framework.
