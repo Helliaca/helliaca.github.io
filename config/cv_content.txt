@@ -1,1 +1,4 @@
---TODO--
+<object style="width: 80%; height:calc(100% - 10px); margin-left: 10%;" data="config/cv/cv_BKAHL_eng.pdf" width="500" height="375" type="application/pdf">
+It looks like your browser doesn't support pdf-objects. Click on the link below to download the pdf instead:<br>
+<a href="config/cv/cv_BKAHL_eng.pdf" class="no-fade">DOWNLOAD</a>
+</object>
